@@ -111,10 +111,11 @@
      background-color: #907a62;
      color: #AF1F1F;
      border: none;
-     padding: 12px 24px;
+     padding: 10px 20px;
      font-size: 1rem;
      border-radius: 4px;
      cursor: pointer;
+     font-weight: bold;
      transition: background-color 0.3s;
  }
  
@@ -256,20 +257,23 @@
  }
  
  .moreinfo button {
-     background-color: #2c3e50;
-     color: white;
+     background-color: #907a62;
+     color: #AF1F1F;
      border: none;
-     padding: 12px 24px;
+     padding: 10px 20px;
      font-size: 1rem;
      border-radius: 4px;
      cursor: pointer;
+     font-weight: bold;
      transition: background-color 0.3s;
-     margin-top: 30px;
-     /* Added margin to separate from service items */
  }
  
  .moreinfo button:hover {
      background-color: #1a252f;
+ }
+ 
+ .Career h1 {
+     color: #AF1F1F;
  }
  
  .blue-square {
@@ -432,7 +436,7 @@
  
  .footerbar {
      background-color: #9d8369;
-     /* 棕色背景 */
+     width: 100%;
      color: #fff;
      padding: 40px 60px;
      display: flex;
