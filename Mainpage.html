@@ -1,0 +1,477 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
+    <title>Home</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: Arial, sans-serif;
+        }
+        
+        header {
+            position: relative;
+        }
+        
+        .nav_bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 30;
+            padding: 20px 0;
+        }
+        
+        .nav_bar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0 50px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        
+        .nav_bar ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        
+        .nav_bar ul li a:hover {
+            color: #ddd;
+        }
+        
+        .background-image {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .background-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(60%);
+        }
+        
+        .background-image::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+        
+        .hero-text {
+            position: absolute;
+            z-index: 20;
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            font-family: 'Jacques Francois', serif;
+        }
+        
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            font-family: 'Jacques Francois', serif;
+        }
+        
+        main {
+            padding: 20px;
+        }
+        
+        .introduce_text {
+            font-size: 1.2rem;
+            line-height: 1.6;
+            margin-top: 20px;
+            text-align: center;
+        }
+        
+        .introduce_text p {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .aboutuse_btn {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .aboutuse_btn button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+        
+        .aboutuse_btn button:hover {
+            background-color: #1a252f;
+        }
+        
+        footer {
+            background-color: #f8f8f8;
+            padding: 20px;
+            text-align: center;
+        }
+        /* Floating language selector styles */
+        
+        .language-selector {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+        
+        .language-toggle {
+            width: 50px;
+            height: 50px;
+            background-color: #2c3e50;
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            cursor: pointer;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            transition: all 0.3s;
+        }
+        
+        .language-toggle:hover {
+            background-color: #1a252f;
+            transform: scale(1.1);
+        }
+        
+        .language-toggle span {
+            font-size: 1.2rem;
+            font-weight: bold;
+        }
+        
+        .language-options {
+            position: absolute;
+            bottom: 60px;
+            right: 0;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+            overflow: hidden;
+            display: none;
+            width: 120px;
+        }
+        
+        .language-option {
+            padding: 10px 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            text-align: center;
+        }
+        
+        .language-option:hover {
+            background-color: #f0f0f0;
+        }
+        
+        .language-selector.active .language-options {
+            display: block;
+        }
+        
+        .language-selector.active .language-toggle {
+            background-color: #1a252f;
+        }
+        
+        .ourservice {
+            padding: 40px 20px;
+            text-align: center;
+        }
+        
+        .ourservice h1 {
+            font-size: 2.5rem;
+            margin-bottom: 40px;
+            font-family: 'Jacques Francois', serif;
+            color: #2c3e50;
+        }
+        
+        .service-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            max-width: 1000px;
+            margin: 0 auto;
+        }
+        
+        .service-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+        
+        .service-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+        .service-image {
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s;
+        }
+        
+        .service-item:hover .service-image img {
+            transform: scale(1.05);
+        }
+        
+        .service-content {
+            padding: 20px;
+        }
+        
+        .service-content h3 {
+            margin: 0 0 10px 0;
+            color: #2c3e50;
+            font-size: 1.3rem;
+        }
+        
+        .moreinfo {
+            margin-top: 30px;
+            text-align: center;
+        }
+        
+        .moreinfo button {
+            background-color: #2c3e50;
+            color: white;
+            border: none;
+            padding: 12px 24px;
+            font-size: 1rem;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+            margin-top: 30px;
+            /* Added margin to separate from service items */
+        }
+        
+        .moreinfo button:hover {
+            background-color: #1a252f;
+        }
+        
+        .blue-square {
+            width: 300px;
+            height: 200px;
+            background-color: #000080;
+            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 10%);
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Floating Language Selector -->
+    <div class="language-selector" id="languageSelector">
+        <div class="language-toggle" onclick="toggleLanguageOptions()">
+            <span id="currentLangIcon">EN</span>
+        </div>
+        <div class="language-options">
+            <div class="language-option" onclick="selectLanguage('en')">English</div>
+            <div class="language-option" onclick="selectLanguage('zh')">中文</div>
+        </div>
+    </div>
+
+    <header>
+        <nav>
+            <div class="nav_bar">
+                <ul>
+                    <li><a href="Mainpage.html">Home</a></li>
+                    <li><a href="About.html">About</a></li>
+                    <li><a href="service.html">Service</a></li>
+                    <li><a href="Career.html">Career</a></li>
+                    <li><a href="Contact.html">Contact us</a></li>
+                </ul>
+            </div>
+            <div class="background-image">
+                <img src="image source/pexels-ahmetyuksek-30348504.jpg" alt="">
+                <div class="hero-text">
+                    <h1>VL Insurance Advisor</h1>
+                    <p class="subtitle">Your trusted insurance partner</p>
+                </div>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <hr>
+        <div class="introduce_text">
+            <p id="introText"></p>
+            <div class="aboutuse_btn">
+                <button>About us</button>
+            </div>
+        </div>
+
+        <div class="ourservice">
+            <h1>Our Service</h1>
+            <div class="service-grid">
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="image source/fresscustomplanning.jpg" alt="Free Customer Planning">
+                    </div>
+                    <div class="service-content">
+                        <h3>Free Customer Planning</h3>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <a href="">
+                        <div class="service-image">
+                            <img src="image source/pexels-bia-limova-1908542654-33175656.jpg" alt="Insurance Needs Analyse">
+                        </div>
+                        <div class="service-content">
+                            <h3>Insurance Needs Analyse</h3>
+                        </div>
+                    </a>
+                </div>
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="image source/app-application-business-business-strategy-coffee-collaboration-1434201-pxhere.com.jpg" alt="Latest Info">
+                    </div>
+                    <div class="service-content">
+                        <h3>Latest Info</h3>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="image source/writing-work-pen-office-brand-cash-1238368-pxhere.com.jpg" alt="Insurance Knowledge">
+                    </div>
+                    <div class="service-content">
+                        <h3>Insurance Knowledge</h3>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="image source/staff-agreement-applicant-associate-boardroom-business-1652041-pxhere.com.jpg" alt="Case Sharing">
+                    </div>
+                    <div class="service-content">
+                        <h3>Case Sharing</h3>
+                    </div>
+                </div>
+                <div class="service-item">
+                    <div class="service-image">
+                        <img src="image source/person-people-girl-photography-play-kid-817215-pxhere.com.jpg" alt="Orphan Policy">
+                    </div>
+                    <div class="service-content">
+                        <h3>Orphan Policy</h3>
+                    </div>
+                </div>
+
+            </div>
+            <div class="moreinfo">
+                <button>More Info</button>
+            </div>
+        </div>
+        <div class="Career">
+            <h1>Career</h1>
+            <div class="blue-square">
+
+            </div>
+
+        </div>
+
+    </main>
+    <footer>
+        <p>&copy; 2023 My Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Content in different languages
+        const content = {
+            en: {
+                intro: "We are a team of professional insurance advisors, always putting clients at the center, listening to your dreams, and protecting your future. With professional advice, we help you protect the most important people and things in your life, and assist you in creating intergenerational love and security for your loved ones.",
+                title: "VL Insurance Advisor",
+                subtitle: "Your trusted insurance partner"
+            },
+            zh: {
+                intro: "我们是一支专业的保险顾问团队，始终以客户为中心，倾听您的梦想，守护您的未来。我们用专业的建议，帮您守护最重要的人和事，并助您为挚爱之人打造跨世代的爱与保障。",
+                title: "VL 保险顾问",
+                subtitle: "您值得信赖的保险合作伙伴"
+            }
+        };
+
+        // Function to set language
+        function setLanguage(lang) {
+            // Update all language-specific elements
+            document.getElementById('introText').textContent = content[lang].intro;
+            document.querySelector('.hero-text h1').textContent = content[lang].title;
+            document.querySelector('.hero-text .subtitle').textContent = content[lang].subtitle;
+
+            // Update language icon
+            document.getElementById('currentLangIcon').textContent = lang === 'en' ? 'EN' : '中';
+
+            // Store preference
+            localStorage.setItem('userLang', lang);
+
+            // Hide options
+            document.getElementById('languageSelector').classList.remove('active');
+        }
+
+        // Toggle language options visibility
+        function toggleLanguageOptions() {
+            document.getElementById('languageSelector').classList.toggle('active');
+        }
+
+        // Close language options when clicking outside
+        document.addEventListener('click', function(event) {
+            const languageSelector = document.getElementById('languageSelector');
+            if (!languageSelector.contains(event.target)) {
+                languageSelector.classList.remove('active');
+            }
+        });
+
+        // Check for saved language preference or browser language
+        function checkLanguagePreference() {
+            const savedLang = localStorage.getItem('userLang');
+            const browserLang = navigator.language || navigator.userLanguage;
+            const langCode = browserLang.split('-')[0];
+
+            // If user has previously selected a language, use that
+            if (savedLang) {
+                setLanguage(savedLang);
+            }
+            // If browser language is Chinese, use Chinese
+            else if (langCode === 'zh') {
+                setLanguage('zh');
+            }
+            // Otherwise default to English
+            else {
+                setLanguage('en');
+            }
+        }
+
+        // Initialize when DOM is loaded
+        document.addEventListener('DOMContentLoaded', checkLanguagePreference);
+    </script>
+</body>
+
+</html>
