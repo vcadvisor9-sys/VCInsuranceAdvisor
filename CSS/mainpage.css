@@ -1,0 +1,508 @@
+ body {
+     margin: 0;
+     padding: 0;
+     font-family: Arial, sans-serif;
+ }
+ 
+ header {
+     position: relative;
+ }
+ 
+ .nav_bar {
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     z-index: 30;
+     padding: 20px 0;
+ }
+ 
+ .nav_bar ul {
+     list-style: none;
+     margin: 0;
+     padding: 0 50px;
+     display: flex;
+     justify-content: flex-end;
+     align-items: center;
+ }
+ 
+ .nav_bar ul li a {
+     color: white;
+     text-decoration: none;
+     padding: 10px 20px;
+     font-size: 18px;
+     transition: color 0.3s;
+ }
+ 
+ .nav_bar ul li a:hover {
+     color: #ddd;
+ }
+ 
+ .background-image {
+     position: relative;
+     width: 100%;
+     height: 400px;
+     overflow: hidden;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+ }
+ 
+ .background-image img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     filter: brightness(60%);
+ }
+ 
+ .background-image::after {
+     content: "";
+     position: absolute;
+     top: 0;
+     left: 0;
+     width: 100%;
+     height: 100%;
+     background: rgba(0, 0, 0, 0.3);
+     z-index: 2;
+ }
+ 
+ .hero-text {
+     position: absolute;
+     z-index: 20;
+     color: white;
+     text-align: center;
+     width: 100%;
+ }
+ 
+ .hero-text h1 {
+     font-size: 3.5rem;
+     margin: 0;
+     font-family: 'Jacques Francois', serif;
+ }
+ 
+ .hero-text .subtitle {
+     font-size: 1.5rem;
+     margin-top: 15px;
+     font-family: 'Jacques Francois', serif;
+ }
+ 
+ main {
+     padding: 20px;
+ }
+ 
+ .introduce_text {
+     font-size: 1.2rem;
+     line-height: 1.6;
+     margin-top: 20px;
+     text-align: center;
+ }
+ 
+ .introduce_text p {
+     max-width: 800px;
+     margin: 0 auto;
+ }
+ 
+ .aboutuse_btn {
+     margin-top: 30px;
+     text-align: center;
+ }
+ 
+ .aboutuse_btn button {
+     background-color: #907a62;
+     color: #AF1F1F;
+     border: none;
+     padding: 12px 24px;
+     font-size: 1rem;
+     border-radius: 4px;
+     cursor: pointer;
+     transition: background-color 0.3s;
+ }
+ 
+ .aboutuse_btn button:hover {
+     background-color: #1a252f;
+ }
+ 
+ footer {
+     background-color: #f8f8f8;
+     padding: 20px;
+     text-align: center;
+ }
+ /* Floating language selector styles */
+ 
+ .language-selector {
+     position: fixed;
+     bottom: 20px;
+     right: 20px;
+     z-index: 1000;
+ }
+ 
+ .language-toggle {
+     width: 50px;
+     height: 50px;
+     background-color: #2c3e50;
+     color: white;
+     border-radius: 50%;
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     cursor: pointer;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+     transition: all 0.3s;
+ }
+ 
+ .language-toggle:hover {
+     background-color: #1a252f;
+     transform: scale(1.1);
+ }
+ 
+ .language-toggle span {
+     font-size: 1.2rem;
+     font-weight: bold;
+ }
+ 
+ .language-options {
+     position: absolute;
+     bottom: 60px;
+     right: 0;
+     background-color: white;
+     border-radius: 8px;
+     box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
+     overflow: hidden;
+     display: none;
+     width: 120px;
+ }
+ 
+ .language-option {
+     padding: 10px 15px;
+     cursor: pointer;
+     transition: background-color 0.3s;
+     text-align: center;
+ }
+ 
+ .language-option:hover {
+     background-color: #f0f0f0;
+ }
+ 
+ .language-selector.active .language-options {
+     display: block;
+ }
+ 
+ .language-selector.active .language-toggle {
+     background-color: #1a252f;
+ }
+ 
+ .ourservice {
+     padding: 40px 20px;
+     text-align: center;
+ }
+ 
+ .ourservice h1 {
+     font-size: 2.5rem;
+     margin-bottom: 40px;
+     font-family: 'Jacques Francois', serif;
+     color: #AF1F1F;
+ }
+ 
+ .service-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+     gap: 30px;
+     max-width: 1000px;
+     margin: 0 auto;
+ }
+ 
+ .service-item {
+     background-color: white;
+     border-radius: 8px;
+     overflow: hidden;
+     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+     transition: transform 0.3s, box-shadow 0.3s;
+ }
+ 
+ .service-item:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+ }
+ 
+ .service-image {
+     height: 180px;
+     overflow: hidden;
+ }
+ 
+ .service-image img {
+     width: 100%;
+     height: 100%;
+     object-fit: cover;
+     transition: transform 0.5s;
+ }
+ 
+ .service-item:hover .service-image img {
+     transform: scale(1.05);
+ }
+ 
+ .service-content {
+     padding: 20px;
+ }
+ 
+ .service-content h3 {
+     margin: 0 0 10px 0;
+     color: #2c3e50;
+     font-size: 1.3rem;
+ }
+ 
+ .moreinfo {
+     margin-top: 30px;
+     text-align: center;
+ }
+ 
+ .moreinfo button {
+     background-color: #2c3e50;
+     color: white;
+     border: none;
+     padding: 12px 24px;
+     font-size: 1rem;
+     border-radius: 4px;
+     cursor: pointer;
+     transition: background-color 0.3s;
+     margin-top: 30px;
+     /* Added margin to separate from service items */
+ }
+ 
+ .moreinfo button:hover {
+     background-color: #1a252f;
+ }
+ 
+ .blue-square {
+     width: 100vw;
+     /* 占满整个视口宽度 */
+     margin-left: calc(-50vw + 50%);
+     /* 抵消父元素 padding 或 margin */
+     height: 500px;
+     background-color: #D9C4AA;
+     clip-path: polygon(0% 0%, 100% 5%, 100% 95%, 0% 100%);
+     display: flex;
+     justify-content: center;
+     align-items: center;
+     padding: 40px;
+     box-sizing: border-box;
+ }
+ 
+ .career-content {
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     max-width: 1000px;
+     width: 100%;
+     gap: 40px;
+     color: white;
+     flex-wrap: wrap;
+ }
+ 
+ .career-content img {
+     width: 300px;
+     height: auto;
+     border-radius: 8px;
+     box-shadow: 0 8px 16px rgba(0, 0, 0, 0.3);
+ }
+ 
+ .career-text {
+     flex: 1;
+     min-width: 280px;
+     color: #AF1F1F;
+     margin-left: 20%;
+ }
+ 
+ .career-text h2 {
+     font-size: 1.8rem;
+     margin-bottom: 20px;
+     font-family: 'Jacques Francois', serif;
+ }
+ 
+ .career-text p {
+     font-size: 1.1rem;
+     line-height: 1.6;
+     margin-bottom: 20px;
+ }
+ 
+ .career-text button {
+     background-color: #907a62;
+     color: #AF1F1F;
+     border: none;
+     padding: 10px 20px;
+     font-size: 1rem;
+     border-radius: 4px;
+     cursor: pointer;
+     font-weight: bold;
+     transition: background-color 0.3s;
+ }
+ 
+ .career-text button:hover {
+     background-color: #ddd;
+ }
+ 
+ .popup-modal {
+     display: none;
+     position: fixed;
+     z-index: 9999;
+     padding-top: 60px;
+     left: 0;
+     top: 0;
+     width: 100%;
+     height: 100%;
+     overflow: auto;
+     background-color: rgba(0, 0, 0, 0.9);
+ }
+ 
+ .popup-content {
+     margin: auto;
+     display: block;
+     max-width: 80%;
+     max-height: 80%;
+     border-radius: 10px;
+     box-shadow: 0 0 20px rgba(255, 255, 255, 0.3);
+ }
+ 
+ .popup-close {
+     position: absolute;
+     top: 20px;
+     right: 40px;
+     color: white;
+     font-size: 40px;
+     font-weight: bold;
+     cursor: pointer;
+     transition: 0.3s;
+ }
+ 
+ .popup-close:hover {
+     color: #ccc;
+ }
+ 
+ .popup-link img:hover {
+     transform: scale(1.05);
+     transition: transform 0.3s;
+ }
+ 
+ .contactus {
+     margin-top: 10%;
+     text-align: center;
+     font-family: 'Jacques Francois', serif;
+ }
+ 
+ .contactus h1 {
+     font-size: 40px;
+     font-weight: 500;
+     margin-bottom: 10px;
+     color: #AF1F1F;
+ }
+ 
+ .contactus p {
+     font-size: 30px;
+     margin: 5px 0;
+ }
+ 
+ .contactus .email {
+     text-decoration: underline;
+     font-size: 18px;
+     color: black;
+ }
+ 
+ .social-icon {
+     margin-top: 10px;
+ }
+ 
+ .social-icon a {
+     text-decoration: none;
+     margin: 0 10px;
+     font-size: 32px;
+     color: black;
+     transition: transform 0.2s ease, color 0.2s ease;
+ }
+ 
+ .phone-link {
+     text-decoration: none;
+     color: black;
+     font-size: 22px;
+     font-family: 'Aboreto', cursive;
+ }
+ 
+ .social-icon a:hover {
+     transform: scale(1.2);
+     color: #007bff;
+ }
+ 
+ .footerbar {
+     background-color: #9d8369;
+     /* 棕色背景 */
+     color: #fff;
+     padding: 40px 60px;
+     display: flex;
+     justify-content: space-between;
+     flex-wrap: wrap;
+ }
+ 
+ .footer-logo {
+     flex: 1;
+     min-width: 200px;
+     text-align: left;
+     /* 靠左 */
+ }
+ 
+ .footer-logo .logo-box {
+     width: 180px;
+     height: 180px;
+     background: #d9d9d9;
+     display: flex;
+     align-items: center;
+     justify-content: center;
+     margin: 0;
+     /* 去掉自动居中 */
+     font-weight: bold;
+     color: black;
+ }
+ 
+ .footer-section {
+     flex: 1;
+     min-width: 200px;
+     margin: 10px;
+     text-align: left;
+     /* 让所有内容靠左 */
+ }
+ 
+ .footer-section h3 {
+     margin-bottom: 15px;
+     font-size: 18px;
+     border-bottom: 1px solid #fff;
+     display: inline-block;
+     padding-bottom: 5px;
+ }
+ 
+ .footer-section ul {
+     list-style: none;
+     padding: 0;
+     margin: 0;
+ }
+ 
+ .footer-section ul li {
+     margin-bottom: 8px;
+ }
+ 
+ .footer-section ul li a {
+     color: #fff;
+     text-decoration: none;
+     transition: 0.3s;
+ }
+ 
+ .footer-section ul li a:hover {
+     text-decoration: underline;
+ }
+ 
+ .location-item {
+     margin-bottom: 15px;
+ }
+ 
+ .contact-item {
+     margin-bottom: 10px;
+     display: flex;
+     align-items: center;
+     gap: 8px;
+ }

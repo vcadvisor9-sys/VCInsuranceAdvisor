@@ -5,289 +5,11 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+    <link rel="stylesheet" href="CSS/mainpage.css">
     <title>Home</title>
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
-        }
-        
-        header {
-            position: relative;
-        }
-        
-        .nav_bar {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            z-index: 30;
-            padding: 20px 0;
-        }
-        
-        .nav_bar ul {
-            list-style: none;
-            margin: 0;
-            padding: 0 50px;
-            display: flex;
-            justify-content: flex-end;
-            align-items: center;
-        }
-        
-        .nav_bar ul li a {
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            font-size: 18px;
-            transition: color 0.3s;
-        }
-        
-        .nav_bar ul li a:hover {
-            color: #ddd;
-        }
-        
-        .background-image {
-            position: relative;
-            width: 100%;
-            height: 400px;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        
-        .background-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            filter: brightness(60%);
-        }
-        
-        .background-image::after {
-            content: "";
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(0, 0, 0, 0.3);
-            z-index: 2;
-        }
-        
-        .hero-text {
-            position: absolute;
-            z-index: 20;
-            color: white;
-            text-align: center;
-            width: 100%;
-        }
-        
-        .hero-text h1 {
-            font-size: 3.5rem;
-            margin: 0;
-            font-family: 'Jacques Francois', serif;
-        }
-        
-        .hero-text .subtitle {
-            font-size: 1.5rem;
-            margin-top: 15px;
-            font-family: 'Jacques Francois', serif;
-        }
-        
-        main {
-            padding: 20px;
-        }
-        
-        .introduce_text {
-            font-size: 1.2rem;
-            line-height: 1.6;
-            margin-top: 20px;
-            text-align: center;
-        }
-        
-        .introduce_text p {
-            max-width: 800px;
-            margin: 0 auto;
-        }
-        
-        .aboutuse_btn {
-            margin-top: 30px;
-            text-align: center;
-        }
-        
-        .aboutuse_btn button {
-            background-color: #2c3e50;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-        }
-        
-        .aboutuse_btn button:hover {
-            background-color: #1a252f;
-        }
-        
-        footer {
-            background-color: #f8f8f8;
-            padding: 20px;
-            text-align: center;
-        }
-        /* Floating language selector styles */
-        
-        .language-selector {
-            position: fixed;
-            bottom: 20px;
-            right: 20px;
-            z-index: 1000;
-        }
-        
-        .language-toggle {
-            width: 50px;
-            height: 50px;
-            background-color: #2c3e50;
-            color: white;
-            border-radius: 50%;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            cursor: pointer;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            transition: all 0.3s;
-        }
-        
-        .language-toggle:hover {
-            background-color: #1a252f;
-            transform: scale(1.1);
-        }
-        
-        .language-toggle span {
-            font-size: 1.2rem;
-            font-weight: bold;
-        }
-        
-        .language-options {
-            position: absolute;
-            bottom: 60px;
-            right: 0;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-            overflow: hidden;
-            display: none;
-            width: 120px;
-        }
-        
-        .language-option {
-            padding: 10px 15px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            text-align: center;
-        }
-        
-        .language-option:hover {
-            background-color: #f0f0f0;
-        }
-        
-        .language-selector.active .language-options {
-            display: block;
-        }
-        
-        .language-selector.active .language-toggle {
-            background-color: #1a252f;
-        }
-        
-        .ourservice {
-            padding: 40px 20px;
-            text-align: center;
-        }
-        
-        .ourservice h1 {
-            font-size: 2.5rem;
-            margin-bottom: 40px;
-            font-family: 'Jacques Francois', serif;
-            color: #2c3e50;
-        }
-        
-        .service-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-            gap: 30px;
-            max-width: 1000px;
-            margin: 0 auto;
-        }
-        
-        .service-item {
-            background-color: white;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-            transition: transform 0.3s, box-shadow 0.3s;
-        }
-        
-        .service-item:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
-        }
-        
-        .service-image {
-            height: 180px;
-            overflow: hidden;
-        }
-        
-        .service-image img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.5s;
-        }
-        
-        .service-item:hover .service-image img {
-            transform: scale(1.05);
-        }
-        
-        .service-content {
-            padding: 20px;
-        }
-        
-        .service-content h3 {
-            margin: 0 0 10px 0;
-            color: #2c3e50;
-            font-size: 1.3rem;
-        }
-        
-        .moreinfo {
-            margin-top: 30px;
-            text-align: center;
-        }
-        
-        .moreinfo button {
-            background-color: #2c3e50;
-            color: white;
-            border: none;
-            padding: 12px 24px;
-            font-size: 1rem;
-            border-radius: 4px;
-            cursor: pointer;
-            transition: background-color 0.3s;
-            margin-top: 30px;
-            /* Added margin to separate from service items */
-        }
-        
-        .moreinfo button:hover {
-            background-color: #1a252f;
-        }
-        
-        .blue-square {
-            width: 300px;
-            height: 200px;
-            background-color: #000080;
-            clip-path: polygon(0 0, 100% 0, 100% 100%, 0 10%);
-        }
-    </style>
+
 </head>
 
 <body>
@@ -316,7 +38,7 @@
             <div class="background-image">
                 <img src="image source/pexels-ahmetyuksek-30348504.jpg" alt="">
                 <div class="hero-text">
-                    <h1>VL Insurance Advisor</h1>
+                    <h1>VC Insurance Advisor</h1>
                     <p class="subtitle">Your trusted insurance partner</p>
                 </div>
             </div>
@@ -340,7 +62,7 @@
                         <img src="image source/fresscustomplanning.jpg" alt="Free Customer Planning">
                     </div>
                     <div class="service-content">
-                        <h3>Free Customer Planning</h3>
+                        <h3>Free Customise Planning</h3>
                     </div>
                 </div>
                 <div class="service-item">
@@ -394,13 +116,89 @@
         <div class="Career">
             <h1>Career</h1>
             <div class="blue-square">
+                <div class="career-content">
+                    <!-- Career Section 图片区域 -->
+                    <a href="image source/career.jpg" class="popup-link">
+                        <img src="image source/career.jpg" alt="Career Poster">
+                    </a>
 
+
+                    <div class="career-text">
+                        <h2>合作方案<br><span style="font-weight: normal;">Career Collaboration</span></h2>
+                        <p>
+                            1. 每个月津贴 RM1000<br> 2. 免费土耳其欧洲游旅行<br> 3. PRUVenture 创业计划 RM180k（18个月）<br> *奖金-在职奖-创业奖金-年度2次旅行
+                        </p>
+                        <button>More Info</button>
+                    </div>
+                </div>
             </div>
 
+        </div>
+        <div class="contactus">
+            <h1>Contact With Us</h1>
+            <p>
+                <a href="https://wa.me/qr/TJSZQG327JJKC1" class="phone-link">+6012-708 9125</a>
+            </p>
+
+            <p class="email">vcadvisory@hotmail.com</p>
+
+            <div class="social-icon">
+                <a href="https://www.instagram.com/vc_advisor?utm_source=ig_web_button_share_sheet&igsh=MXMzYmFua2EzejFudg==" target="_blank">
+                    <i class="fab fa-instagram"></i>
+                </a>
+                <a href="https://www.facebook.com/你的帳號" target="_blank">
+                    <i class="fab fa-facebook-f"></i>
+                </a>
+            </div>
         </div>
 
     </main>
     <footer>
+        <div class="footerbar">
+            <!-- Logo Section -->
+            <div class="footer-logo">
+                <div class="logo-box">LOGO</div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Link</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Location -->
+            <div class="footer-section">
+                <h3>Location</h3>
+                <div class="location-item">
+                    <strong>TRX Exchange</strong><br> Ground Floor, Menara Prudential, Persiaran TRX Barat, 55188 Tun Razak Exchange, Kuala Lumpur, Malaysia.
+                </div>
+                <div class="location-item">
+                    <strong>Melaka</strong><br> Lot G2, Ground Floor, Menara Prudential, 99 Jalan Tun Sri Lanang, 75100 Melaka.
+                </div>
+                <div class="location-item">
+                    <strong>Batu Pahat</strong><br> 11th Floor, Wisma Sing Long, No. 8 Jalan Zabedah, 83000 Batu Pahat, Johor.
+                </div>
+                <div class="location-item">
+                    <strong>Skudai</strong><br> No. 1A-3, Ground Floor, Jalan Sutera Tanjung 8/2, Taman Sutera Utama, 81300 Skudai, Johor.
+                </div>
+                <div class="location-item">
+                    <strong>Southkey</strong><br> G-02, Ground Floor, Menara Sella, Persiaran Southkey 1, Kota Southkey, 80150 Johor Bahru.
+                </div>
+            </div>
+
+            <!-- Contact Us -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="contact-item">📞 +6012-708 9125</div>
+                <div class="contact-item">✉️ vcadvisory@hotmail.com</div>
+            </div>
+        </div>
         <p>&copy; 2023 My Website. All rights reserved.</p>
     </footer>
 
@@ -409,12 +207,12 @@
         const content = {
             en: {
                 intro: "We are a team of professional insurance advisors, always putting clients at the center, listening to your dreams, and protecting your future. With professional advice, we help you protect the most important people and things in your life, and assist you in creating intergenerational love and security for your loved ones.",
-                title: "VL Insurance Advisor",
+                title: "VC Insurance Advisor",
                 subtitle: "Your trusted insurance partner"
             },
             zh: {
                 intro: "我们是一支专业的保险顾问团队，始终以客户为中心，倾听您的梦想，守护您的未来。我们用专业的建议，帮您守护最重要的人和事，并助您为挚爱之人打造跨世代的爱与保障。",
-                title: "VL 保险顾问",
+                title: "VC 保险顾问",
                 subtitle: "您值得信赖的保险合作伙伴"
             }
         };
@@ -471,7 +269,34 @@
 
         // Initialize when DOM is loaded
         document.addEventListener('DOMContentLoaded', checkLanguagePreference);
+
+
+        document.addEventListener('DOMContentLoaded', function() {
+            const popupLinks = document.querySelectorAll('.popup-link');
+            const popupModal = document.getElementById('popup-modal');
+            const popupImg = document.getElementById('popup-img');
+
+            popupLinks.forEach(link => {
+                link.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    popupImg.src = this.href;
+                    popupModal.style.display = "block";
+                });
+            });
+        });
+
+        function closePopup() {
+            document.getElementById("popup-modal").style.display = "none";
+        }
     </script>
+
+    <!-- Lightbox Modal -->
+    <div id="popup-modal" class="popup-modal">
+        <span class="popup-close" onclick="closePopup()">&times;</span>
+        <img class="popup-content" id="popup-img">
+    </div>
+
 </body>
+
 
 </html>
