@@ -272,6 +272,65 @@
      background-color: #1a252f;
  }
  
+ .benefits {
+     text-align: center;
+     padding: 50px 20px;
+     width: 80%;
+     margin: auto;
+ }
+ 
+ .benefits .title {
+     font-size: 2rem;
+     font-weight: bold;
+     margin-bottom: 10px;
+     color: #333;
+ }
+ 
+ .benefits .subtitle {
+     font-size: 1rem;
+     color: #666;
+     margin-bottom: 40px;
+ }
+ 
+ .benefit-grid {
+     display: grid;
+     grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+     gap: 25px;
+ }
+ 
+ .benefit-card {
+     background: #fff;
+     border-radius: 15px;
+     box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+     padding: 25px 20px;
+     transition: transform 0.2s ease, box-shadow 0.2s ease;
+ }
+ 
+ .benefit-card img {
+     width: 100%;
+     height: auto;
+     border-radius: 10px;
+     margin-bottom: 15px;
+     display: block;
+ }
+ 
+ .benefit-card:hover {
+     transform: translateY(-5px);
+     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+ }
+ 
+ .benefit-card h3 {
+     font-size: 1.1rem;
+     margin-bottom: 10px;
+     color: #AF1F1F;
+ }
+ 
+ .benefit-card p {
+     font-size: 0.95rem;
+     color: #444;
+     line-height: 1.5;
+ }
+ 
  .Career h1 {
      color: #AF1F1F;
  }

@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="zh">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>顾客福利</title>
+    <style>
+        body {
+            font-family: "Arial", sans-serif;
+            margin: 0;
+            padding: 0;
+            background: #f9f9f9;
+        }
+        
+        .benefits {
+            text-align: center;
+            padding: 50px 20px;
+            max-width: 1100px;
+            margin: auto;
+        }
+        
+        .benefits .title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+        }
+        
+        .benefits .subtitle {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 40px;
+        }
+        
+        .benefit-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+        
+        .benefit-card {
+            background: #fff;
+            border-radius: 15px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+            padding: 25px 20px;
+            transition: transform 0.2s ease, box-shadow 0.2s ease;
+        }
+        
+        .benefit-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+        }
+        
+        .benefit-card h3 {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: #AF1F1F;
+        }
+        
+        .benefit-card p {
+            font-size: 0.95rem;
+            color: #444;
+            line-height: 1.5;
+        }
+    </style>
+</head>
+
+<body>
+    <section class="benefits">
+        <h2 class="title">🎁 尊贵客户专属福利</h2>
+        <p class="subtitle">客户保费满 RM1,000，即可享受以下特别优惠</p>
+
+        <div class="benefit-grid">
+            <div class="benefit-card">
+                <h3>COWAY</h3>
+                <p>免费使用任意产品 2 个月</p>
+            </div>
+            <div class="benefit-card">
+                <h3>USANA</h3>
+                <p>每笔消费满 RM200 返现 RM30</p>
+            </div>
+            <div class="benefit-card">
+                <h3>PRESTIGE HOLIDAYS</h3>
+                <p>欧洲旅游配套 RM500 代金券</p>
+            </div>
+            <div class="benefit-card">
+                <h3>ATOMY</h3>
+                <p>每笔消费满 RM300 返现 RM30</p>
+            </div>
+            <div class="benefit-card">
+                <h3>UME.ALLINONE</h3>
+                <p>消费满 RM100 立减 RM20</p>
+            </div>
+            <div class="benefit-card">
+                <h3>TRIP.COM</h3>
+                <p>高达 5% 折扣</p>
+            </div>
+            <div class="benefit-card">
+                <h3>MILLENNIALS.BEAUTY</h3>
+                <p>消费满 RM100 立减 RM20</p>
+            </div>
+            <div class="benefit-card">
+                <h3>SHOP.COM</h3>
+                <p>化妆品高达 10% 折扣</p>
+            </div>
+            <div class="benefit-card">
+                <h3>CUTE MEET FLORIST</h3>
+                <p>私人定制花束 任意消费立减 RM20</p>
+            </div>
+        </div>
+    </section>
+</body>
+
+</html>
