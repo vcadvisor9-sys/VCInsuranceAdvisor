@@ -6,11 +6,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
     <link rel="stylesheet" href="CSS/mainpage.css">
     <title>Our Service</title>
 
+
 </head>
+
 <header>
     <nav>
         <div class="nav_bar">
@@ -33,8 +34,75 @@
 </header>
 
 <body>
+    <!-- Hospital Finder Section -->
+    <section class="hospital-finder">
+        <h2 class="section-title">医院网络查找</h2>
+        <p class="section-subtitle">查找您附近的合作医院，享受便捷的医疗服务和保险理赔</p>
+
+        <div class="hospital-container">
+            <div class="hospital-main-content">
+                <div class="hospital-left-panel">
+                    <div class="selector-group">
+                        <label for="stateSelect">选择州属：</label>
+                        <select id="stateSelect">
+                            <option value="">请选择州属...</option>
+                            <option value="johor">柔佛 (Johor)</option>
+                        </select>
+                    </div>
+
+                    <div class="selector-group city-selector" id="citySelector">
+                        <label for="citySelect">选择城市 (可选)：</label>
+                        <select id="citySelect">
+                            <option value="">所有城市</option>
+                        </select>
+                    </div>
+
+                    <div class="hospitals-list">
+                        <h3>可选医院</h3>
+                        <div id="hospitalsList">
+                            <div class="no-selection">
+                                <p>请先选择州属以查看该地区的医院</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hospital-right-panel">
+                    <div class="map-container" id="mapContainer">
+                        <div class="map-placeholder">
+                            <p>🏥 选择医院以查看位置</p>
+                        </div>
+                    </div>
+
+                    <div class="map-controls" id="mapControls" style="display: none;">
+                        <div class="hospital-info" id="hospitalInfo"></div>
+                        <div class="action-buttons">
+                            <a href="#" id="googleMapsBtn" class="btn btn-primary" target="_blank">
+                                📍 Google Maps 导航
+                            </a>
+                            <button id="copyAddressBtn" class="btn btn-secondary">
+                                📋 复制地址
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <div class="customernotic">
+        <section class="notic" id="customer-notice">
+            <h2 class="title">顾客须知</h2>
+            <hr>
+            <br>
+            <div class="noticblock">
+
+            </div>
+        </section>
+    </div>
+
     <div class="customerbenifit">
-        <section class="benefits">
+        <section class="benefits" id="benefit">
             <h2 class="title">尊贵客户专属福利</h2>
             <hr>
             <br>
@@ -88,7 +156,6 @@
         </section>
     </div>
 
-
     <footer>
         <div class="footerbar">
             <!-- Logo Section -->
@@ -137,6 +204,214 @@
         </div>
         <p>&copy; 2023 My Website. All rights reserved.</p>
     </footer>
+
+    <script>
+        const hospitals = {
+            johor: [{
+                name: "Asia Eye Specialist Centre (Bukit Indah)",
+                address: "No. 73G & 75G, Jalan Bestari 12/2, Taman Nusa Bestari, 81300 Skudai, Johor",
+                phone: "07-559 3075",
+                city: "Skudai",
+                coords: {
+                    lat: 1.5351,
+                    lng: 103.6831
+                }
+            }, {
+                name: "Asia Eye Specialist Centre (Southern)",
+                address: "No. 51 & 53, Jalan Dedap 23, Taman Johor Jaya, 81100 Johor Bahru, Johor",
+                phone: "07-364 8299",
+                city: "Johor Bahru",
+                coords: {
+                    lat: 1.4927,
+                    lng: 103.7414
+                }
+            }, {
+                name: "Columbia Asia Hospital - Iskandar Puteri",
+                address: "Persiaran Afiat, Taman Kesihatan Afiat, 79250 Iskandar Puteri, Johor",
+                phone: "07-233 9999",
+                city: "Iskandar Puteri",
+                coords: {
+                    lat: 1.4655,
+                    lng: 103.6057
+                }
+            }, {
+                name: "Columbia Asia Hospital Tebrau",
+                address: "Persiaran Southkey 5, Kota Southkey, 80150 Johor Bahru, Johor",
+                phone: "07-272 9999",
+                city: "Johor Bahru",
+                coords: {
+                    lat: 1.4804,
+                    lng: 103.7767
+                }
+            }, {
+                name: "Gleneagles Hospital Johor",
+                address: "2 Jalan Medini Utara 4, Medini, 79250 Iskandar Puteri, Johor",
+                phone: "07-560 1000",
+                city: "Iskandar Puteri",
+                coords: {
+                    lat: 1.4338,
+                    lng: 103.6318
+                }
+            }]
+        };
+
+        const cities = {
+            johor: ["Johor Bahru", "Skudai", "Iskandar Puteri", "Muar", "Segamat", "Kluang", "Batu Pahat", "Yong Peng", "Kulai", "Pontian", "Kota Tinggi"]
+        };
+
+        let selectedHospital = null;
+
+        const stateSelect = document.getElementById('stateSelect');
+        const citySelect = document.getElementById('citySelect');
+        const citySelector = document.getElementById('citySelector');
+        const hospitalsList = document.getElementById('hospitalsList');
+        const mapContainer = document.getElementById('mapContainer');
+        const mapControls = document.getElementById('mapControls');
+        const hospitalInfo = document.getElementById('hospitalInfo');
+        const googleMapsBtn = document.getElementById('googleMapsBtn');
+        const copyAddressBtn = document.getElementById('copyAddressBtn');
+
+        stateSelect.addEventListener('change', function() {
+            const selectedState = this.value;
+            if (selectedState && hospitals[selectedState]) {
+                showCitySelector(selectedState);
+                displayHospitals(hospitals[selectedState]);
+            } else {
+                hideCitySelector();
+                hospitalsList.innerHTML = '<div class="no-selection"><p>请先选择州属以查看该地区的医院</p></div>';
+                hideMap();
+            }
+        });
+
+        citySelect.addEventListener('change', function() {
+            const selectedState = stateSelect.value;
+            const selectedCity = this.value;
+
+            if (selectedState && hospitals[selectedState]) {
+                let hospitalsToShow = hospitals[selectedState];
+
+                if (selectedCity) {
+                    hospitalsToShow = hospitals[selectedState].filter(hospital =>
+                        hospital.city === selectedCity
+                    );
+                }
+
+                displayHospitals(hospitalsToShow);
+
+                if (hospitalsToShow.length === 0) {
+                    hospitalsList.innerHTML = '<div class="no-selection"><p>所选城市暂无合作医院</p></div>';
+                }
+            }
+        });
+
+        function showCitySelector(state) {
+            if (cities[state]) {
+                citySelect.innerHTML = '<option value="">所有城市</option>';
+                cities[state].forEach(city => {
+                    const option = document.createElement('option');
+                    option.value = city;
+                    option.textContent = city;
+                    citySelect.appendChild(option);
+                });
+                citySelector.style.display = 'block';
+            } else {
+                hideCitySelector();
+            }
+        }
+
+        function hideCitySelector() {
+            citySelector.style.display = 'none';
+            citySelect.value = '';
+        }
+
+        function displayHospitals(stateHospitals) {
+            hospitalsList.innerHTML = '';
+            stateHospitals.forEach((hospital, index) => {
+                const hospitalItem = document.createElement('div');
+                hospitalItem.className = 'hospital-item';
+                hospitalItem.innerHTML = `
+                    <div class="hospital-name">${hospital.name}</div>
+                    <div class="hospital-address">${hospital.address}</div>
+                `;
+                hospitalItem.addEventListener('click', () => selectHospital(hospital, hospitalItem));
+                hospitalsList.appendChild(hospitalItem);
+            });
+        }
+
+        function selectHospital(hospital, element) {
+            document.querySelectorAll('.hospital-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            element.classList.add('active');
+
+            selectedHospital = hospital;
+            showHospitalOnMap(hospital);
+            showHospitalInfo(hospital);
+        }
+
+        function showHospitalOnMap(hospital) {
+            mapContainer.innerHTML = `
+                <iframe 
+                    class="map-frame"
+                    src="https://maps.google.com/maps?q=${encodeURIComponent(hospital.address)}&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            `;
+            mapControls.style.display = 'block';
+        }
+
+        function showHospitalInfo(hospital) {
+            hospitalInfo.innerHTML = `
+                <h4>${hospital.name}</h4>
+                <p><strong>📍 地址:</strong> ${hospital.address}</p>
+                <p><strong>📞 电话:</strong> ${hospital.phone}</p>
+                <p><strong>🏙️ 城市:</strong> ${hospital.city}</p>
+            `;
+
+            googleMapsBtn.href = `https://maps.google.com/maps?q=${encodeURIComponent(hospital.address)}`;
+        }
+
+        function hideMap() {
+            mapContainer.innerHTML = '<div class="map-placeholder"><p>🏥 选择医院以查看位置</p></div>';
+            mapControls.style.display = 'none';
+            selectedHospital = null;
+        }
+
+        copyAddressBtn.addEventListener('click', async function() {
+            if (selectedHospital) {
+                try {
+                    await navigator.clipboard.writeText(selectedHospital.address);
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '✅ 已复制!';
+                    this.style.background = '#27ae60';
+
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.style.background = '';
+                    }, 2000);
+                } catch (err) {
+                    const textArea = document.createElement('textarea');
+                    textArea.value = selectedHospital.address;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '✅ 已复制!';
+                    this.style.background = '#27ae60';
+
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.style.background = '';
+                    }, 2000);
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>

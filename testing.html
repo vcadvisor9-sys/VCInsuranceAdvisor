@@ -1,22 +1,358 @@
 <!DOCTYPE html>
-<html lang="zh">
+<html lang="en">
 
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>顾客福利</title>
+    <link href="https://fonts.googleapis.com/css2?family=Jacques+Francois&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <title>Our Service</title>
+
     <style>
         body {
-            font-family: "Arial", sans-serif;
             margin: 0;
             padding: 0;
-            background: #f9f9f9;
+            font-family: Arial, sans-serif;
+        }
+        
+        header {
+            position: relative;
+        }
+        
+        .nav_bar {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 30;
+            padding: 20px 0;
+        }
+        
+        .nav_bar ul {
+            list-style: none;
+            margin: 0;
+            padding: 0 50px;
+            display: flex;
+            justify-content: flex-end;
+            align-items: center;
+        }
+        
+        .nav_bar ul li a {
+            color: white;
+            text-decoration: none;
+            padding: 10px 20px;
+            font-size: 18px;
+            transition: color 0.3s;
+        }
+        
+        .nav_bar ul li a:hover {
+            color: #ddd;
+        }
+        
+        .background-image {
+            position: relative;
+            width: 100%;
+            height: 400px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .background-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            filter: brightness(60%);
+        }
+        
+        .background-image::after {
+            content: "";
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.3);
+            z-index: 2;
+        }
+        
+        .hero-text {
+            position: absolute;
+            z-index: 20;
+            color: white;
+            text-align: center;
+            width: 100%;
+        }
+        
+        .hero-text h1 {
+            font-size: 3.5rem;
+            margin: 0;
+            font-family: 'Jacques Francois', serif;
+        }
+        
+        .hero-text .subtitle {
+            font-size: 1.5rem;
+            margin-top: 15px;
+            font-family: 'Jacques Francois', serif;
+        }
+        /* Hospital Finder Section */
+        
+        .hospital-finder {
+            padding: 50px 20px;
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        }
+        
+        .hospital-finder .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            margin-bottom: 20px;
+            font-family: 'Jacques Francois', serif;
+            color: #AF1F1F;
+        }
+        
+        .hospital-finder .section-subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            color: #666;
+            margin-bottom: 40px;
+            max-width: 600px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hospital-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+        }
+        
+        .hospital-main-content {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            min-height: 600px;
+        }
+        
+        .hospital-left-panel {
+            padding: 30px;
+            background: #f8f9fa;
+            border-right: 1px solid #e1e8ed;
+        }
+        
+        .selector-group {
+            margin-bottom: 25px;
+        }
+        
+        .selector-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #2c3e50;
+            font-size: 1rem;
+        }
+        
+        .selector-group select {
+            width: 100%;
+            padding: 12px 15px;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            font-size: 15px;
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .selector-group select:focus {
+            outline: none;
+            border-color: #AF1F1F;
+            box-shadow: 0 0 0 3px rgba(175, 31, 31, 0.1);
+        }
+        
+        .city-selector {
+            display: none;
+        }
+        
+        .hospitals-list {
+            background: white;
+            border-radius: 12px;
+            padding: 20px;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+        
+        .hospitals-list h3 {
+            margin-bottom: 15px;
+            color: #2c3e50;
+            font-size: 1.2rem;
+            border-bottom: 2px solid #AF1F1F;
+            padding-bottom: 8px;
+        }
+        
+        .hospital-item {
+            padding: 15px;
+            margin-bottom: 10px;
+            border: 2px solid #e1e8ed;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            background: #fafbfc;
+        }
+        
+        .hospital-item:hover {
+            border-color: #AF1F1F;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            background: white;
+        }
+        
+        .hospital-item.active {
+            border-color: #AF1F1F;
+            background: #AF1F1F;
+            color: white;
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(175, 31, 31, 0.3);
+        }
+        
+        .hospital-name {
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 5px;
+        }
+        
+        .hospital-address {
+            font-size: 0.85rem;
+            opacity: 0.8;
+            line-height: 1.4;
+        }
+        
+        .hospital-item.active .hospital-address {
+            opacity: 0.9;
+        }
+        
+        .hospital-right-panel {
+            background: #fff;
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .map-container {
+            flex: 1;
+            position: relative;
+            background: linear-gradient(45deg, #f1f2f6, #ddd6fe);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 350px;
+        }
+        
+        .map-placeholder {
+            text-align: center;
+            color: #666;
+            font-size: 1.1rem;
+        }
+        
+        .map-frame {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .map-controls {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e1e8ed;
+        }
+        
+        .hospital-info {
+            margin-bottom: 15px;
+            padding: 15px;
+            background: #f8f9fa;
+            border-radius: 8px;
+            border-left: 4px solid #AF1F1F;
+        }
+        
+        .hospital-info h4 {
+            color: #2c3e50;
+            margin-bottom: 5px;
+            font-size: 1.1rem;
+        }
+        
+        .hospital-info p {
+            color: #666;
+            margin-bottom: 5px;
+            font-size: 0.9rem;
+        }
+        
+        .action-buttons {
+            display: flex;
+            gap: 10px;
+            flex-wrap: wrap;
+        }
+        
+        .btn {
+            padding: 10px 18px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            transition: all 0.3s ease;
+            font-size: 13px;
+        }
+        
+        .btn-primary {
+            background-color: #AF1F1F;
+            color: white;
+        }
+        
+        .btn-primary:hover {
+            background-color: #8b1818;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(175, 31, 31, 0.3);
+        }
+        
+        .btn-secondary {
+            background-color: #907a62;
+            color: white;
+        }
+        
+        .btn-secondary:hover {
+            background-color: #7a6553;
+            transform: translateY(-2px);
+        }
+        
+        .no-selection {
+            text-align: center;
+            color: #666;
+            padding: 30px;
+            font-style: italic;
+        }
+        /* Original styles continue... */
+        
+        .notic {
+            text-align: center;
+            padding: 50px 20px;
+            width: 80%;
+            margin: auto;
+        }
+        
+        .notic .title {
+            font-size: 2rem;
+            font-weight: bold;
+            margin-bottom: 10px;
+            color: #333;
+            font-family: 'Jacques Francois', serif;
         }
         
         .benefits {
             text-align: center;
             padding: 50px 20px;
-            max-width: 1100px;
+            width: 80%;
             margin: auto;
         }
         
@@ -25,6 +361,7 @@
             font-weight: bold;
             margin-bottom: 10px;
             color: #333;
+            font-family: 'Jacques Francois', serif;
         }
         
         .benefits .subtitle {
@@ -47,6 +384,14 @@
             transition: transform 0.2s ease, box-shadow 0.2s ease;
         }
         
+        .benefit-card img {
+            width: 100%;
+            height: auto;
+            border-radius: 10px;
+            margin-bottom: 15px;
+            display: block;
+        }
+        
         .benefit-card:hover {
             transform: translateY(-5px);
             box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
@@ -63,53 +408,502 @@
             color: #444;
             line-height: 1.5;
         }
+        
+        .footerbar {
+            background-color: #9d8369;
+            width: 100%;
+            color: #fff;
+            padding: 40px 60px;
+            display: flex;
+            justify-content: space-between;
+            flex-wrap: wrap;
+        }
+        
+        .footer-logo {
+            flex: 1;
+            min-width: 200px;
+            text-align: left;
+        }
+        
+        .footer-logo .logo-box {
+            width: 180px;
+            height: 180px;
+            background: #d9d9d9;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0;
+            font-weight: bold;
+            color: black;
+        }
+        
+        .footer-section {
+            flex: 1;
+            min-width: 200px;
+            margin: 10px;
+            text-align: left;
+        }
+        
+        .footer-section h3 {
+            margin-bottom: 15px;
+            font-size: 18px;
+            border-bottom: 1px solid #fff;
+            display: inline-block;
+            padding-bottom: 5px;
+        }
+        
+        .footer-section ul {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+        }
+        
+        .footer-section ul li {
+            margin-bottom: 8px;
+        }
+        
+        .footer-section ul li a {
+            color: #fff;
+            text-decoration: none;
+            transition: 0.3s;
+        }
+        
+        .footer-section ul li a:hover {
+            text-decoration: underline;
+        }
+        
+        .location-item {
+            margin-bottom: 15px;
+        }
+        
+        .contact-item {
+            margin-bottom: 10px;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        /* Responsive Design */
+        
+        @media (max-width: 768px) {
+            .hospital-main-content {
+                grid-template-columns: 1fr;
+            }
+            .hero-text h1 {
+                font-size: 2.5rem;
+            }
+            .action-buttons {
+                flex-direction: column;
+            }
+            .btn {
+                justify-content: center;
+            }
+            .hospital-finder .section-title {
+                font-size: 2rem;
+            }
+        }
     </style>
 </head>
 
-<body>
-    <section class="benefits">
-        <h2 class="title">🎁 尊贵客户专属福利</h2>
-        <p class="subtitle">客户保费满 RM1,000，即可享受以下特别优惠</p>
+<header>
+    <nav>
+        <div class="nav_bar">
+            <ul>
+                <li><a href="Mainpage.html">Home</a></li>
+                <li><a href="About.html">About</a></li>
+                <li><a href="service.html">Service</a></li>
+                <li><a href="Career.html">Career</a></li>
+                <li><a href="Contact.html">Contact us</a></li>
+            </ul>
+        </div>
+        <div class="background-image">
+            <img src="image source/pexels-ahmetyuksek-30348504.jpg" alt="">
+            <div class="hero-text">
+                <h1>VC Insurance Advisor</h1>
+                <p class="subtitle">Your trusted insurance partner</p>
+            </div>
+        </div>
+    </nav>
+</header>
 
-        <div class="benefit-grid">
-            <div class="benefit-card">
-                <h3>COWAY</h3>
-                <p>免费使用任意产品 2 个月</p>
-            </div>
-            <div class="benefit-card">
-                <h3>USANA</h3>
-                <p>每笔消费满 RM200 返现 RM30</p>
-            </div>
-            <div class="benefit-card">
-                <h3>PRESTIGE HOLIDAYS</h3>
-                <p>欧洲旅游配套 RM500 代金券</p>
-            </div>
-            <div class="benefit-card">
-                <h3>ATOMY</h3>
-                <p>每笔消费满 RM300 返现 RM30</p>
-            </div>
-            <div class="benefit-card">
-                <h3>UME.ALLINONE</h3>
-                <p>消费满 RM100 立减 RM20</p>
-            </div>
-            <div class="benefit-card">
-                <h3>TRIP.COM</h3>
-                <p>高达 5% 折扣</p>
-            </div>
-            <div class="benefit-card">
-                <h3>MILLENNIALS.BEAUTY</h3>
-                <p>消费满 RM100 立减 RM20</p>
-            </div>
-            <div class="benefit-card">
-                <h3>SHOP.COM</h3>
-                <p>化妆品高达 10% 折扣</p>
-            </div>
-            <div class="benefit-card">
-                <h3>CUTE MEET FLORIST</h3>
-                <p>私人定制花束 任意消费立减 RM20</p>
+<body>
+    <!-- Hospital Finder Section -->
+    <section class="hospital-finder">
+        <h2 class="section-title">医院网络查找</h2>
+        <p class="section-subtitle">查找您附近的合作医院，享受便捷的医疗服务和保险理赔</p>
+
+        <div class="hospital-container">
+            <div class="hospital-main-content">
+                <div class="hospital-left-panel">
+                    <div class="selector-group">
+                        <label for="stateSelect">选择州属：</label>
+                        <select id="stateSelect">
+                            <option value="">请选择州属...</option>
+                            <option value="johor">柔佛 (Johor)</option>
+                        </select>
+                    </div>
+
+                    <div class="selector-group city-selector" id="citySelector">
+                        <label for="citySelect">选择城市 (可选)：</label>
+                        <select id="citySelect">
+                            <option value="">所有城市</option>
+                        </select>
+                    </div>
+
+                    <div class="hospitals-list">
+                        <h3>可选医院</h3>
+                        <div id="hospitalsList">
+                            <div class="no-selection">
+                                <p>请先选择州属以查看该地区的医院</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="hospital-right-panel">
+                    <div class="map-container" id="mapContainer">
+                        <div class="map-placeholder">
+                            <p>🏥 选择医院以查看位置</p>
+                        </div>
+                    </div>
+
+                    <div class="map-controls" id="mapControls" style="display: none;">
+                        <div class="hospital-info" id="hospitalInfo"></div>
+                        <div class="action-buttons">
+                            <a href="#" id="googleMapsBtn" class="btn btn-primary" target="_blank">
+                                📍 Google Maps 导航
+                            </a>
+                            <button id="copyAddressBtn" class="btn btn-secondary">
+                                📋 复制地址
+                            </button>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
+
+    <div class="customernotic">
+        <section class="notic" id="customer-notice">
+            <h2 class="title">顾客须知</h2>
+            <hr>
+            <br>
+            <div class="noticblock">
+
+            </div>
+        </section>
+    </div>
+
+    <div class="customerbenifit">
+        <section class="benefits" id="benefit">
+            <h2 class="title">尊贵客户专属福利</h2>
+            <hr>
+            <br>
+            <div class="benefit-grid">
+                <div class="benefit-card">
+                    <img src="image source/coway.png" class="benifit-image" alt="">
+                    <h3>COWAY</h3>
+                    <p>免费使用任意产品 2 个月</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="image source/usana.png" class="benifit-image" alt="">
+                    <h3>USANA</h3>
+                    <p>每笔消费满 RM200 返现 RM30</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="image source/VC.jpg" class="benifit-image" alt="">
+                    <h3>VC HOLIDAYS</h3>
+                    <p>欧洲旅游配套 RM500 代金券</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="image source/atomy.png" class="benifit-image" alt="">
+                    <h3>ATOMY</h3>
+                    <p>每笔消费满 RM300 返现 RM30</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="image source/ume.png" class="benifit-image" alt="">
+                    <h3>UME.ALLINONE</h3>
+                    <p>消费满 RM100 立减 RM20</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="image source/tripcomlogo.png" class="benifit-image" alt="">
+                    <h3>TRIP.COM</h3>
+                    <p>高达 5% 折扣</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="image source/millennailsbeauty.jpg" class="benifit-image" alt="">
+                    <h3>MILLENNIALS.BEAUTY</h3>
+                    <p>消费满 RM100 立减 RM20</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="image source/shopcom logo.png" class="benifit-image" alt="">
+                    <h3>SHOP.COM</h3>
+                    <p>化妆品高达 10% 折扣</p>
+                </div>
+                <div class="benefit-card">
+                    <img src="image source/cutemeetflorist.jpg" class="benifit-image" alt="">
+                    <h3>CUTE MEET FLORIST</h3>
+                    <p>私人定制花束 任意消费立减 RM20</p>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <footer>
+        <div class="footerbar">
+            <!-- Logo Section -->
+            <div class="footer-logo">
+                <div class="logo-box">LOGO</div>
+            </div>
+
+            <!-- Quick Links -->
+            <div class="footer-section">
+                <h3>Quick Link</h3>
+                <ul>
+                    <li><a href="#">Home</a></li>
+                    <li><a href="#">About Us</a></li>
+                    <li><a href="#">Service</a></li>
+                    <li><a href="#">Career</a></li>
+                    <li><a href="#">Contact Us</a></li>
+                </ul>
+            </div>
+
+            <!-- Location -->
+            <div class="footer-section">
+                <h3>Location</h3>
+                <div class="location-item">
+                    <strong>TRX Exchange</strong><br> Ground Floor, Menara Prudential, Persiaran TRX Barat, 55188 Tun Razak Exchange, Kuala Lumpur, Malaysia.
+                </div>
+                <div class="location-item">
+                    <strong>Melaka</strong><br> Lot G2, Ground Floor, Menara Prudential, 99 Jalan Tun Sri Lanang, 75100 Melaka.
+                </div>
+                <div class="location-item">
+                    <strong>Batu Pahat</strong><br> 11th Floor, Wisma Sing Long, No. 8 Jalan Zabedah, 83000 Batu Pahat, Johor.
+                </div>
+                <div class="location-item">
+                    <strong>Skudai</strong><br> No. 1A-3, Ground Floor, Jalan Sutera Tanjung 8/2, Taman Sutera Utama, 81300 Skudai, Johor.
+                </div>
+                <div class="location-item">
+                    <strong>Southkey</strong><br> G-02, Ground Floor, Menara Sella, Persiaran Southkey 1, Kota Southkey, 80150 Johor Bahru.
+                </div>
+            </div>
+
+            <!-- Contact Us -->
+            <div class="footer-section">
+                <h3>Contact Us</h3>
+                <div class="contact-item">📞 +6012-708 9125</div>
+                <div class="contact-item">✉️ vcadvisory@hotmail.com</div>
+            </div>
+        </div>
+        <p>&copy; 2023 My Website. All rights reserved.</p>
+    </footer>
+
+    <script>
+        const hospitals = {
+            johor: [{
+                name: "Asia Eye Specialist Centre (Bukit Indah)",
+                address: "No. 73G & 75G, Jalan Bestari 12/2, Taman Nusa Bestari, 81300 Skudai, Johor",
+                phone: "07-559 3075",
+                city: "Skudai",
+                coords: {
+                    lat: 1.5351,
+                    lng: 103.6831
+                }
+            }, {
+                name: "Asia Eye Specialist Centre (Southern)",
+                address: "No. 51 & 53, Jalan Dedap 23, Taman Johor Jaya, 81100 Johor Bahru, Johor",
+                phone: "07-364 8299",
+                city: "Johor Bahru",
+                coords: {
+                    lat: 1.4927,
+                    lng: 103.7414
+                }
+            }, {
+                name: "Columbia Asia Hospital - Iskandar Puteri",
+                address: "Persiaran Afiat, Taman Kesihatan Afiat, 79250 Iskandar Puteri, Johor",
+                phone: "07-233 9999",
+                city: "Iskandar Puteri",
+                coords: {
+                    lat: 1.4655,
+                    lng: 103.6057
+                }
+            }, {
+                name: "Columbia Asia Hospital Tebrau",
+                address: "Persiaran Southkey 5, Kota Southkey, 80150 Johor Bahru, Johor",
+                phone: "07-272 9999",
+                city: "Johor Bahru",
+                coords: {
+                    lat: 1.4804,
+                    lng: 103.7767
+                }
+            }, {
+                name: "Gleneagles Hospital Johor",
+                address: "2 Jalan Medini Utara 4, Medini, 79250 Iskandar Puteri, Johor",
+                phone: "07-560 1000",
+                city: "Iskandar Puteri",
+                coords: {
+                    lat: 1.4338,
+                    lng: 103.6318
+                }
+            }]
+        };
+
+        const cities = {
+            johor: ["Johor Bahru", "Skudai", "Iskandar Puteri", "Muar", "Segamat", "Kluang", "Batu Pahat", "Yong Peng", "Kulai", "Pontian", "Kota Tinggi"]
+        };
+
+        let selectedHospital = null;
+
+        const stateSelect = document.getElementById('stateSelect');
+        const citySelect = document.getElementById('citySelect');
+        const citySelector = document.getElementById('citySelector');
+        const hospitalsList = document.getElementById('hospitalsList');
+        const mapContainer = document.getElementById('mapContainer');
+        const mapControls = document.getElementById('mapControls');
+        const hospitalInfo = document.getElementById('hospitalInfo');
+        const googleMapsBtn = document.getElementById('googleMapsBtn');
+        const copyAddressBtn = document.getElementById('copyAddressBtn');
+
+        stateSelect.addEventListener('change', function() {
+            const selectedState = this.value;
+            if (selectedState && hospitals[selectedState]) {
+                showCitySelector(selectedState);
+                displayHospitals(hospitals[selectedState]);
+            } else {
+                hideCitySelector();
+                hospitalsList.innerHTML = '<div class="no-selection"><p>请先选择州属以查看该地区的医院</p></div>';
+                hideMap();
+            }
+        });
+
+        citySelect.addEventListener('change', function() {
+            const selectedState = stateSelect.value;
+            const selectedCity = this.value;
+
+            if (selectedState && hospitals[selectedState]) {
+                let hospitalsToShow = hospitals[selectedState];
+
+                if (selectedCity) {
+                    hospitalsToShow = hospitals[selectedState].filter(hospital =>
+                        hospital.city === selectedCity
+                    );
+                }
+
+                displayHospitals(hospitalsToShow);
+
+                if (hospitalsToShow.length === 0) {
+                    hospitalsList.innerHTML = '<div class="no-selection"><p>所选城市暂无合作医院</p></div>';
+                }
+            }
+        });
+
+        function showCitySelector(state) {
+            if (cities[state]) {
+                citySelect.innerHTML = '<option value="">所有城市</option>';
+                cities[state].forEach(city => {
+                    const option = document.createElement('option');
+                    option.value = city;
+                    option.textContent = city;
+                    citySelect.appendChild(option);
+                });
+                citySelector.style.display = 'block';
+            } else {
+                hideCitySelector();
+            }
+        }
+
+        function hideCitySelector() {
+            citySelector.style.display = 'none';
+            citySelect.value = '';
+        }
+
+        function displayHospitals(stateHospitals) {
+            hospitalsList.innerHTML = '';
+            stateHospitals.forEach((hospital, index) => {
+                const hospitalItem = document.createElement('div');
+                hospitalItem.className = 'hospital-item';
+                hospitalItem.innerHTML = `
+                    <div class="hospital-name">${hospital.name}</div>
+                    <div class="hospital-address">${hospital.address}</div>
+                `;
+                hospitalItem.addEventListener('click', () => selectHospital(hospital, hospitalItem));
+                hospitalsList.appendChild(hospitalItem);
+            });
+        }
+
+        function selectHospital(hospital, element) {
+            document.querySelectorAll('.hospital-item').forEach(item => {
+                item.classList.remove('active');
+            });
+
+            element.classList.add('active');
+
+            selectedHospital = hospital;
+            showHospitalOnMap(hospital);
+            showHospitalInfo(hospital);
+        }
+
+        function showHospitalOnMap(hospital) {
+            mapContainer.innerHTML = `
+                <iframe 
+                    class="map-frame"
+                    src="https://maps.google.com/maps?q=${encodeURIComponent(hospital.address)}&t=&z=15&ie=UTF8&iwloc=&output=embed"
+                    allowfullscreen=""
+                    loading="lazy"
+                    referrerpolicy="no-referrer-when-downgrade">
+                </iframe>
+            `;
+            mapControls.style.display = 'block';
+        }
+
+        function showHospitalInfo(hospital) {
+            hospitalInfo.innerHTML = `
+                <h4>${hospital.name}</h4>
+                <p><strong>📍 地址:</strong> ${hospital.address}</p>
+                <p><strong>📞 电话:</strong> ${hospital.phone}</p>
+                <p><strong>🏙️ 城市:</strong> ${hospital.city}</p>
+            `;
+
+            googleMapsBtn.href = `https://maps.google.com/maps?q=${encodeURIComponent(hospital.address)}`;
+        }
+
+        function hideMap() {
+            mapContainer.innerHTML = '<div class="map-placeholder"><p>🏥 选择医院以查看位置</p></div>';
+            mapControls.style.display = 'none';
+            selectedHospital = null;
+        }
+
+        copyAddressBtn.addEventListener('click', async function() {
+            if (selectedHospital) {
+                try {
+                    await navigator.clipboard.writeText(selectedHospital.address);
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '✅ 已复制!';
+                    this.style.background = '#27ae60';
+
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.style.background = '';
+                    }, 2000);
+                } catch (err) {
+                    const textArea = document.createElement('textarea');
+                    textArea.value = selectedHospital.address;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    document.execCommand('copy');
+                    document.body.removeChild(textArea);
+
+                    const originalText = this.innerHTML;
+                    this.innerHTML = '✅ 已复制!';
+                    this.style.background = '#27ae60';
+
+                    setTimeout(() => {
+                        this.innerHTML = originalText;
+                        this.style.background = '';
+                    }, 2000);
+                }
+            }
+        });
+    </script>
 </body>
 
 </html>
