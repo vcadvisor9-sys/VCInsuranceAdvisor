@@ -3,6 +3,139 @@
             padding: 0;
             font-family: Arial, sans-serif;
         }
+        
+        .noticblock {
+            margin-top: 20px;
+        }
+        
+        .notice-category {
+            margin-bottom: 15px;
+            border: 1px solid #e1e8ed;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .notice-category:hover {
+            border-color: #c9d3da;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        
+        .category-header {
+            padding: 18px 20px;
+            background-color: #f8f9fa;
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            transition: background-color 0.3s;
+        }
+        
+        .category-header:hover {
+            background-color: #eef2f6;
+        }
+        
+        .category-header h3 {
+            margin: 0;
+            font-size: 1.25rem;
+            color: #AF1F1F;
+            text-align: left;
+            /* 确保标题左对齐 */
+        }
+        
+        .category-content {
+            padding: 0;
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.3s ease;
+            background-color: white;
+            text-align: left;
+            /* 内容左对齐 */
+        }
+        
+        .category-content.active {
+            padding: 20px;
+            max-height: 1000px;
+        }
+        
+        .category-content p {
+            margin-bottom: 15px;
+            line-height: 1.7;
+            color: #444;
+            text-align: left;
+            /* 段落左对齐 */
+        }
+        
+        .category-content ul {
+            margin-bottom: 15px;
+            padding-left: 30px;
+            /* 调整列表左对齐的缩进 */
+            text-align: left;
+        }
+        
+        .category-content li {
+            margin-bottom: 10px;
+            line-height: 1.6;
+            text-align: left;
+            /* 列表项左对齐 */
+        }
+        
+        .icon-rotate {
+            transition: transform 0.3s;
+            font-size: 1.2rem;
+            color: #AF1F1F;
+        }
+        
+        .icon-rotate.rotated {
+            transform: rotate(180deg);
+        }
+        
+        .important-note {
+            background-color: #fff9e6;
+            border-left: 4px solid #ffcc00;
+            padding: 18px;
+            margin: 20px 0;
+            border-radius: 4px;
+            text-align: left;
+            /* 重要提示左对齐 */
+        }
+        
+        .important-note h4 {
+            color: #e6a600;
+            margin-bottom: 8px;
+            font-size: 1.1rem;
+        }
+        
+        footer {
+            text-align: center;
+            margin-top: 40px;
+            padding-top: 20px;
+            border-top: 1px solid #e6e6e6;
+            color: #666;
+            font-size: 0.9rem;
+        }
+        
+        @media (max-width: 768px) {
+            .container {
+                padding: 20px;
+            }
+            h1 {
+                font-size: 2rem;
+            }
+            .category-header {
+                padding: 14px 16px;
+            }
+            .category-header h3 {
+                font-size: 1.1rem;
+            }
+            .category-content.active {
+                padding: 15px;
+            }
+            .category-content ul {
+                padding-left: 20px;
+            }
+        }
         /* Hospital Finder Section */
         
         .hospital-finder {
