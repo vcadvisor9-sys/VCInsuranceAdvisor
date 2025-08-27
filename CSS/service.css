@@ -124,6 +124,21 @@
             color: #444;
         }
         
+        .PruLady b {
+            color: #AF1F1F;
+        }
+        
+        .PruLady p {
+            margin: 8px 0;
+            line-height: 1.6;
+        }
+        
+        .PruLady strong {
+            font-weight: bold;
+            display: block;
+            margin: 6px 0;
+        }
+        
         .detail-content.active {
             display: block;
         }
