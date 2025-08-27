@@ -35,138 +35,242 @@
 </header>
 
 <body>
-    <div class="customernotic">
-        <section class="notic" id="customer-notice">
-            <h2 class="title">顾客须知</h2>
+    <div class="servicelist">
+        <section class="services" id="services">
+            <h2 class="title">我们的服务</h2>
             <hr>
             <br>
-            <div class="noticblock">
-                <div class="notice-category">
-                    <div class="category-header" onclick="toggleCategory(this)">
-                        <h3>既往病症</h3>
-                        <i class="fas fa-chevron-down icon-rotate"></i>
+
+            <!-- 保险类别按钮 -->
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-target="momanbaby">保障妈妈和宝宝的完整孕期 
+                    <p>Mom & Baby Care</p>
+                </button>
+                <button class="filter-btn" data-target="PRUCash">储蓄保单
+                    <p>PRUCash </p>
+                </button>
+                <button class="filter-btn" data-target="PRULady">女性保障
+                    <p>PruLady </p>
+                </button>
+            </div>
+
+
+            <div class="service-details">
+
+                <div class="detail-content active" id="momanbaby">
+                    <h3>保障妈妈和宝宝的完整孕期 <br>Mom & Baby Care</h3>
+                    <div class="coverage">
+                        <div class="baby-coverage">
+                            <h4>宝宝保障 Baby Coverage</h4>
+                            <ul>
+                                <li>入住加护病房ICU/高危病房HDU <br> Admission to ICU / High Dependency Unit (HDU)</li>
+                                <li>新生儿入住育婴箱 <br> Incubator Admission for Newborns</li>
+                                <li>因先天性疾病而入院治疗（27种） <br> Hospitalization Due to Congenital Diseases (27 types covered)</li>
+                                <li>新生儿黄疸病（没规定指数要求） <br> Neonatal Jaundice (No minimum bilirubin index required)</li>
+                                <li>儿童发育障碍（7种） <br> Developmental Disorders in Children (7 types covered)</li>
+                                <li>传染性疾病 <br> Infectious Diseases</li>
+                                <li>儿童死亡 <br> Child Death Benefit</li>
+                                <li>现金奖励 <br> Cash Reward</li>
+                            </ul>
+                        </div>
+
+                        <div class="mother-coverage">
+                            <h4>妈妈保障 Mother Coverage</h4>
+                            <ul>
+                                <li>妊娠并发症（9种） <br> Pregnancy Complications (9 types)</li>
+                                <li>早产紧急剖腹 <br> Emergency Cesarean Due to Preterm Labor</li>
+                                <li>早期癌症 <br> Early-stage Cancer</li>
+                                <li>心理健康（抑郁症/焦虑症） <br>Mental Health (Depression / Anxiety)</li>
+                                <li>胎儿死亡 <br> Fetal Death</li>
+                                <li>传染性疾病 <br> Infectious Diseases</li>
+                                <li>母亲死亡 <br> Maternal Death</li>
+                                <li>母亲意外死亡 <br> Accidental Maternal Death</li>
+                            </ul>
+                        </div>
                     </div>
-                    <div class="category-content">
-                        <p><strong>既往病症</strong> 指在提交投保单之前已经存在身体和/或心理状况。如果在提交投保申请表是为披露该疾病，或当保单因为保费中断而复效是未披露该病症，则该病症将不在保险范围内。此外，由于未披露病症，保单的福利和/或条款可能会发生变化。</p>
-                        <p>所有保单持有人在填写投保申请表时，必须如实提供所有相关的信息和细节，并确保没有任何虚假陈述。</p>
-                        <p>保单持有人还必须向保诚披露任何可能未在申请表中列明的事项，但他们知道这些事项可能与保诚决定保单费率和条款有关。</p>
-                    </div>
-                </div>
-
-                <div class="notice-category">
-                    <div class="category-header" onclick="toggleCategory(this)">
-                        <h3>等待期</h3>
-                        <i class="fas fa-chevron-down icon-rotate"></i>
-                    </div>
-                    <div class="category-content">
-                        <p>等待期是指在此期间您无法从保险公司领取部分或全部保险福利的时间段。</p>
-                        <p>等待期的持续时间以及相关条款会根据保险类型和所涵盖的福利不同而有所变化。因此,了解您保险合同中规定的等待期的持续时间和条款是非常重要的。</p>
-                        <p>请注意,对于不在医院联盟服务HAS设施范围内的理赔，客户需先行支付,并在治疗完成后提交所有相关支持文件以申请报销。报销申请将根据保险条款和条件进行处理。</p>
-                    </div>
-                </div>
 
 
-
-                <div class="notice-category">
-                    <div class="category-header" onclick="toggleCategory(this)">
-                        <h3>保单生效时间与覆盖范围</h3>
-                        <i class="fas fa-chevron-down icon-rotate"></i>
-                    </div>
-                    <div class="category-content">
-                        <h4>距保单/生效日期少于30天</h4>
-                        <p>在此期间,除非因事故导致伤害入院,否则无法申请医疗福利且医院联盟服务(HAS)设施无法使用。对于此类事故病例的任何预授权信(PAL) /担保信(GL)申请,可能需要提交支持文件,以排除任何潜在的既往疾病或慢性病。例如,膝盖疼痛或背痛可能是长期存在的情况,因此该申请可能需要回答额外问题,以确定病情的实际原因。</p>
-
-                        <h4>距保单/生效日期30至90天</h4>
-                        <p>在此期间,医疗福利可在30天后申请,具体需审核。预授权信(PAL)/担保信(GL)服务不可用。</p>
-
-                        <h4>距保单/生效日期最多120天</h4>
-                        <p>在此期间,除非涉及您的保单文件中"除外条款"所列明的"指定疾病",否则医疗福利是可以申请的。</p>
-
-                        <h4>指定疾病</h4>
-                        <p>指在保单生效日期或复效日期后120天内发生的以下疾病或由这些疾病引发的并发症(以较晚日期为准):</p>
-                        <ul>
-                            <li>高血压、糖尿病和心血管疾病;</li>
-                            <li>各类肿块,包括肿瘤、癌症、囊肿、结节、息肉;</li>
-                            <li>尿路系统和胆道系统的结石;</li>
-                            <li>任何耳、鼻(包括鼻窦)或喉部疾病;</li>
-                            <li>疝气、痔疮、瘘管、水囊或静脉曲张;</li>
-                            <li>任何生殖系统疾病,包括子宫内膜异位症;</li>
-                            <li>任何脊柱疾病(包括椎间盘突出)和膝部疾病。</li>
-                        </ul>
-
-                        <h4>距保单/证书生效日期超过24个月</h4>
-                        <p>在此期间,医疗福利可用于需要外科手术干预的疾病、急性疾病、慢性疾病及指定疾病。</p>
-                        <p>重大医疗条件可按福利限额、保单排除条款及一般排除条款支付。如果医疗条件属于既往病史或在保单签发前未披露,则将无法提供担保信 (Guarantee Letters)。保单持有人需自费支付,并提交理赔申请,报销将根据审核结果处理。</p>
-                        <p>请注意,保单在生效超过24个月后将不可争议。然而,如果我们能够证明存在虚假陈述/既往病史/未披露或客户隐瞒了重要事实,保单可能会被作废。</p>
+                    <div class="images-bottom">
+                        <img src="image source/momandbaby2-Photoroom.png" id="legoblock" alt="">
+                        <img src="image source/momandbabypic-Photoroom.png" id="bear" alt="">
                     </div>
                 </div>
-
-                <div class="notice-category">
-                    <div class="category-header" onclick="toggleCategory(this)">
-                        <h3>医疗和健康保险的除外条款</h3>
-                        <i class="fas fa-chevron-down icon-rotate"></i>
+                <div class="detail-content active" id="PRUCash">
+                    <h3>储蓄保单 <br>PRUCash</h3>
+                    <div class="coverage">
+                        <div class="Prucash">
+                            <h4>储蓄保单到底适合谁？<br>10 Benefits PRUCash Double Reward </h4>
+                            <div class="PRUcash-coverage">
+                                <ul>
+                                    <li>年度现金回馈--每年可领取固定现金 <br>Yearly Cash Payout Receive guaranteed cash every year.</li>
+                                    <li>保费全额返还保障--合约期满可取回所缴保费 <br> Money-Back Guarantee Get back your full premiums upon maturity.</li>
+                                    <li>双重奖励--同时享有固定与额外红利回馈 <br>Double Rewards Enjoy both fixed and bonus payouts.</li>
+                                    <li>传承资产--将财富留给挚爱亲人 Leave a Legacy – Pass on your wealth to your loved ones.</li>
+                                    <li>轻松继承--理赔金额直接支付予指定受益人 <br>Easy Inheritance – Payout is made directly to your beneficiary.</li>
+                                    <li>短期缴费，长期保障--缴费年限短，享受长远收益 <br>Short-Term Commitment – Pay for a limited period, enjoy long-term benefits.</li>
+                                    <li>额外红利--若投资组合表现良好，可获得额外回报 <br>Extra Bonuses – Earn additional returns when the fund performs well.</li>
+                                    <li>灵活运用--可提取现金使用，或继续累积生息。 <br>Flexible Options – Withdraw the cash or let it grow with interest.</li>
+                                    <li>基础保障--计划包含基本保险保障 <br> Basic Protection – Includes essential insurance coverage.</li>
+                                    <li>培养财务纪律 帮助您养成储蓄习惯，累积长期财富 <br>Financial Discipline – Encourages consistent saving and long-term wealth building.</li>
+                                </ul>
+                            </div>
+                        </div>
                     </div>
-                    <div class="category-content">
-                        <p>有两种类型的除外条款:</p>
-                        <ol>
-                            <li><strong>一般除外条款</strong>指的是保险公司不予承保的风险,并且适用于所有投保人。
-                                <p>一般除外条款的例子包括:整形/美容治疗、牙科疾病、先天性疾病,以及不属于住院前治疗的全科医生治疗/专科门诊治疗。</p>
-                            </li>
-                            <li><strong>特定除外条款</strong>指的是根据您之前的病史,保险公司不承保的特定风险。</li>
-                        </ol>
-                        <div class="important-note">
-                            <p>请确保仔细阅读并理解保单合同中明确列出的一般除外条款或特定除外条款(如果有)。</p>
+
+                </div>
+                <div class="detail-content active" id="PRULady">
+                    <h3>女性保障 <br>PruLady</h3>
+                    <div class="coverage">
+                        <div class="PruLady">
+                            <h4>女性特定疾病（高达260%保障） <br>Female-Specific Diseases (Up to 260% Coverage)</h4>
+                            <b>乳腺癌、子宫癌、卵巢癌、子宫颈癌等常见癌症。<br>Breast cancer, uterine cancer, ovarian cancer, cervical cancer, and other common cancers</b>
+                            <b>原位癌保障：针对早期原位癌提供**基本保额 50%**的赔付<br> Carcinoma in Situ Coverage: 50% of the basic sum assured for early-stage carcinoma in situ</b>
+                            <hr>
+                            <h4>人生阶段奖提供特别现金奖励</h4>
+                            <ul>
+                                <li>结婚奖励 Marriage Reward</li>
+                                <li>生育奖励 Childbirth Reward</li>
+                                <li>购房奖励 Home Purchase Reward</li>
+                            </ul>
                         </div>
                     </div>
                 </div>
+        </section>
 
-                <div class="notice-category">
-                    <div class="category-header" onclick="toggleCategory(this)">
-                        <h3>其他除外条款</h3>
-                        <i class="fas fa-chevron-down icon-rotate"></i>
+
+        </div>
+        <div class="customernotic">
+            <section class="notic" id="customer-notice">
+                <h2 class="title">顾客须知</h2>
+                <hr>
+                <br>
+                <div class="noticblock">
+                    <div class="notice-category">
+                        <div class="category-header" onclick="toggleCategory(this)">
+                            <h3>既往病症</h3>
+                            <i class="fas fa-chevron-down icon-rotate"></i>
+                        </div>
+                        <div class="category-content">
+                            <p><strong>既往病症</strong> 指在提交投保单之前已经存在身体和/或心理状况。如果在提交投保申请表是为披露该疾病，或当保单因为保费中断而复效是未披露该病症，则该病症将不在保险范围内。此外，由于未披露病症，保单的福利和/或条款可能会发生变化。</p>
+                            <p>所有保单持有人在填写投保申请表时，必须如实提供所有相关的信息和细节，并确保没有任何虚假陈述。</p>
+                            <p>保单持有人还必须向保诚披露任何可能未在申请表中列明的事项，但他们知道这些事项可能与保诚决定保单费率和条款有关。</p>
+                        </div>
                     </div>
-                    <div class="category-content">
-                        <p>我们不支付因以下任何原因直接或间接、全部或部分导致的任何费用或住院治疗费用:</p>
-                        <ol>
-                            <li>既往病症;</li>
-                            <li>在保单生效日期起连续承保的前一百二十(120) 天内发生的指定疾病;</li>
-                            <li>选择性美容或整形手术(除非是必要的重建手术以恢复功能)、多汗症、包皮环切术、近视、远视或散光的眼部检查、视力矫正器具及屈光手术(如放射状角膜切开术),以及外部义肢或设备的使用或购买,例如但不限于假肢、助听器、人工耳蜗、 外部或临时起搏器及相关处方;</li>
-                            <li>牙科疾病,包括牙科治疗或口腔手术,除非是由意外伤害造成的健康牙齿损伤,并且在本保单有效期间发生;</li>
-                            <li>私人护理、休养或疗养护理;</li>
-                            <li>药物滥用、任何种类物质或酒精的依赖性障碍、酒精影响下的行为、性病及其后遗症、艾滋病(获得性免疫缺陷综合症)或艾滋病相关综合症(ARC)和与艾滋病毒 (HIV)相关的疾病,以及任何需要法律隔离的传染病;</li>
-                            <li>先天性异常或畸形的任何治疗或外科手术,包括遗传性疾病。</li>
-                            <li>怀孕、分娩(包括剖腹产)、流产、堕胎及产前或产后护理,任何手术、机械或化学避孕方法,或与不孕不育相关的治疗。阳痿及与阳痿或绝育相关的检查或治疗;</li>
-                            <li>主要用于调查、诊断、X光检查、一般体检或医学检查的住院治疗,非与已覆盖疾病的治疗或诊断相关的检查,任何非医学必要的治疗以及由医生执行的任何预防性治疗、预防性药物或体检,特别是用于减肥或增重的治疗;</li>
-                            <li>自杀、企图自杀或故意自我伤害,无论是否精神正常;</li>
-                            <li>战争或任何战争行为(无论是否宣战)、犯罪或恐怖活动、任何武装力量的现役服役、直接参与罢工、暴动、民事骚乱或叛乱;</li>
-                            <li>由任何核燃料或核废料的放射性污染,或来自核裂变过程或任何核武器材料的辐射;</li>
-                            <li>生命被保险人捐赠器官的相关费用,包括器官获取的费用,以及在器官移植及其并发症过程中捐赠者所产生的所有费用;</li>
-                            <li>睡眠和打鼾障碍的调查和治疗、激素替代疗法及替代疗法(如治疗、医疗服务或用品),包括但不限于脊椎按摩服务、针灸、指压、反射疗法、正骨、草药治疗、按摩或芳香疗法等其他替代治疗。</li>
-                            <li>不需要支付费用的护理或治疗,或在其他保险或赔偿计划下可以获得赔偿的费用, 或因工作或职业责任所产生的疾病或伤害,这些情况已被工伤赔偿保险承保;</li>
-                            <li>精神病、心理或神经障碍(包括任何神经症及其生理或心理生理表现);</li>
-                            <li>非医疗性质的服务费用/开支,如电视、电话、电传服务、收音机或类似设施、入院套件/包以及其他不符合条件的非医疗项目;</li>
-                            <li>因违反任何法律、参与任何形式的比赛(脚步比赛除外)、危险运动(如但不限于跳伞、水上滑雪、需要呼吸器的水下活动、冬季运动、职业运动)及非法活动所引起的疾病或伤害;</li>
-                            <li>除作为付费乘客外的私人飞行,不包括乘坐任何商业定期航班,在已获许可的航线上运输乘客;</li>
-                            <li>性别变更的费用;</li>
-                            <li>实验性治疗,包括未经过验证的药物和/或非常规医疗技术/程序,这些治疗尚未证明在已确立的医学实践中有效,或尚未获得马来西亚公认机构的批准。</li>
-                        </ol>
+
+                    <div class="notice-category">
+                        <div class="category-header" onclick="toggleCategory(this)">
+                            <h3>等待期</h3>
+                            <i class="fas fa-chevron-down icon-rotate"></i>
+                        </div>
+                        <div class="category-content">
+                            <p>等待期是指在此期间您无法从保险公司领取部分或全部保险福利的时间段。</p>
+                            <p>等待期的持续时间以及相关条款会根据保险类型和所涵盖的福利不同而有所变化。因此,了解您保险合同中规定的等待期的持续时间和条款是非常重要的。</p>
+                            <p>请注意,对于不在医院联盟服务HAS设施范围内的理赔，客户需先行支付,并在治疗完成后提交所有相关支持文件以申请报销。报销申请将根据保险条款和条件进行处理。</p>
+                        </div>
+                    </div>
+
+
+
+                    <div class="notice-category">
+                        <div class="category-header" onclick="toggleCategory(this)">
+                            <h3>保单生效时间与覆盖范围</h3>
+                            <i class="fas fa-chevron-down icon-rotate"></i>
+                        </div>
+                        <div class="category-content">
+                            <h4>距保单/生效日期少于30天</h4>
+                            <p>在此期间,除非因事故导致伤害入院,否则无法申请医疗福利且医院联盟服务(HAS)设施无法使用。对于此类事故病例的任何预授权信(PAL) /担保信(GL)申请,可能需要提交支持文件,以排除任何潜在的既往疾病或慢性病。例如,膝盖疼痛或背痛可能是长期存在的情况,因此该申请可能需要回答额外问题,以确定病情的实际原因。</p>
+
+                            <h4>距保单/生效日期30至90天</h4>
+                            <p>在此期间,医疗福利可在30天后申请,具体需审核。预授权信(PAL)/担保信(GL)服务不可用。</p>
+
+                            <h4>距保单/生效日期最多120天</h4>
+                            <p>在此期间,除非涉及您的保单文件中"除外条款"所列明的"指定疾病",否则医疗福利是可以申请的。</p>
+
+                            <h4>指定疾病</h4>
+                            <p>指在保单生效日期或复效日期后120天内发生的以下疾病或由这些疾病引发的并发症(以较晚日期为准):</p>
+                            <ul>
+                                <li>高血压、糖尿病和心血管疾病;</li>
+                                <li>各类肿块,包括肿瘤、癌症、囊肿、结节、息肉;</li>
+                                <li>尿路系统和胆道系统的结石;</li>
+                                <li>任何耳、鼻(包括鼻窦)或喉部疾病;</li>
+                                <li>疝气、痔疮、瘘管、水囊或静脉曲张;</li>
+                                <li>任何生殖系统疾病,包括子宫内膜异位症;</li>
+                                <li>任何脊柱疾病(包括椎间盘突出)和膝部疾病。</li>
+                            </ul>
+
+                            <h4>距保单/证书生效日期超过24个月</h4>
+                            <p>在此期间,医疗福利可用于需要外科手术干预的疾病、急性疾病、慢性疾病及指定疾病。</p>
+                            <p>重大医疗条件可按福利限额、保单排除条款及一般排除条款支付。如果医疗条件属于既往病史或在保单签发前未披露,则将无法提供担保信 (Guarantee Letters)。保单持有人需自费支付,并提交理赔申请,报销将根据审核结果处理。</p>
+                            <p>请注意,保单在生效超过24个月后将不可争议。然而,如果我们能够证明存在虚假陈述/既往病史/未披露或客户隐瞒了重要事实,保单可能会被作废。</p>
+                        </div>
+                    </div>
+
+                    <div class="notice-category">
+                        <div class="category-header" onclick="toggleCategory(this)">
+                            <h3>医疗和健康保险的除外条款</h3>
+                            <i class="fas fa-chevron-down icon-rotate"></i>
+                        </div>
+                        <div class="category-content">
+                            <p>有两种类型的除外条款:</p>
+                            <ol>
+                                <li><strong>一般除外条款</strong>指的是保险公司不予承保的风险,并且适用于所有投保人。
+                                    <p>一般除外条款的例子包括:整形/美容治疗、牙科疾病、先天性疾病,以及不属于住院前治疗的全科医生治疗/专科门诊治疗。</p>
+                                </li>
+                                <li><strong>特定除外条款</strong>指的是根据您之前的病史,保险公司不承保的特定风险。</li>
+                            </ol>
+                            <div class="important-note">
+                                <p>请确保仔细阅读并理解保单合同中明确列出的一般除外条款或特定除外条款(如果有)。</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="notice-category">
+                        <div class="category-header" onclick="toggleCategory(this)">
+                            <h3>其他除外条款</h3>
+                            <i class="fas fa-chevron-down icon-rotate"></i>
+                        </div>
+                        <div class="category-content">
+                            <p>我们不支付因以下任何原因直接或间接、全部或部分导致的任何费用或住院治疗费用:</p>
+                            <ol>
+                                <li>既往病症;</li>
+                                <li>在保单生效日期起连续承保的前一百二十(120) 天内发生的指定疾病;</li>
+                                <li>选择性美容或整形手术(除非是必要的重建手术以恢复功能)、多汗症、包皮环切术、近视、远视或散光的眼部检查、视力矫正器具及屈光手术(如放射状角膜切开术),以及外部义肢或设备的使用或购买,例如但不限于假肢、助听器、人工耳蜗、 外部或临时起搏器及相关处方;</li>
+                                <li>牙科疾病,包括牙科治疗或口腔手术,除非是由意外伤害造成的健康牙齿损伤,并且在本保单有效期间发生;</li>
+                                <li>私人护理、休养或疗养护理;</li>
+                                <li>药物滥用、任何种类物质或酒精的依赖性障碍、酒精影响下的行为、性病及其后遗症、艾滋病(获得性免疫缺陷综合症)或艾滋病相关综合症(ARC)和与艾滋病毒 (HIV)相关的疾病,以及任何需要法律隔离的传染病;</li>
+                                <li>先天性异常或畸形的任何治疗或外科手术,包括遗传性疾病。</li>
+                                <li>怀孕、分娩(包括剖腹产)、流产、堕胎及产前或产后护理,任何手术、机械或化学避孕方法,或与不孕不育相关的治疗。阳痿及与阳痿或绝育相关的检查或治疗;</li>
+                                <li>主要用于调查、诊断、X光检查、一般体检或医学检查的住院治疗,非与已覆盖疾病的治疗或诊断相关的检查,任何非医学必要的治疗以及由医生执行的任何预防性治疗、预防性药物或体检,特别是用于减肥或增重的治疗;</li>
+                                <li>自杀、企图自杀或故意自我伤害,无论是否精神正常;</li>
+                                <li>战争或任何战争行为(无论是否宣战)、犯罪或恐怖活动、任何武装力量的现役服役、直接参与罢工、暴动、民事骚乱或叛乱;</li>
+                                <li>由任何核燃料或核废料的放射性污染,或来自核裂变过程或任何核武器材料的辐射;</li>
+                                <li>生命被保险人捐赠器官的相关费用,包括器官获取的费用,以及在器官移植及其并发症过程中捐赠者所产生的所有费用;</li>
+                                <li>睡眠和打鼾障碍的调查和治疗、激素替代疗法及替代疗法(如治疗、医疗服务或用品),包括但不限于脊椎按摩服务、针灸、指压、反射疗法、正骨、草药治疗、按摩或芳香疗法等其他替代治疗。</li>
+                                <li>不需要支付费用的护理或治疗,或在其他保险或赔偿计划下可以获得赔偿的费用, 或因工作或职业责任所产生的疾病或伤害,这些情况已被工伤赔偿保险承保;</li>
+                                <li>精神病、心理或神经障碍(包括任何神经症及其生理或心理生理表现);</li>
+                                <li>非医疗性质的服务费用/开支,如电视、电话、电传服务、收音机或类似设施、入院套件/包以及其他不符合条件的非医疗项目;</li>
+                                <li>因违反任何法律、参与任何形式的比赛(脚步比赛除外)、危险运动(如但不限于跳伞、水上滑雪、需要呼吸器的水下活动、冬季运动、职业运动)及非法活动所引起的疾病或伤害;</li>
+                                <li>除作为付费乘客外的私人飞行,不包括乘坐任何商业定期航班,在已获许可的航线上运输乘客;</li>
+                                <li>性别变更的费用;</li>
+                                <li>实验性治疗,包括未经过验证的药物和/或非常规医疗技术/程序,这些治疗尚未证明在已确立的医学实践中有效,或尚未获得马来西亚公认机构的批准。</li>
+                            </ol>
+                        </div>
                     </div>
                 </div>
-            </div>
-        </section>
-    </div>
+            </section>
+        </div>
 
-    <!-- Hospital Finder Section -->
-    <section class="hospital-finder">
-        <h2 class="section-title">医院网络查找</h2>
-        <p class="section-subtitle">查找您附近的合作医院，享受便捷的医疗服务和保险理赔</p>
+        <!-- Hospital Finder Section -->
+        <section class="hospital-finder">
+            <h2 class="section-title">医院网络查找</h2>
+            <p class="section-subtitle">查找您附近的合作医院，享受便捷的医疗服务和保险理赔</p>
 
-        <div class="hospital-container">
-            <div class="hospital-main-content">
-                <div class="hospital-left-panel">
-                    <div class="selector-group">
-                        <label for="stateSelect">选择州属：</label>
-                        <select id="stateSelect">
+            <div class="hospital-container">
+                <div class="hospital-main-content">
+                    <div class="hospital-left-panel">
+                        <div class="selector-group">
+                            <label for="stateSelect">选择州属：</label>
+                            <select id="stateSelect">
                             <option value="">请选择州属...</option>
                             <option value="johor">柔佛 (Johor)</option>
                             <option value="kedah">吉打 (Kedah)</option>
@@ -182,1112 +286,1112 @@
                             <option value="selangor">雪兰莪/吉隆波 (Selangor/Kuala Lumpur)</option>
                             <option value="terengganu">登嘉楼 (Terengganu)</option>
                         </select>
-                    </div>
+                        </div>
 
-                    <div class="selector-group city-selector" id="citySelector">
-                        <label for="citySelect">选择城市 (可选)：</label>
-                        <select id="citySelect">
+                        <div class="selector-group city-selector" id="citySelector">
+                            <label for="citySelect">选择城市 (可选)：</label>
+                            <select id="citySelect">
                             <option value="">所有城市</option>
                         </select>
+                        </div>
+
+                        <div class="hospitals-list">
+                            <h3>可选医院</h3>
+                            <div id="hospitalsList">
+                                <div class="no-selection">
+                                    <p>请先选择州属以查看该地区的医院</p>
+                                </div>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="hospitals-list">
-                        <h3>可选医院</h3>
-                        <div id="hospitalsList">
-                            <div class="no-selection">
-                                <p>请先选择州属以查看该地区的医院</p>
+                    <div class="hospital-right-panel">
+                        <div class="map-container" id="mapContainer">
+                            <div class="map-placeholder">
+                                <p>🏥 选择医院以查看位置</p>
+                            </div>
+                        </div>
+
+                        <div class="map-controls" id="mapControls" style="display: none;">
+                            <div class="hospital-info" id="hospitalInfo"></div>
+                            <div class="action-buttons">
+                                <a href="#" id="googleMapsBtn" class="btn btn-primary" target="_blank">
+                                📍 Google Maps 导航
+                            </a>
+                                <button id="copyAddressBtn" class="btn btn-secondary">
+                                📋 复制地址
+                            </button>
                             </div>
                         </div>
                     </div>
                 </div>
-
-                <div class="hospital-right-panel">
-                    <div class="map-container" id="mapContainer">
-                        <div class="map-placeholder">
-                            <p>🏥 选择医院以查看位置</p>
-                        </div>
-                    </div>
-
-                    <div class="map-controls" id="mapControls" style="display: none;">
-                        <div class="hospital-info" id="hospitalInfo"></div>
-                        <div class="action-buttons">
-                            <a href="#" id="googleMapsBtn" class="btn btn-primary" target="_blank">
-                                📍 Google Maps 导航
-                            </a>
-                            <button id="copyAddressBtn" class="btn btn-secondary">
-                                📋 复制地址
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-
-
-    <div class="customerbenifit">
-        <section class="benefits" id="benefit">
-            <h2 class="title">尊贵客户专属福利</h2>
-            <hr>
-            <br>
-            <div class="benefit-grid">
-                <div class="benefit-card">
-                    <img src="image source/coway.png" class="benifit-image" alt="">
-                    <h3>COWAY</h3>
-                    <p>免费使用任意产品 2 个月</p>
-                </div>
-                <div class="benefit-card">
-                    <img src="image source/usana.png" class="benifit-image" alt="">
-                    <h3>USANA</h3>
-                    <p>每笔消费满 RM200 返现 RM30</p>
-                </div>
-                <div class="benefit-card">
-                    <img src="image source/VC.jpg" class="benifit-image" alt="">
-                    <h3>VC HOLIDAYS</h3>
-                    <p>欧洲旅游配套 RM500 代金券</p>
-                </div>
-                <div class="benefit-card">
-                    <img src="image source/atomy.png" class="benifit-image" alt="">
-                    <h3>ATOMY</h3>
-                    <p>每笔消费满 RM300 返现 RM30</p>
-                </div>
-                <div class="benefit-card">
-                    <img src="image source/ume.png" class="benifit-image" alt="">
-                    <h3>UME.ALLINONE</h3>
-                    <p>消费满 RM100 立减 RM20</p>
-                </div>
-                <div class="benefit-card">
-                    <img src="image source/tripcomlogo.png" class="benifit-image" alt="">
-                    <h3>TRIP.COM</h3>
-                    <p>高达 5% 折扣</p>
-                </div>
-                <div class="benefit-card">
-                    <img src="image source/millennailsbeauty.jpg" class="benifit-image" alt="">
-                    <h3>MILLENNIALS.BEAUTY</h3>
-                    <p>消费满 RM100 立减 RM20</p>
-                </div>
-                <div class="benefit-card">
-                    <img src="image source/shopcom logo.png" class="benifit-image" alt="">
-                    <h3>SHOP.COM</h3>
-                    <p>化妆品高达 10% 折扣</p>
-                </div>
-                <div class="benefit-card">
-                    <img src="image source/cutemeetflorist.jpg" class="benifit-image" alt="">
-                    <h3>CUTE MEET FLORIST</h3>
-                    <p>私人定制花束 任意消费立减 RM20</p>
-                </div>
             </div>
         </section>
-    </div>
 
-    <footer>
-        <div class="footerbar">
-            <!-- Logo Section -->
-            <div class="footer-logo">
-                <div class="logo-box">LOGO</div>
-            </div>
 
-            <!-- Quick Links -->
-            <div class="footer-section">
-                <h3>Quick Link</h3>
-                <ul>
-                    <li><a href="Mainpage.html">Home</a></li>
-                    <li><a href="About.html">About Us</a></li>
-                    <li><a href="service.html">Service</a></li>
-                    <li><a href="Career.html">Career</a></li>
-                    <li><a href="Mainpage.html#contactus">Contact Us</a></li>
-                </ul>
-            </div>
 
-            <!-- Location -->
-            <div class="footer-section">
-                <h3>Location</h3>
-                <div class="location-item">
-                    <strong>TRX Exchange</strong><br> Ground Floor, Menara Prudential, Persiaran TRX Barat, 55188 Tun Razak Exchange, Kuala Lumpur, Malaysia.
+        <div class="customerbenifit">
+            <section class="benefits" id="benefit">
+                <h2 class="title">尊贵客户专属福利</h2>
+                <hr>
+                <br>
+                <div class="benefit-grid">
+                    <div class="benefit-card">
+                        <img src="image source/coway.png" class="benifit-image" alt="">
+                        <h3>COWAY</h3>
+                        <p>免费使用任意产品 2 个月</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="image source/usana.png" class="benifit-image" alt="">
+                        <h3>USANA</h3>
+                        <p>每笔消费满 RM200 返现 RM30</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="image source/VC.jpg" class="benifit-image" alt="">
+                        <h3>VC HOLIDAYS</h3>
+                        <p>欧洲旅游配套 RM500 代金券</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="image source/atomy.png" class="benifit-image" alt="">
+                        <h3>ATOMY</h3>
+                        <p>每笔消费满 RM300 返现 RM30</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="image source/ume.png" class="benifit-image" alt="">
+                        <h3>UME.ALLINONE</h3>
+                        <p>消费满 RM100 立减 RM20</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="image source/tripcomlogo.png" class="benifit-image" alt="">
+                        <h3>TRIP.COM</h3>
+                        <p>高达 5% 折扣</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="image source/millennailsbeauty.jpg" class="benifit-image" alt="">
+                        <h3>MILLENNIALS.BEAUTY</h3>
+                        <p>消费满 RM100 立减 RM20</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="image source/shopcom logo.png" class="benifit-image" alt="">
+                        <h3>SHOP.COM</h3>
+                        <p>化妆品高达 10% 折扣</p>
+                    </div>
+                    <div class="benefit-card">
+                        <img src="image source/cutemeetflorist.jpg" class="benifit-image" alt="">
+                        <h3>CUTE MEET FLORIST</h3>
+                        <p>私人定制花束 任意消费立减 RM20</p>
+                    </div>
                 </div>
-                <div class="location-item">
-                    <strong>Melaka</strong><br> Lot G2, Ground Floor, Menara Prudential, 99 Jalan Tun Sri Lanang, 75100 Melaka.
-                </div>
-                <div class="location-item">
-                    <strong>Batu Pahat</strong><br> 11th Floor, Wisma Sing Long, No. 8 Jalan Zabedah, 83000 Batu Pahat, Johor.
-                </div>
-                <div class="location-item">
-                    <strong>Skudai</strong><br> No. 1A-3, Ground Floor, Jalan Sutera Tanjung 8/2, Taman Sutera Utama, 81300 Skudai, Johor.
-                </div>
-                <div class="location-item">
-                    <strong>Southkey</strong><br> G-02, Ground Floor, Menara Sella, Persiaran Southkey 1, Kota Southkey, 80150 Johor Bahru.
-                </div>
-            </div>
-
-            <!-- Contact Us -->
-            <div class="footer-section">
-                <h3>Contact Us</h3>
-                <div class="contact-item">📞 +6012-708 9125</div>
-                <div class="contact-item">✉️ vcadvisory@hotmail.com</div>
-            </div>
+            </section>
         </div>
-        <p>&copy; 2023 My Website. All rights reserved.</p>
-    </footer>
 
-    <script>
-        const hospitals = {
-            johor: [{
-                name: "Asia Eye Specialist Centre (Bukit Indah)",
-                address: "No. 73G & 75G, Jalan Bestari 12/2, Taman Nusa Bestari, 81300 Skudai, Johor",
-                phone: "07-559 3075",
-                city: "Skudai",
-                coords: {
-                    lat: 1.5351,
-                    lng: 103.6831
-                }
-            }, {
-                name: "Asia Eye Specialist Centre (Southern)",
-                address: "No. 51 & 53, Jalan Dedap 23, Taman Johor Jaya, 81100 Johor Bahru, Johor",
-                phone: "07-364 8299",
-                city: "Johor Bahru",
-                coords: {
-                    lat: 1.4927,
-                    lng: 103.7414
-                }
-            }, {
-                name: "Columbia Asia Hospital - Iskandar Puteri",
-                address: "Persiaran Afiat, Taman Kesihatan Afiat, 79250 Iskandar Puteri, Johor",
-                phone: "07-233 9999",
-                city: "Iskandar Puteri",
-                coords: {
-                    lat: 1.4655,
-                    lng: 103.6057
-                }
-            }, {
-                name: "Columbia Asia Hospital Tebrau",
-                address: "Persiaran Southkey 5, Kota Southkey, 80150 Johor Bahru, Johor",
-                phone: "07-272 9999",
-                city: "Johor Bahru",
-                coords: {
-                    lat: 1.4804,
-                    lng: 103.7767
-                }
-            }, {
-                name: "Gleneagles Hospital Johor",
-                address: "2 Jalan Medini Utara 4, Medini, 79250 Iskandar Puteri, Johor",
-                phone: "07-560 1000",
-                city: "Iskandar Puteri",
-                coords: {
-                    lat: 1.4338,
-                    lng: 103.6318
-                }
-            }, {
-                name: "KPJ Bandar Dato' Onn Specialist Hospital",
-                address: "Jalan Bukit Mutiara, Bandar Dato' Onn, 81100 Johor Bahru, Johor",
-                phone: "07- 301 1000",
-                city: "Johor Bahru",
-                coords: {
-                    lat: 1.4804,
-                    lng: 103.7767
-                }
-            }, {
-                name: "KPJ Bandar Dato' Onn Specialist Hospital",
-                address: "Jalan Bukit Mutiara, Bandar Dato' Onn, 81100 Johor Bahru, Johor",
-                phone: "07-301 1000",
-                city: "Johor Bahru",
-                coords: {
-                    lat: 1.4927,
-                    lng: 103.7414
-                }
-            }, {
-                name: "KPJ Bandar Maharani Specialist Hospital",
-                address: "73-1, Jalan Stadium, 84000 Muar, Johor",
-                phone: "06-956 4500",
-                city: "Muar",
-                coords: {
-                    lat: 2.0442,
-                    lng: 102.5689
-                }
-            }, {
-                name: "KPJ Johor Specialist Hospital",
-                address: "39B, Jalan Abdul Samad, 80100 Johor Bahru, Johor",
-                phone: "07-225 3000",
-                city: "Johor Bahru",
-                coords: {
-                    lat: 1.4648,
-                    lng: 103.7618
-                }
-            }, {
-                name: "KPJ Kluang Specialist Hospital",
-                address: "PTD 91374, Jalan Saujana Utama, Taman Saujana Kluang 86000 Kluang, Johor",
-                phone: "07-771 8999",
-                city: "Kluang",
-                coords: {
-                    lat: 2.0306,
-                    lng: 103.3167
-                }
-            }, {
-                name: "KPJ Pasir Gudang Specialist Hospital",
-                address: "Lot PTD 204781, Jalan Persiaran Dahlia, Taman Bukit Dahlia 81700 Pasir Gudang, Johor",
-                phone: "07-257 3999",
-                city: "Pasir Gudang",
-                coords: {
-                    lat: 1.4737,
-                    lng: 103.8999
-                }
-            }, {
-                name: "Pantai Hospital Batu Pahat",
-                address: "95, Jalan Bintang 1, Taman Koperasi Bahagia, 83000 Batu Pahat, Johor",
-                phone: "07-433 8811",
-                city: "Batu Pahat",
-                coords: {
-                    lat: 1.8554,
-                    lng: 102.9326
-                }
-            }, {
-                name: "Regency Specialist Hospital",
-                address: "No. 1 Jalan Suria, Bandar Seri Alam, 81750 Masai Johor",
-                phone: "07-381 7700",
-                city: "Pasir Gudang",
-                coords: {
-                    lat: 1.4895,
-                    lng: 103.8720
-                }
-            }, {
-                name: "Optimax Johor Eye Specialist Centre",
-                address: "Ground Floor, No. 53 & 55, Jalan Cantik 6, Taman Pelangi Indah, 81800 Ulu Tiram, Johor Bahru, Johor",
-                phone: "07-859 0528",
-                city: "Johor Bahru",
-                coords: {
-                    lat: 1.6130,
-                    lng: 103.8076
-                }
-            }, {
-                name: "Optimax Eye Specialist Centre (Muar)",
-                address: "Ground Floor, No. 1-5 & 1-6, Jalan Ismail, 84000 Muar, Johor",
-                phone: "07-981 0018",
-                city: "Muar",
-                coords: {
-                    lat: 2.0442,
-                    lng: 102.5689
-                }
-            }, {
-                name: "Optimax Kluang Eye Specialist Centre",
-                address: "Ground Floor, No. 43 & 44, Jalan Haji Manan, 86000 Kluang, Johor",
-                phone: "07-701 0018",
-                city: "Kluang",
-                coords: {
-                    lat: 2.0306,
-                    lng: 103.3167
-                }
-            }, {
-                name: "Optimax Segamat Eye Specialist Centre",
-                address: "Ground Floor, 49B & 49C, Jalan Genuang, 85000 Segamat, Johor",
-                phone: "07-701 0018",
-                city: "Segamat",
-                coords: {
-                    lat: 2.5150,
-                    lng: 102.8154
-                }
-            }, {
-                name: "Top Vision Eye Specialist Centre Batu Pahat",
-                address: "No. 1 & 2, Jalan Maju, Taman Maju, 83000 Batu Pahat, Johor",
-                phone: "07-439 4998",
-                city: "Batu Pahat",
-                coords: {
-                    lat: 1.8554,
-                    lng: 102.9326
-                }
-            }, {
-                name: "Top Vision Eye Specialist Centre Kulai",
-                address: "No. 56, Jalan Sri Putra 2, Bandar Putra, 81000 Kulai, Johor",
-                phone: "016-929 9818",
-                city: "Kulai",
-                coords: {
-                    lat: 1.6587,
-                    lng: 103.6006
-                }
-            }, {
-                name: "Top Vision Eye Specialist Centre Johor Bahru",
-                address: "A-01-04 & A-01-05, Block A, 1 Tebrau, Jalan Tebrau, Kampung Setanggi, 80250 Johor Bahru, Johor",
-                phone: "016-755 7298",
-                city: "Johor Bahru",
-                coords: {
-                    lat: 1.4648,
-                    lng: 103.7618
-                }
-            }, {
-                name: "Kempas Medical Centre",
-                address: "Lot PTD 7522, Jalan Kempas Baru, 81200 Johor Bahru, Johor",
-                phone: "07-236 8999",
-                city: "Johor Bahru",
-                coords: {
-                    lat: 1.4648,
-                    lng: 103.7618
-                }
-            }, {
-                name: "KPJ Batu Pahat Specialist Hospital",
-                address: "No. 1 Jalan Mutiara Gading 1 Taman Mutiara Gading Sri Gading, 83000 Batu Pahat, Johor",
-                phone: "07-459 1000",
-                city: "Batu Pahat",
-                coords: {
-                    lat: 1.8554,
-                    lng: 102.9326
-                }
-            }, {
-                name: "KPJ Puteri Specialist Hospital",
-                address: "33, Jalan Tun Abdul Razak (Susur 5), 80000 Johor Bahru, Johor",
-                phone: "07-225 3222",
-                city: "Johor Bahru",
-                coords: {
-                    lat: 1.4648,
-                    lng: 103.7618
-                }
-            }, {
-                name: "Putra Specialist Hospital (Batu Pahat)",
-                address: "1, Jalan Peserai, 83000 Batu Pahat, Johor",
-                phone: "07-413 3333",
-                city: "Batu Pahat",
-                coords: {
-                    lat: 1.8554,
-                    lng: 102.9326
-                }
-            }],
-            kedah: [{
-                name: "Asia Eye Specialist Centre (Sungai Petani)",
-                address: "No. 276G & 277G, Jalan Lagenda 11, Lagenda Heights, 08000 Sungai Petani, Kedah",
-                phone: "04-421 0011",
-                city: "Sungai Petani",
-                coords: {
-                    lat: 5.6470,
-                    lng: 100.4870
-                }
-            }, {
-                name: "Metro Specialist Hospital",
-                address: "No. 1, Lorong Metro, 08000 Sungai Petani, Kedah",
-                phone: "04-423 8888",
-                city: "Sungai Petani",
-                coords: {
-                    lat: 5.6470,
-                    lng: 100.4870
-                }
-            }, {
-                name: "Top Vision Eye Specialist Centre Sungai Petani",
-                address: "No. 13, 14 & 15 Jalan Lagenda 2, Lagenda Height, 08000 Sungai Petani, Kedah",
-                phone: "04-424 6888",
-                city: "Sungai Petani",
-                coords: {
-                    lat: 5.6470,
-                    lng: 100.4870
-                }
-            }, {
-                name: "Aurelius Hospital Alor Setar",
-                address: "69, Jalan Perusahaan 1, Taman Bandar Baru Mergong Alor Setar, Kedah",
-                phone: "04-736 6970",
-                city: "Alor Setar",
-                coords: {
-                    lat: 6.1248,
-                    lng: 100.3678
-                }
-            }, {
-                name: "Kedah Medical Centre",
-                address: "527, Mukim Alor Merah Pumpong, Kampung Pumpong, 05250 Alor Setar, Kedah",
-                phone: "04-730 8878",
-                city: "Alor Setar",
-                coords: {
-                    lat: 6.1248,
-                    lng: 100.3678
-                }
-            }, {
-                name: "Pantai Hospital Sungai Petani",
-                address: "1, Persiaran Cempaka, Bandar Aman Jaya, 08000 Sungai Petani, Kedah",
-                phone: "04-442 8888",
-                city: "Sungai Petani",
-                coords: {
-                    lat: 5.6470,
-                    lng: 100.4870
-                }
-            }],
-            kelantan: [{
-                name: "KPJ Perdana Specialist Hospital",
-                address: "Lot PT 37 & 600, Seksyen 14, Jalan Bayam, 15200 Kota Bahru, Kelantan",
-                phone: "09-745 8000",
-                city: "Kota Bharu",
-                coords: {
-                    lat: 6.1247,
-                    lng: 102.2381
-                }
-            }, {
-                name: "Hospital Universiti Sains Malaysia (USAINS)",
-                address: "Usains Tech Services S/B, Kampus Kesihatan, 16150 Kubang Kerian, Kota Bharu, Kelantan",
-                phone: "09-766 6200",
-                city: "Kubang Kerian",
-                coords: {
-                    lat: 6.0982,
-                    lng: 102.2896
-                }
-            }, {
-                name: "Top Vision Eye Specialist Centre Kota Bharu",
-                address: "No. 297, 298, 299 & 300, Jalan Sultan Ibrahim, Seksyen 16, 15050 Kota Bharu, Kelantan",
-                phone: "09-741 8866",
-                city: "Kota Bharu",
-                coords: {
-                    lat: 6.1370,
-                    lng: 102.2380
-                }
-            }, {
-                name: "Kota Bharu Medical Centre",
-                address: "PT 179-184, Jalan Sultan Yahya Petra, 15200 Kota Bharu, Kelantan",
-                phone: "09-743 3399",
-                city: "Kota Bharu",
-                coords: {
-                    lat: 6.1333,
-                    lng: 102.2500
-                }
-            }],
-            selangor: [{
-                    name: "An-Nur Specialist Hospital",
-                    address: "Jalan Gerbang Wawasan 1, Seksyen 15, 43650 Bandar Baru Bangi, Selangor",
-                    phone: "03-8923 5500",
-                    city: "Bandar Baru Bangi",
-                    coords: {
-                        lat: 2.9569,
-                        lng: 101.7518
-                    }
-                }, {
-                    name: "Ara Damansara Medical Centre",
-                    address: "Lot 2, Jalan Lapangan Terbang Subang, Seksyen U2, 40150 Shah Alam, Selangor",
-                    phone: "03-5639 1212",
-                    city: "Shah Alam",
-                    coords: {
-                        lat: 3.1086,
-                        lng: 101.5651
-                    }
-                }, {
-                    name: "Asia Eye Specialist Centre (USJ)",
-                    address: "No. 37, Jalan USJ 10/1F, Taipan Business Centre, 47620 Subang Jaya, Selangor",
-                    phone: "03-8011 8033",
-                    city: "Subang Jaya",
-                    coords: {
-                        lat: 3.0499,
-                        lng: 101.5845
-                    }
-                }, {
-                    name: "Asia Eye Specialist Centre (Kelana Jaya)",
-                    address: "No. 103-G & 105-G, Jalan SS 25/2, Taman Mayang, 47301 Petaling Jaya, Selangor",
-                    phone: "03-7887 0033",
-                    city: "Petaling Jaya",
-                    coords: {
-                        lat: 3.1096,
-                        lng: 101.5971
-                    }
-                }, {
-                    name: "Asia Eye Specialist Centre (Kepong)",
-                    address: "No. 60, Jalan Ambong 1, Kepong Baru, 52100 Kuala Lumpur",
-                    phone: "03-6241 8011",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.2105,
-                        lng: 101.6358
-                    }
-                }, {
-                    name: "Asia Eye Specialist Centre (Serdang)",
-                    address: "67-G & 68-G, Pusat Perniagaan Olive Hill, Jalan BS 1/1, Taman Bukit Serdang, 43300 Seri Kembangan, Selangor",
-                    phone: "03-8940 0388",
-                    city: "Seri Kembangan",
-                    coords: {
-                        lat: 3.0243,
-                        lng: 101.7134
-                    }
-                }, {
-                    name: "Beacon Hospital",
-                    address: "1 Jalan 215, Section 51, Off Jalan Templer, 46050 Petaling Jaya, Selangor",
-                    phone: "03-7620 7979",
-                    city: "Petaling Jaya",
-                    coords: {
-                        lat: 3.1188,
-                        lng: 101.6360
-                    }
-                }, {
-                    name: "Bukit Tinggi Medical Centre",
-                    address: "Lot 83211, Persiaran Batu Nilam, Bandar Bukit Tinggi, 41200 Klang, Selangor",
-                    phone: "03-3884 3884",
-                    city: "Klang",
-                    coords: {
-                        lat: 3.0090,
-                        lng: 101.4472
-                    }
-                }, {
-                    name: "Columbia Asia Hospital – Cheras",
-                    address: "Lot 33107, Jalan Suakasih, 43200 Cheras, Selangor",
-                    phone: "03-9086 9999",
-                    city: "Cheras",
-                    coords: {
-                        lat: 3.0627,
-                        lng: 101.7621
-                    }
-                }, {
-                    name: "Damansara Specialist Hospital 2 (DSH 2)",
-                    address: "No. 1, Jalan Bukit Lanjan 3, Bukit Lanjan, 60000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
-                    phone: "03-7717 3000",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.1675,
-                        lng: 101.6079
-                    }
-                }, {
-                    name: "Gleneagles Kuala Lumpur",
-                    address: "286, Jalan Ampang, 50450 Kuala Lumpur",
-                    phone: "03-4141 3000",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.1611,
-                        lng: 101.7179
-                    }
-                }, {
-                    name: "KL Eye Specialist Centre",
-                    address: "No 73 & 73-1, Jalan Metro Perdana Barat 1, Taman Usahawan Kepong, 52100 Kuala Lumpur",
-                    phone: "03-6250 0077",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.2089,
-                        lng: 101.6353
-                    }
-                }, {
-                    name: "KPJ Damansara Specialist Hospital",
-                    address: "119, Jalan SS 20/10, Damansara Utama, 47400 Petaling Jaya, Selangor",
-                    phone: "03-7722 2692",
-                    city: "Petaling Jaya",
-                    coords: {
-                        lat: 3.1345,
-                        lng: 101.6171
-                    }
-                }, {
-                    name: "KPJ Kajang Specialist Hospital",
-                    address: "Batu 14, Jalan Cheras, 43000 Kajang, Selangor",
-                    phone: "03-8769 2999",
-                    city: "Kajang",
-                    coords: {
-                        lat: 3.0187,
-                        lng: 101.7870
-                    }
-                }, {
-                    name: "KPJ Klang Specialist Hospital",
-                    address: "No. 102, Persiaran Rajawali/KU1, Bandar Baru Klang, 41150 Klang, Selangor",
-                    phone: "03-3377 7888",
-                    city: "Klang",
-                    coords: {
-                        lat: 3.0442,
-                        lng: 101.4455
-                    }
-                }, {
-                    name: "KPJ Rawang Specialist Hospital",
-                    address: "Jalan Rawang, Bandar Baru Rawang, 48000 Rawang Selangor",
-                    phone: "03-6099 8999",
-                    city: "Rawang",
-                    coords: {
-                        lat: 3.3213,
-                        lng: 101.5767
-                    }
-                }, {
-                    name: "KPJ Tawakkal Specialist Hospital",
-                    address: "1, Jalan Pahang Barat, 53000 Kuala Lumpur",
-                    phone: "03-4026 7777",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.2006,
-                        lng: 101.7033
-                    }
-                }, {
-                    name: "Optimax Bandar Sunway Eye Specialist Centre",
-                    address: "Ground Floor, No. 11, Jalan PJS 11/28B, Bandar Sunway, 46150 Petaling Jaya, Selangor",
-                    phone: "03-80841212",
-                    city: "Petaling Jaya",
-                    coords: {
-                        lat: 3.0716,
-                        lng: 101.6053
-                    }
-                }, {
-                    name: "Optimax Klang Eye Specialist Centre",
-                    address: "No. 17 and 19, Jalan Bayu Tinggi 7, 41200 Klang, Selangor",
-                    phone: "03-33851186",
-                    city: "Klang",
-                    coords: {
-                        lat: 3.0413,
-                        lng: 101.4502
-                    }
-                }, {
-                    name: "Optimax Shah Alam Eye Specialist Centre",
-                    address: "No. 50-G & 52-G, Blok 3, Jalan Pahat G 15/G, Dataran Otomobil, Seksyen 15, 40200 Shah Alam, Selangor",
-                    phone: "03-58701168",
-                    city: "Shah Alam",
-                    coords: {
-                        lat: 3.0738,
-                        lng: 101.5276
-                    }
-                }, {
-                    name: "Optimax Eye Specialist Centre (Damansara Jaya)",
-                    address: "C38-40, Concourse Floor, Atria Shopping Gallery, Jalan SS22/23, Damansara Jaya, 47400 Petaling Jaya, Selangor",
-                    phone: "03-78900168",
-                    city: "Petaling Jaya",
-                    coords: {
-                        lat: 3.1332,
-                        lng: 101.6176
-                    }
-                }, {
-                    name: "Optimax Eye Specialist Centre (TTDI)",
-                    address: "Unit 2-2-1, Bangunan AHP, Jalan Tun Mohd Fuad 3, Taman Tun Dr. Ismail, 6000 WP, Kuala Lumpur",
-                    phone: "03-78902626",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.1390,
-                        lng: 101.6271
-                    }
-                }, {
-                    name: "Optimax Kuala Lumpur Eye Specialist Centre",
-                    address: "Ground Floor, No. 145, Jalan Radin Bagus, Seri Petaling, 57000 Kuala Lumpur",
-                    phone: "03-27796499",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.0732,
-                        lng: 101.6931
-                    }
-                }, {
-                    name: "Pantai Hospital Kuala Lumpur",
-                    address: "8, Jalan Bukit Pantai, 59100 Kuala Lumpur",
-                    phone: "03-2296 0888",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.1198,
-                        lng: 101.6652
-                    }
-                }, {
-                    name: "ParkCity Medical Centre",
-                    address: "2, Jalan Intisari Perdana, Desa Parkcity, 52200 Kuala Lumpur",
-                    phone: "03-5639 1212",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.1966,
-                        lng: 101.6148
-                    }
-                }, {
-                    name: "Sri Kota Specialist Medical Centre",
-                    address: "Jalan Mohet, 41000 Klang, Selangor",
-                    phone: "03-3375 7799",
-                    city: "Klang",
-                    coords: {
-                        lat: 3.0378,
-                        lng: 101.4519
-                    }
-                }, {
-                    name: "Subang Jaya Medical Centre",
-                    address: "1, Jalan SS12/1A, 47500 Subang Jaya, Selangor",
-                    phone: "03-5639 1212",
-                    city: "Subang Jaya",
-                    coords: {
-                        lat: 3.0813,
-                        lng: 101.5845
-                    }
-                }, {
-                    name: "Sunway Medical Centre",
-                    address: "5, Jalan Lagoon Selatan, Bandar Sunway, 46150 Petaling Jaya, Selangor",
-                    phone: "03-7491 9191",
-                    city: "Petaling Jaya",
-                    coords: {
-                        lat: 3.0716,
-                        lng: 101.6063
-                    }
-                }, {
-                    name: "Sunway Medical Centre Velocity",
-                    address: "Pusat Perubatan Sunway Velocity, Lingkaran SV, Sunway Velocity, 55100, Kuala Lumpur",
-                    phone: "03-9772 9191",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.1284,
-                        lng: 101.7353
-                    }
-                }, {
-                    name: "Top Vision Eye Specialist Centre Setia Alam",
-                    address: "Unit 11-2 & 11-3, No. 2, Block 2, Jalan Setia Prima (S) U13/S, Setia Alam, Seksyen U13, 40170 Shah Alam, Selangor",
-                    phone: "03-33439911",
-                    city: "Shah Alam",
-                    coords: {
-                        lat: 3.1089,
-                        lng: 101.4706
-                    }
-                }, {
-                    name: "Top Vision Eye Specialist Centre Banting",
-                    address: "1-G-A, Jalan Sultan Abdul Samad, 42700 Banting, Selangor",
-                    phone: "03-31818933",
-                    city: "Banting",
-                    coords: {
-                        lat: 2.8178,
-                        lng: 101.5032
-                    }
-                }, {
-                    name: "Top Vision Eye Specialist Centre Kuala Selangor",
-                    address: "No. 53A & 55, Jalan Peninsula Utama 1, Peninsula Park, Pasir Penambang, 45000 Kuala Selangor, Selangor",
-                    phone: "03-32895500",
-                    city: "Kuala Selangor",
-                    coords: {
-                        lat: 3.3421,
-                        lng: 101.2487
-                    }
-                }, {
-                    name: "UM Specialist Centre",
-                    address: "UMSC Building, Lot 28, Lorong Universiti, Lembah Pantai, 50603 Kuala Lumpur",
-                    phone: "03-7841 4000",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.1187,
-                        lng: 101.6561
-                    }
-                }, {
-                    name: "Assunta Hospital",
-                    address: "Jalan Templer, 46990 Petaling Jaya, Selangor",
-                    phone: "03-7680 7000",
-                    city: "Petaling Jaya",
-                    coords: {
-                        lat: 3.0913,
-                        lng: 101.6395
-                    }
-                }, {
-                    name: "Avisena Specialist Hospital",
-                    address: "No. 4, Jalan Ikhtisas, Seksyen 14, 40000 Shah Alam, Selangor Darul Ehsan, Malaysia",
-                    phone: "03-5155 1966",
-                    city: "Shah Alam",
-                    coords: {
-                        lat: 3.0748,
-                        lng: 101.5256
-                    }
-                }, {
-                    name: "Avisena Women's & Children's Specialist Hospital",
-                    address: "No. 3, Jalan Perdagangan 14/4, Seksyen 14, 40000 Shah Alam, Selangor Darul Ehsan, Malaysia",
-                    phone: "03-5155 1966",
-                    city: "Shah Alam",
-                    coords: {
-                        lat: 3.0759,
-                        lng: 101.5248
-                    }
-                }, {
-                    name: "Cardiac Vascular Sentral Kuala Lumpur",
-                    address: "Jalan Stesen Sentral 5, Kuala Lumpur Sentral, 50470 Kuala Lumpur",
-                    phone: "03-2276 7000",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.1353,
-                        lng: 101.6864
-                    }
-                }, {
-                    name: "Columbia Asia Hospital - Bukit Jalil",
-                    address: "No. 9, Jalan Jalil Perkasa 7, Bukit Jalil, 57000, Kuala Lumpur",
-                    phone: "03-8657 9888",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.0553,
-                        lng: 101.6698
-                    }
-                }, {
-                    name: "Columbia Asia Hospital - Bukit Rimau",
-                    address: "3, Persiaran Anggerik Eria, Bukit Rimau, Seksyen 32, 40460 Shah Alam, Selangor",
-                    phone: "03-5125 9999",
-                    city: "Shah Alam",
-                    coords: {
-                        lat: 3.0965,
-                        lng: 101.4904
-                    }
-                }, {
-                    name: "Columbia Asia Hospital - Klang",
-                    address: "Jalan Mahkota 1/KU 2, Mutiara Bukit Raja 2, KM2 off Jalan Meru, 41050 Klang, Selangor Darul Ehsan",
-                    phone: "03-3346 7999",
-                    city: "Klang",
-                    coords: {
-                        lat: 3.0649,
-                        lng: 101.4670
-                    }
-                }, {
-                    name: "Columbia Asia Hospital - Puchong",
-                    address: "1 Lebuh Puteri, Bandar Puteri Puchong, 47100 Puchong, Selango",
-                    phone: "03-8064 8688",
-                    city: "Puchong",
-                    coords: {
-                        lat: 2.9933,
-                        lng: 101.6168
-                    }
-                }, {
-                    name: "Columbia Asia Hospital - Setapak",
-                    address: "No. 1, Jalan Danau Saujana, Off Jalan Genting Klang, 53300 Kuala Lumpur",
-                    phone: "03-4145 9999",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.1988,
-                        lng: 101.7126
-                    }
-                }, {
-                    name: "Columbia Asia Hospital - Petaling Jaya",
-                    address: "69, Jalan 13/6, Seksyen 13, 46200 Petaling Jaya, Selangor",
-                    phone: "03-7949 9999",
-                    city: "Petaling Jaya",
-                    coords: {
-                        lat: 3.0996,
-                        lng: 101.6408
-                    }
-                }, {
-                    name: "Institut Jantung Negara",
-                    address: "145, Jalan Tun Razak, 50400 Kuala Lumpur",
-                    phone: "03-2617 8200",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.1665,
-                        lng: 101.7149
-                    }
-                }, {
-                    name: "KPJ Ampang Puteri Specialist Hospital",
-                    address: "1, Jalan Mamanda 9, Taman Dato Ahmad Razali, 68000 Ampang, Selangor",
-                    phone: "03-4270 2500",
-                    city: "Ampang",
-                    coords: {
-                        lat: 3.1476,
-                        lng: 101.7618
-                    }
-                }, {
-                    name: "KPJ Kuala Selangor Specialist Hospital",
-                    address: "No. 1, Jalan Peninsula Tanjung, Peninsula Utama, 45000, Kuala Selangor, Selangor",
-                    phone: "03-6078 5888",
-                    city: "Kuala Selangor",
-                    coords: {
-                        lat: 3.3408,
-                        lng: 101.2499
-                    }
-                }, {
-                    name: "KPJ Selangor Specialist Hospital",
-                    address: "Lot 1, Jalan Singa 20/1, Section 20, 40300 Shah Alam, Selangor",
-                    phone: "03-5543 1111",
-                    city: "Shah Alam",
-                    coords: {
-                        lat: 3.0583,
-                        lng: 101.5251
-                    }
-                }, {
-                    name: "Pantai Hospital Ampang",
-                    address: "Jalan Perubatan 1, Pandan Indah, 55100 Kuala Lumpur",
-                    phone: "03-4289 2828",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.1345,
-                        lng: 101.7521
-                    }
-                }, {
-                    name: "Pantai Hospital Cheras",
-                    address: "1, Jalan 1/96A, Taman Cheras Makmur, 56100 Kuala Lumpur",
-                    phone: "03-9145 2888",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.1044,
-                        lng: 101.7433
-                    }
-                }, {
-                    name: "Pantai Hospital Klang",
-                    address: "Lot 5921, Persiaran Raja Muda Musa, 41200 Klang, Selangor",
-                    phone: "03-3258 5500",
-                    city: "Klang",
-                    coords: {
-                        lat: 3.0379,
-                        lng: 101.4504
-                    }
-                }, {
-                    name: "KPJ Sentosa KL Specialist Medical Centre",
-                    address: "36, Jalan Chemur, Kompleks Damai, 50400 Kuala Lumpur",
-                    phone: "03-4043 7166",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.1701,
-                        lng: 101.6991
-                    }
-                }, {
-                    name: "Sentosa Specialist Hospital",
-                    address: "No 27-29, Lorong Temenggung 15A, Dan No. 2, 4 & 6, Lorong Temenggung 15D, Off Jalan Sungai Jati, 41200 Klang, Selangor",
-                    phone: "03-5162 8819",
-                    city: "Klang",
-                    coords: {
-                        lat: 3.0404,
-                        lng: 101.4463
-                    }
-                }, {
-                    name: "Sungai Long Specialist Hospital",
-                    address: "Pt 21147, Persiaran SL 1, Bandar Sg Long, 43000 Kajang, Selangor",
-                    phone: "03-9010 3788",
-                    city: "Kajang",
-                    coords: {
-                        lat: 3.0456,
-                        lng: 101.8023
-                    }
-                }, {
-                    name: "Thomson Hospital Kota Damansara",
-                    address: "11 Jalan Technologi, Taman Sains Selangor 1, PJU 5, Kota Damansara, 47810 Petaling Jaya, Selangor",
-                    phone: "03-6287 1111",
-                    city: "Petaling Jaya",
-                    coords: {
-                        lat: 3.1639,
-                        lng: 101.5897
-                    }
-                }, {
-                    name: "Tung Shin Hospital",
-                    address: "102, Jalan Pudu, 55100 Kuala Lumpur",
-                    phone: "03-2037 2288",
-                    city: "Kuala Lumpur",
-                    coords: {
-                        lat: 3.1444,
-                        lng: 101.7042
-                    }
-                }
+        <footer>
+            <div class="footerbar">
+                <!-- Logo Section -->
+                <div class="footer-logo">
+                    <div class="logo-box">LOGO</div>
+                </div>
 
-            ],
-            malacca: [{
-                name: "Mahkota Medical Centre",
-                address: "3, Mahkota Melaka, Jalan Merdeka, 75000 Melaka",
-                phone: "06-281 3333",
-                "city": "Melaka",
-                coords: {
-                    lat: 2.1940,
-                    lng: 102.2490
-                }
-            }, {
-                name: "Putra Specialist Hospital (Melaka)",
-                address: "169, Jalan Bendahara, 75100 Melaka",
-                phone: "06-283 5888",
-                city: "Melaka",
-                coords: {
-                    lat: 2.1994,
-                    lng: 102.2463
-                }
-            }, {
-                name: "Southern Specialist Eye Centre",
-                address: "No. 309 & 310, Jalan Melaka Raya 1, Taman Melaka Raya, 75000 Melaka",
-                phone: "06-2833510",
-                city: "Melaka",
-                coords: {
-                    lat: 2.1899,
-                    lng: 102.2515
-                }
-            }, {
-                name: "Oriental Melaka Straits Medical Centre",
-                address: "Pusat Perubatan Klebang, 75200 Melaka",
-                phone: "06-315 8888",
-                city: "Melaka",
-                coords: {
-                    lat: 2.2191,
-                    lng: 102.1952
-                }
-            }, {
-                name: "Pantai Hospital Melaka",
-                address: "2418-1, KM 8, Lebuh Ayer Keroh, 75450 Melaka",
-                phone: "06-231 9999",
-                city: "Melaka",
-                coords: {
-                    lat: 2.2640,
-                    lng: 102.2839
-                }
-            }],
-        };
+                <!-- Quick Links -->
+                <div class="footer-section">
+                    <h3>Quick Link</h3>
+                    <ul>
+                        <li><a href="Mainpage.html">Home</a></li>
+                        <li><a href="About.html">About Us</a></li>
+                        <li><a href="service.html">Service</a></li>
+                        <li><a href="Career.html">Career</a></li>
+                        <li><a href="Mainpage.html#contactus">Contact Us</a></li>
+                    </ul>
+                </div>
 
-        const cities = {
-            johor: ["Johor Bahru", "Skudai", "Iskandar Puteri", "Muar", "Segamat", "Kluang", "Batu Pahat", "Kulai", "Pasir Gudang"],
-            kedah: ["Sungai Petani", "Alor Setar"],
-            kelantan: ["Kota Bharu", "Kubang Kerian", "Machang", "Pasir Mas", "Tanah Merah", "Bachok", "Pasir Puteh", "Kuala Krai", "Gua Musang", "Jeli"],
-            selangor: ["Ampang", "Banting", "Bandar Baru Bangi", "Cheras", "Kajang", "Klang", "Kuala Lumpur", "Kuala Selangor", "Petaling Jaya", "Puchong", "Rawang", "Seri Kembangan", "Shah Alam", "Subang Jaya"],
+                <!-- Location -->
+                <div class="footer-section">
+                    <h3>Location</h3>
+                    <div class="location-item">
+                        <strong>TRX Exchange</strong><br> Ground Floor, Menara Prudential, Persiaran TRX Barat, 55188 Tun Razak Exchange, Kuala Lumpur, Malaysia.
+                    </div>
+                    <div class="location-item">
+                        <strong>Melaka</strong><br> Lot G2, Ground Floor, Menara Prudential, 99 Jalan Tun Sri Lanang, 75100 Melaka.
+                    </div>
+                    <div class="location-item">
+                        <strong>Batu Pahat</strong><br> 11th Floor, Wisma Sing Long, No. 8 Jalan Zabedah, 83000 Batu Pahat, Johor.
+                    </div>
+                    <div class="location-item">
+                        <strong>Skudai</strong><br> No. 1A-3, Ground Floor, Jalan Sutera Tanjung 8/2, Taman Sutera Utama, 81300 Skudai, Johor.
+                    </div>
+                    <div class="location-item">
+                        <strong>Southkey</strong><br> G-02, Ground Floor, Menara Sella, Persiaran Southkey 1, Kota Southkey, 80150 Johor Bahru.
+                    </div>
+                </div>
 
-        };
+                <!-- Contact Us -->
+                <div class="footer-section">
+                    <h3>Contact Us</h3>
+                    <div class="contact-item">📞 +6012-708 9125</div>
+                    <div class="contact-item">✉️ vcadvisory@hotmail.com</div>
+                </div>
+            </div>
+            <p>&copy; 2023 My Website. All rights reserved.</p>
+        </footer>
 
-        let selectedHospital = null;
+        <script>
+            const hospitals = {
+                johor: [{
+                    name: "Asia Eye Specialist Centre (Bukit Indah)",
+                    address: "No. 73G & 75G, Jalan Bestari 12/2, Taman Nusa Bestari, 81300 Skudai, Johor",
+                    phone: "07-559 3075",
+                    city: "Skudai",
+                    coords: {
+                        lat: 1.5351,
+                        lng: 103.6831
+                    }
+                }, {
+                    name: "Asia Eye Specialist Centre (Southern)",
+                    address: "No. 51 & 53, Jalan Dedap 23, Taman Johor Jaya, 81100 Johor Bahru, Johor",
+                    phone: "07-364 8299",
+                    city: "Johor Bahru",
+                    coords: {
+                        lat: 1.4927,
+                        lng: 103.7414
+                    }
+                }, {
+                    name: "Columbia Asia Hospital - Iskandar Puteri",
+                    address: "Persiaran Afiat, Taman Kesihatan Afiat, 79250 Iskandar Puteri, Johor",
+                    phone: "07-233 9999",
+                    city: "Iskandar Puteri",
+                    coords: {
+                        lat: 1.4655,
+                        lng: 103.6057
+                    }
+                }, {
+                    name: "Columbia Asia Hospital Tebrau",
+                    address: "Persiaran Southkey 5, Kota Southkey, 80150 Johor Bahru, Johor",
+                    phone: "07-272 9999",
+                    city: "Johor Bahru",
+                    coords: {
+                        lat: 1.4804,
+                        lng: 103.7767
+                    }
+                }, {
+                    name: "Gleneagles Hospital Johor",
+                    address: "2 Jalan Medini Utara 4, Medini, 79250 Iskandar Puteri, Johor",
+                    phone: "07-560 1000",
+                    city: "Iskandar Puteri",
+                    coords: {
+                        lat: 1.4338,
+                        lng: 103.6318
+                    }
+                }, {
+                    name: "KPJ Bandar Dato' Onn Specialist Hospital",
+                    address: "Jalan Bukit Mutiara, Bandar Dato' Onn, 81100 Johor Bahru, Johor",
+                    phone: "07- 301 1000",
+                    city: "Johor Bahru",
+                    coords: {
+                        lat: 1.4804,
+                        lng: 103.7767
+                    }
+                }, {
+                    name: "KPJ Bandar Dato' Onn Specialist Hospital",
+                    address: "Jalan Bukit Mutiara, Bandar Dato' Onn, 81100 Johor Bahru, Johor",
+                    phone: "07-301 1000",
+                    city: "Johor Bahru",
+                    coords: {
+                        lat: 1.4927,
+                        lng: 103.7414
+                    }
+                }, {
+                    name: "KPJ Bandar Maharani Specialist Hospital",
+                    address: "73-1, Jalan Stadium, 84000 Muar, Johor",
+                    phone: "06-956 4500",
+                    city: "Muar",
+                    coords: {
+                        lat: 2.0442,
+                        lng: 102.5689
+                    }
+                }, {
+                    name: "KPJ Johor Specialist Hospital",
+                    address: "39B, Jalan Abdul Samad, 80100 Johor Bahru, Johor",
+                    phone: "07-225 3000",
+                    city: "Johor Bahru",
+                    coords: {
+                        lat: 1.4648,
+                        lng: 103.7618
+                    }
+                }, {
+                    name: "KPJ Kluang Specialist Hospital",
+                    address: "PTD 91374, Jalan Saujana Utama, Taman Saujana Kluang 86000 Kluang, Johor",
+                    phone: "07-771 8999",
+                    city: "Kluang",
+                    coords: {
+                        lat: 2.0306,
+                        lng: 103.3167
+                    }
+                }, {
+                    name: "KPJ Pasir Gudang Specialist Hospital",
+                    address: "Lot PTD 204781, Jalan Persiaran Dahlia, Taman Bukit Dahlia 81700 Pasir Gudang, Johor",
+                    phone: "07-257 3999",
+                    city: "Pasir Gudang",
+                    coords: {
+                        lat: 1.4737,
+                        lng: 103.8999
+                    }
+                }, {
+                    name: "Pantai Hospital Batu Pahat",
+                    address: "95, Jalan Bintang 1, Taman Koperasi Bahagia, 83000 Batu Pahat, Johor",
+                    phone: "07-433 8811",
+                    city: "Batu Pahat",
+                    coords: {
+                        lat: 1.8554,
+                        lng: 102.9326
+                    }
+                }, {
+                    name: "Regency Specialist Hospital",
+                    address: "No. 1 Jalan Suria, Bandar Seri Alam, 81750 Masai Johor",
+                    phone: "07-381 7700",
+                    city: "Pasir Gudang",
+                    coords: {
+                        lat: 1.4895,
+                        lng: 103.8720
+                    }
+                }, {
+                    name: "Optimax Johor Eye Specialist Centre",
+                    address: "Ground Floor, No. 53 & 55, Jalan Cantik 6, Taman Pelangi Indah, 81800 Ulu Tiram, Johor Bahru, Johor",
+                    phone: "07-859 0528",
+                    city: "Johor Bahru",
+                    coords: {
+                        lat: 1.6130,
+                        lng: 103.8076
+                    }
+                }, {
+                    name: "Optimax Eye Specialist Centre (Muar)",
+                    address: "Ground Floor, No. 1-5 & 1-6, Jalan Ismail, 84000 Muar, Johor",
+                    phone: "07-981 0018",
+                    city: "Muar",
+                    coords: {
+                        lat: 2.0442,
+                        lng: 102.5689
+                    }
+                }, {
+                    name: "Optimax Kluang Eye Specialist Centre",
+                    address: "Ground Floor, No. 43 & 44, Jalan Haji Manan, 86000 Kluang, Johor",
+                    phone: "07-701 0018",
+                    city: "Kluang",
+                    coords: {
+                        lat: 2.0306,
+                        lng: 103.3167
+                    }
+                }, {
+                    name: "Optimax Segamat Eye Specialist Centre",
+                    address: "Ground Floor, 49B & 49C, Jalan Genuang, 85000 Segamat, Johor",
+                    phone: "07-701 0018",
+                    city: "Segamat",
+                    coords: {
+                        lat: 2.5150,
+                        lng: 102.8154
+                    }
+                }, {
+                    name: "Top Vision Eye Specialist Centre Batu Pahat",
+                    address: "No. 1 & 2, Jalan Maju, Taman Maju, 83000 Batu Pahat, Johor",
+                    phone: "07-439 4998",
+                    city: "Batu Pahat",
+                    coords: {
+                        lat: 1.8554,
+                        lng: 102.9326
+                    }
+                }, {
+                    name: "Top Vision Eye Specialist Centre Kulai",
+                    address: "No. 56, Jalan Sri Putra 2, Bandar Putra, 81000 Kulai, Johor",
+                    phone: "016-929 9818",
+                    city: "Kulai",
+                    coords: {
+                        lat: 1.6587,
+                        lng: 103.6006
+                    }
+                }, {
+                    name: "Top Vision Eye Specialist Centre Johor Bahru",
+                    address: "A-01-04 & A-01-05, Block A, 1 Tebrau, Jalan Tebrau, Kampung Setanggi, 80250 Johor Bahru, Johor",
+                    phone: "016-755 7298",
+                    city: "Johor Bahru",
+                    coords: {
+                        lat: 1.4648,
+                        lng: 103.7618
+                    }
+                }, {
+                    name: "Kempas Medical Centre",
+                    address: "Lot PTD 7522, Jalan Kempas Baru, 81200 Johor Bahru, Johor",
+                    phone: "07-236 8999",
+                    city: "Johor Bahru",
+                    coords: {
+                        lat: 1.4648,
+                        lng: 103.7618
+                    }
+                }, {
+                    name: "KPJ Batu Pahat Specialist Hospital",
+                    address: "No. 1 Jalan Mutiara Gading 1 Taman Mutiara Gading Sri Gading, 83000 Batu Pahat, Johor",
+                    phone: "07-459 1000",
+                    city: "Batu Pahat",
+                    coords: {
+                        lat: 1.8554,
+                        lng: 102.9326
+                    }
+                }, {
+                    name: "KPJ Puteri Specialist Hospital",
+                    address: "33, Jalan Tun Abdul Razak (Susur 5), 80000 Johor Bahru, Johor",
+                    phone: "07-225 3222",
+                    city: "Johor Bahru",
+                    coords: {
+                        lat: 1.4648,
+                        lng: 103.7618
+                    }
+                }, {
+                    name: "Putra Specialist Hospital (Batu Pahat)",
+                    address: "1, Jalan Peserai, 83000 Batu Pahat, Johor",
+                    phone: "07-413 3333",
+                    city: "Batu Pahat",
+                    coords: {
+                        lat: 1.8554,
+                        lng: 102.9326
+                    }
+                }],
+                kedah: [{
+                    name: "Asia Eye Specialist Centre (Sungai Petani)",
+                    address: "No. 276G & 277G, Jalan Lagenda 11, Lagenda Heights, 08000 Sungai Petani, Kedah",
+                    phone: "04-421 0011",
+                    city: "Sungai Petani",
+                    coords: {
+                        lat: 5.6470,
+                        lng: 100.4870
+                    }
+                }, {
+                    name: "Metro Specialist Hospital",
+                    address: "No. 1, Lorong Metro, 08000 Sungai Petani, Kedah",
+                    phone: "04-423 8888",
+                    city: "Sungai Petani",
+                    coords: {
+                        lat: 5.6470,
+                        lng: 100.4870
+                    }
+                }, {
+                    name: "Top Vision Eye Specialist Centre Sungai Petani",
+                    address: "No. 13, 14 & 15 Jalan Lagenda 2, Lagenda Height, 08000 Sungai Petani, Kedah",
+                    phone: "04-424 6888",
+                    city: "Sungai Petani",
+                    coords: {
+                        lat: 5.6470,
+                        lng: 100.4870
+                    }
+                }, {
+                    name: "Aurelius Hospital Alor Setar",
+                    address: "69, Jalan Perusahaan 1, Taman Bandar Baru Mergong Alor Setar, Kedah",
+                    phone: "04-736 6970",
+                    city: "Alor Setar",
+                    coords: {
+                        lat: 6.1248,
+                        lng: 100.3678
+                    }
+                }, {
+                    name: "Kedah Medical Centre",
+                    address: "527, Mukim Alor Merah Pumpong, Kampung Pumpong, 05250 Alor Setar, Kedah",
+                    phone: "04-730 8878",
+                    city: "Alor Setar",
+                    coords: {
+                        lat: 6.1248,
+                        lng: 100.3678
+                    }
+                }, {
+                    name: "Pantai Hospital Sungai Petani",
+                    address: "1, Persiaran Cempaka, Bandar Aman Jaya, 08000 Sungai Petani, Kedah",
+                    phone: "04-442 8888",
+                    city: "Sungai Petani",
+                    coords: {
+                        lat: 5.6470,
+                        lng: 100.4870
+                    }
+                }],
+                kelantan: [{
+                    name: "KPJ Perdana Specialist Hospital",
+                    address: "Lot PT 37 & 600, Seksyen 14, Jalan Bayam, 15200 Kota Bahru, Kelantan",
+                    phone: "09-745 8000",
+                    city: "Kota Bharu",
+                    coords: {
+                        lat: 6.1247,
+                        lng: 102.2381
+                    }
+                }, {
+                    name: "Hospital Universiti Sains Malaysia (USAINS)",
+                    address: "Usains Tech Services S/B, Kampus Kesihatan, 16150 Kubang Kerian, Kota Bharu, Kelantan",
+                    phone: "09-766 6200",
+                    city: "Kubang Kerian",
+                    coords: {
+                        lat: 6.0982,
+                        lng: 102.2896
+                    }
+                }, {
+                    name: "Top Vision Eye Specialist Centre Kota Bharu",
+                    address: "No. 297, 298, 299 & 300, Jalan Sultan Ibrahim, Seksyen 16, 15050 Kota Bharu, Kelantan",
+                    phone: "09-741 8866",
+                    city: "Kota Bharu",
+                    coords: {
+                        lat: 6.1370,
+                        lng: 102.2380
+                    }
+                }, {
+                    name: "Kota Bharu Medical Centre",
+                    address: "PT 179-184, Jalan Sultan Yahya Petra, 15200 Kota Bharu, Kelantan",
+                    phone: "09-743 3399",
+                    city: "Kota Bharu",
+                    coords: {
+                        lat: 6.1333,
+                        lng: 102.2500
+                    }
+                }],
+                selangor: [{
+                        name: "An-Nur Specialist Hospital",
+                        address: "Jalan Gerbang Wawasan 1, Seksyen 15, 43650 Bandar Baru Bangi, Selangor",
+                        phone: "03-8923 5500",
+                        city: "Bandar Baru Bangi",
+                        coords: {
+                            lat: 2.9569,
+                            lng: 101.7518
+                        }
+                    }, {
+                        name: "Ara Damansara Medical Centre",
+                        address: "Lot 2, Jalan Lapangan Terbang Subang, Seksyen U2, 40150 Shah Alam, Selangor",
+                        phone: "03-5639 1212",
+                        city: "Shah Alam",
+                        coords: {
+                            lat: 3.1086,
+                            lng: 101.5651
+                        }
+                    }, {
+                        name: "Asia Eye Specialist Centre (USJ)",
+                        address: "No. 37, Jalan USJ 10/1F, Taipan Business Centre, 47620 Subang Jaya, Selangor",
+                        phone: "03-8011 8033",
+                        city: "Subang Jaya",
+                        coords: {
+                            lat: 3.0499,
+                            lng: 101.5845
+                        }
+                    }, {
+                        name: "Asia Eye Specialist Centre (Kelana Jaya)",
+                        address: "No. 103-G & 105-G, Jalan SS 25/2, Taman Mayang, 47301 Petaling Jaya, Selangor",
+                        phone: "03-7887 0033",
+                        city: "Petaling Jaya",
+                        coords: {
+                            lat: 3.1096,
+                            lng: 101.5971
+                        }
+                    }, {
+                        name: "Asia Eye Specialist Centre (Kepong)",
+                        address: "No. 60, Jalan Ambong 1, Kepong Baru, 52100 Kuala Lumpur",
+                        phone: "03-6241 8011",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.2105,
+                            lng: 101.6358
+                        }
+                    }, {
+                        name: "Asia Eye Specialist Centre (Serdang)",
+                        address: "67-G & 68-G, Pusat Perniagaan Olive Hill, Jalan BS 1/1, Taman Bukit Serdang, 43300 Seri Kembangan, Selangor",
+                        phone: "03-8940 0388",
+                        city: "Seri Kembangan",
+                        coords: {
+                            lat: 3.0243,
+                            lng: 101.7134
+                        }
+                    }, {
+                        name: "Beacon Hospital",
+                        address: "1 Jalan 215, Section 51, Off Jalan Templer, 46050 Petaling Jaya, Selangor",
+                        phone: "03-7620 7979",
+                        city: "Petaling Jaya",
+                        coords: {
+                            lat: 3.1188,
+                            lng: 101.6360
+                        }
+                    }, {
+                        name: "Bukit Tinggi Medical Centre",
+                        address: "Lot 83211, Persiaran Batu Nilam, Bandar Bukit Tinggi, 41200 Klang, Selangor",
+                        phone: "03-3884 3884",
+                        city: "Klang",
+                        coords: {
+                            lat: 3.0090,
+                            lng: 101.4472
+                        }
+                    }, {
+                        name: "Columbia Asia Hospital – Cheras",
+                        address: "Lot 33107, Jalan Suakasih, 43200 Cheras, Selangor",
+                        phone: "03-9086 9999",
+                        city: "Cheras",
+                        coords: {
+                            lat: 3.0627,
+                            lng: 101.7621
+                        }
+                    }, {
+                        name: "Damansara Specialist Hospital 2 (DSH 2)",
+                        address: "No. 1, Jalan Bukit Lanjan 3, Bukit Lanjan, 60000 Kuala Lumpur, Wilayah Persekutuan Kuala Lumpur",
+                        phone: "03-7717 3000",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.1675,
+                            lng: 101.6079
+                        }
+                    }, {
+                        name: "Gleneagles Kuala Lumpur",
+                        address: "286, Jalan Ampang, 50450 Kuala Lumpur",
+                        phone: "03-4141 3000",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.1611,
+                            lng: 101.7179
+                        }
+                    }, {
+                        name: "KL Eye Specialist Centre",
+                        address: "No 73 & 73-1, Jalan Metro Perdana Barat 1, Taman Usahawan Kepong, 52100 Kuala Lumpur",
+                        phone: "03-6250 0077",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.2089,
+                            lng: 101.6353
+                        }
+                    }, {
+                        name: "KPJ Damansara Specialist Hospital",
+                        address: "119, Jalan SS 20/10, Damansara Utama, 47400 Petaling Jaya, Selangor",
+                        phone: "03-7722 2692",
+                        city: "Petaling Jaya",
+                        coords: {
+                            lat: 3.1345,
+                            lng: 101.6171
+                        }
+                    }, {
+                        name: "KPJ Kajang Specialist Hospital",
+                        address: "Batu 14, Jalan Cheras, 43000 Kajang, Selangor",
+                        phone: "03-8769 2999",
+                        city: "Kajang",
+                        coords: {
+                            lat: 3.0187,
+                            lng: 101.7870
+                        }
+                    }, {
+                        name: "KPJ Klang Specialist Hospital",
+                        address: "No. 102, Persiaran Rajawali/KU1, Bandar Baru Klang, 41150 Klang, Selangor",
+                        phone: "03-3377 7888",
+                        city: "Klang",
+                        coords: {
+                            lat: 3.0442,
+                            lng: 101.4455
+                        }
+                    }, {
+                        name: "KPJ Rawang Specialist Hospital",
+                        address: "Jalan Rawang, Bandar Baru Rawang, 48000 Rawang Selangor",
+                        phone: "03-6099 8999",
+                        city: "Rawang",
+                        coords: {
+                            lat: 3.3213,
+                            lng: 101.5767
+                        }
+                    }, {
+                        name: "KPJ Tawakkal Specialist Hospital",
+                        address: "1, Jalan Pahang Barat, 53000 Kuala Lumpur",
+                        phone: "03-4026 7777",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.2006,
+                            lng: 101.7033
+                        }
+                    }, {
+                        name: "Optimax Bandar Sunway Eye Specialist Centre",
+                        address: "Ground Floor, No. 11, Jalan PJS 11/28B, Bandar Sunway, 46150 Petaling Jaya, Selangor",
+                        phone: "03-80841212",
+                        city: "Petaling Jaya",
+                        coords: {
+                            lat: 3.0716,
+                            lng: 101.6053
+                        }
+                    }, {
+                        name: "Optimax Klang Eye Specialist Centre",
+                        address: "No. 17 and 19, Jalan Bayu Tinggi 7, 41200 Klang, Selangor",
+                        phone: "03-33851186",
+                        city: "Klang",
+                        coords: {
+                            lat: 3.0413,
+                            lng: 101.4502
+                        }
+                    }, {
+                        name: "Optimax Shah Alam Eye Specialist Centre",
+                        address: "No. 50-G & 52-G, Blok 3, Jalan Pahat G 15/G, Dataran Otomobil, Seksyen 15, 40200 Shah Alam, Selangor",
+                        phone: "03-58701168",
+                        city: "Shah Alam",
+                        coords: {
+                            lat: 3.0738,
+                            lng: 101.5276
+                        }
+                    }, {
+                        name: "Optimax Eye Specialist Centre (Damansara Jaya)",
+                        address: "C38-40, Concourse Floor, Atria Shopping Gallery, Jalan SS22/23, Damansara Jaya, 47400 Petaling Jaya, Selangor",
+                        phone: "03-78900168",
+                        city: "Petaling Jaya",
+                        coords: {
+                            lat: 3.1332,
+                            lng: 101.6176
+                        }
+                    }, {
+                        name: "Optimax Eye Specialist Centre (TTDI)",
+                        address: "Unit 2-2-1, Bangunan AHP, Jalan Tun Mohd Fuad 3, Taman Tun Dr. Ismail, 6000 WP, Kuala Lumpur",
+                        phone: "03-78902626",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.1390,
+                            lng: 101.6271
+                        }
+                    }, {
+                        name: "Optimax Kuala Lumpur Eye Specialist Centre",
+                        address: "Ground Floor, No. 145, Jalan Radin Bagus, Seri Petaling, 57000 Kuala Lumpur",
+                        phone: "03-27796499",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.0732,
+                            lng: 101.6931
+                        }
+                    }, {
+                        name: "Pantai Hospital Kuala Lumpur",
+                        address: "8, Jalan Bukit Pantai, 59100 Kuala Lumpur",
+                        phone: "03-2296 0888",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.1198,
+                            lng: 101.6652
+                        }
+                    }, {
+                        name: "ParkCity Medical Centre",
+                        address: "2, Jalan Intisari Perdana, Desa Parkcity, 52200 Kuala Lumpur",
+                        phone: "03-5639 1212",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.1966,
+                            lng: 101.6148
+                        }
+                    }, {
+                        name: "Sri Kota Specialist Medical Centre",
+                        address: "Jalan Mohet, 41000 Klang, Selangor",
+                        phone: "03-3375 7799",
+                        city: "Klang",
+                        coords: {
+                            lat: 3.0378,
+                            lng: 101.4519
+                        }
+                    }, {
+                        name: "Subang Jaya Medical Centre",
+                        address: "1, Jalan SS12/1A, 47500 Subang Jaya, Selangor",
+                        phone: "03-5639 1212",
+                        city: "Subang Jaya",
+                        coords: {
+                            lat: 3.0813,
+                            lng: 101.5845
+                        }
+                    }, {
+                        name: "Sunway Medical Centre",
+                        address: "5, Jalan Lagoon Selatan, Bandar Sunway, 46150 Petaling Jaya, Selangor",
+                        phone: "03-7491 9191",
+                        city: "Petaling Jaya",
+                        coords: {
+                            lat: 3.0716,
+                            lng: 101.6063
+                        }
+                    }, {
+                        name: "Sunway Medical Centre Velocity",
+                        address: "Pusat Perubatan Sunway Velocity, Lingkaran SV, Sunway Velocity, 55100, Kuala Lumpur",
+                        phone: "03-9772 9191",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.1284,
+                            lng: 101.7353
+                        }
+                    }, {
+                        name: "Top Vision Eye Specialist Centre Setia Alam",
+                        address: "Unit 11-2 & 11-3, No. 2, Block 2, Jalan Setia Prima (S) U13/S, Setia Alam, Seksyen U13, 40170 Shah Alam, Selangor",
+                        phone: "03-33439911",
+                        city: "Shah Alam",
+                        coords: {
+                            lat: 3.1089,
+                            lng: 101.4706
+                        }
+                    }, {
+                        name: "Top Vision Eye Specialist Centre Banting",
+                        address: "1-G-A, Jalan Sultan Abdul Samad, 42700 Banting, Selangor",
+                        phone: "03-31818933",
+                        city: "Banting",
+                        coords: {
+                            lat: 2.8178,
+                            lng: 101.5032
+                        }
+                    }, {
+                        name: "Top Vision Eye Specialist Centre Kuala Selangor",
+                        address: "No. 53A & 55, Jalan Peninsula Utama 1, Peninsula Park, Pasir Penambang, 45000 Kuala Selangor, Selangor",
+                        phone: "03-32895500",
+                        city: "Kuala Selangor",
+                        coords: {
+                            lat: 3.3421,
+                            lng: 101.2487
+                        }
+                    }, {
+                        name: "UM Specialist Centre",
+                        address: "UMSC Building, Lot 28, Lorong Universiti, Lembah Pantai, 50603 Kuala Lumpur",
+                        phone: "03-7841 4000",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.1187,
+                            lng: 101.6561
+                        }
+                    }, {
+                        name: "Assunta Hospital",
+                        address: "Jalan Templer, 46990 Petaling Jaya, Selangor",
+                        phone: "03-7680 7000",
+                        city: "Petaling Jaya",
+                        coords: {
+                            lat: 3.0913,
+                            lng: 101.6395
+                        }
+                    }, {
+                        name: "Avisena Specialist Hospital",
+                        address: "No. 4, Jalan Ikhtisas, Seksyen 14, 40000 Shah Alam, Selangor Darul Ehsan, Malaysia",
+                        phone: "03-5155 1966",
+                        city: "Shah Alam",
+                        coords: {
+                            lat: 3.0748,
+                            lng: 101.5256
+                        }
+                    }, {
+                        name: "Avisena Women's & Children's Specialist Hospital",
+                        address: "No. 3, Jalan Perdagangan 14/4, Seksyen 14, 40000 Shah Alam, Selangor Darul Ehsan, Malaysia",
+                        phone: "03-5155 1966",
+                        city: "Shah Alam",
+                        coords: {
+                            lat: 3.0759,
+                            lng: 101.5248
+                        }
+                    }, {
+                        name: "Cardiac Vascular Sentral Kuala Lumpur",
+                        address: "Jalan Stesen Sentral 5, Kuala Lumpur Sentral, 50470 Kuala Lumpur",
+                        phone: "03-2276 7000",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.1353,
+                            lng: 101.6864
+                        }
+                    }, {
+                        name: "Columbia Asia Hospital - Bukit Jalil",
+                        address: "No. 9, Jalan Jalil Perkasa 7, Bukit Jalil, 57000, Kuala Lumpur",
+                        phone: "03-8657 9888",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.0553,
+                            lng: 101.6698
+                        }
+                    }, {
+                        name: "Columbia Asia Hospital - Bukit Rimau",
+                        address: "3, Persiaran Anggerik Eria, Bukit Rimau, Seksyen 32, 40460 Shah Alam, Selangor",
+                        phone: "03-5125 9999",
+                        city: "Shah Alam",
+                        coords: {
+                            lat: 3.0965,
+                            lng: 101.4904
+                        }
+                    }, {
+                        name: "Columbia Asia Hospital - Klang",
+                        address: "Jalan Mahkota 1/KU 2, Mutiara Bukit Raja 2, KM2 off Jalan Meru, 41050 Klang, Selangor Darul Ehsan",
+                        phone: "03-3346 7999",
+                        city: "Klang",
+                        coords: {
+                            lat: 3.0649,
+                            lng: 101.4670
+                        }
+                    }, {
+                        name: "Columbia Asia Hospital - Puchong",
+                        address: "1 Lebuh Puteri, Bandar Puteri Puchong, 47100 Puchong, Selango",
+                        phone: "03-8064 8688",
+                        city: "Puchong",
+                        coords: {
+                            lat: 2.9933,
+                            lng: 101.6168
+                        }
+                    }, {
+                        name: "Columbia Asia Hospital - Setapak",
+                        address: "No. 1, Jalan Danau Saujana, Off Jalan Genting Klang, 53300 Kuala Lumpur",
+                        phone: "03-4145 9999",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.1988,
+                            lng: 101.7126
+                        }
+                    }, {
+                        name: "Columbia Asia Hospital - Petaling Jaya",
+                        address: "69, Jalan 13/6, Seksyen 13, 46200 Petaling Jaya, Selangor",
+                        phone: "03-7949 9999",
+                        city: "Petaling Jaya",
+                        coords: {
+                            lat: 3.0996,
+                            lng: 101.6408
+                        }
+                    }, {
+                        name: "Institut Jantung Negara",
+                        address: "145, Jalan Tun Razak, 50400 Kuala Lumpur",
+                        phone: "03-2617 8200",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.1665,
+                            lng: 101.7149
+                        }
+                    }, {
+                        name: "KPJ Ampang Puteri Specialist Hospital",
+                        address: "1, Jalan Mamanda 9, Taman Dato Ahmad Razali, 68000 Ampang, Selangor",
+                        phone: "03-4270 2500",
+                        city: "Ampang",
+                        coords: {
+                            lat: 3.1476,
+                            lng: 101.7618
+                        }
+                    }, {
+                        name: "KPJ Kuala Selangor Specialist Hospital",
+                        address: "No. 1, Jalan Peninsula Tanjung, Peninsula Utama, 45000, Kuala Selangor, Selangor",
+                        phone: "03-6078 5888",
+                        city: "Kuala Selangor",
+                        coords: {
+                            lat: 3.3408,
+                            lng: 101.2499
+                        }
+                    }, {
+                        name: "KPJ Selangor Specialist Hospital",
+                        address: "Lot 1, Jalan Singa 20/1, Section 20, 40300 Shah Alam, Selangor",
+                        phone: "03-5543 1111",
+                        city: "Shah Alam",
+                        coords: {
+                            lat: 3.0583,
+                            lng: 101.5251
+                        }
+                    }, {
+                        name: "Pantai Hospital Ampang",
+                        address: "Jalan Perubatan 1, Pandan Indah, 55100 Kuala Lumpur",
+                        phone: "03-4289 2828",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.1345,
+                            lng: 101.7521
+                        }
+                    }, {
+                        name: "Pantai Hospital Cheras",
+                        address: "1, Jalan 1/96A, Taman Cheras Makmur, 56100 Kuala Lumpur",
+                        phone: "03-9145 2888",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.1044,
+                            lng: 101.7433
+                        }
+                    }, {
+                        name: "Pantai Hospital Klang",
+                        address: "Lot 5921, Persiaran Raja Muda Musa, 41200 Klang, Selangor",
+                        phone: "03-3258 5500",
+                        city: "Klang",
+                        coords: {
+                            lat: 3.0379,
+                            lng: 101.4504
+                        }
+                    }, {
+                        name: "KPJ Sentosa KL Specialist Medical Centre",
+                        address: "36, Jalan Chemur, Kompleks Damai, 50400 Kuala Lumpur",
+                        phone: "03-4043 7166",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.1701,
+                            lng: 101.6991
+                        }
+                    }, {
+                        name: "Sentosa Specialist Hospital",
+                        address: "No 27-29, Lorong Temenggung 15A, Dan No. 2, 4 & 6, Lorong Temenggung 15D, Off Jalan Sungai Jati, 41200 Klang, Selangor",
+                        phone: "03-5162 8819",
+                        city: "Klang",
+                        coords: {
+                            lat: 3.0404,
+                            lng: 101.4463
+                        }
+                    }, {
+                        name: "Sungai Long Specialist Hospital",
+                        address: "Pt 21147, Persiaran SL 1, Bandar Sg Long, 43000 Kajang, Selangor",
+                        phone: "03-9010 3788",
+                        city: "Kajang",
+                        coords: {
+                            lat: 3.0456,
+                            lng: 101.8023
+                        }
+                    }, {
+                        name: "Thomson Hospital Kota Damansara",
+                        address: "11 Jalan Technologi, Taman Sains Selangor 1, PJU 5, Kota Damansara, 47810 Petaling Jaya, Selangor",
+                        phone: "03-6287 1111",
+                        city: "Petaling Jaya",
+                        coords: {
+                            lat: 3.1639,
+                            lng: 101.5897
+                        }
+                    }, {
+                        name: "Tung Shin Hospital",
+                        address: "102, Jalan Pudu, 55100 Kuala Lumpur",
+                        phone: "03-2037 2288",
+                        city: "Kuala Lumpur",
+                        coords: {
+                            lat: 3.1444,
+                            lng: 101.7042
+                        }
+                    }
 
-        const stateSelect = document.getElementById('stateSelect');
-        const citySelect = document.getElementById('citySelect');
-        const citySelector = document.getElementById('citySelector');
-        const hospitalsList = document.getElementById('hospitalsList');
-        const mapContainer = document.getElementById('mapContainer');
-        const mapControls = document.getElementById('mapControls');
-        const hospitalInfo = document.getElementById('hospitalInfo');
-        const googleMapsBtn = document.getElementById('googleMapsBtn');
-        const copyAddressBtn = document.getElementById('copyAddressBtn');
+                ],
+                malacca: [{
+                    name: "Mahkota Medical Centre",
+                    address: "3, Mahkota Melaka, Jalan Merdeka, 75000 Melaka",
+                    phone: "06-281 3333",
+                    "city": "Melaka",
+                    coords: {
+                        lat: 2.1940,
+                        lng: 102.2490
+                    }
+                }, {
+                    name: "Putra Specialist Hospital (Melaka)",
+                    address: "169, Jalan Bendahara, 75100 Melaka",
+                    phone: "06-283 5888",
+                    city: "Melaka",
+                    coords: {
+                        lat: 2.1994,
+                        lng: 102.2463
+                    }
+                }, {
+                    name: "Southern Specialist Eye Centre",
+                    address: "No. 309 & 310, Jalan Melaka Raya 1, Taman Melaka Raya, 75000 Melaka",
+                    phone: "06-2833510",
+                    city: "Melaka",
+                    coords: {
+                        lat: 2.1899,
+                        lng: 102.2515
+                    }
+                }, {
+                    name: "Oriental Melaka Straits Medical Centre",
+                    address: "Pusat Perubatan Klebang, 75200 Melaka",
+                    phone: "06-315 8888",
+                    city: "Melaka",
+                    coords: {
+                        lat: 2.2191,
+                        lng: 102.1952
+                    }
+                }, {
+                    name: "Pantai Hospital Melaka",
+                    address: "2418-1, KM 8, Lebuh Ayer Keroh, 75450 Melaka",
+                    phone: "06-231 9999",
+                    city: "Melaka",
+                    coords: {
+                        lat: 2.2640,
+                        lng: 102.2839
+                    }
+                }],
+            };
 
-        stateSelect.addEventListener('change', function() {
-            const selectedState = this.value;
-            if (selectedState && hospitals[selectedState]) {
-                showCitySelector(selectedState);
-                displayHospitals(hospitals[selectedState]);
-            } else {
-                hideCitySelector();
-                hospitalsList.innerHTML = '<div class="no-selection"><p>请先选择州属以查看该地区的医院</p></div>';
-                hideMap();
+            const cities = {
+                johor: ["Johor Bahru", "Skudai", "Iskandar Puteri", "Muar", "Segamat", "Kluang", "Batu Pahat", "Kulai", "Pasir Gudang"],
+                kedah: ["Sungai Petani", "Alor Setar"],
+                kelantan: ["Kota Bharu", "Kubang Kerian", "Machang", "Pasir Mas", "Tanah Merah", "Bachok", "Pasir Puteh", "Kuala Krai", "Gua Musang", "Jeli"],
+                selangor: ["Ampang", "Banting", "Bandar Baru Bangi", "Cheras", "Kajang", "Klang", "Kuala Lumpur", "Kuala Selangor", "Petaling Jaya", "Puchong", "Rawang", "Seri Kembangan", "Shah Alam", "Subang Jaya"],
+
+            };
+
+            let selectedHospital = null;
+
+            const stateSelect = document.getElementById('stateSelect');
+            const citySelect = document.getElementById('citySelect');
+            const citySelector = document.getElementById('citySelector');
+            const hospitalsList = document.getElementById('hospitalsList');
+            const mapContainer = document.getElementById('mapContainer');
+            const mapControls = document.getElementById('mapControls');
+            const hospitalInfo = document.getElementById('hospitalInfo');
+            const googleMapsBtn = document.getElementById('googleMapsBtn');
+            const copyAddressBtn = document.getElementById('copyAddressBtn');
+
+            stateSelect.addEventListener('change', function() {
+                const selectedState = this.value;
+                if (selectedState && hospitals[selectedState]) {
+                    showCitySelector(selectedState);
+                    displayHospitals(hospitals[selectedState]);
+                } else {
+                    hideCitySelector();
+                    hospitalsList.innerHTML = '<div class="no-selection"><p>请先选择州属以查看该地区的医院</p></div>';
+                    hideMap();
+                }
+            });
+
+            citySelect.addEventListener('change', function() {
+                const selectedState = stateSelect.value;
+                const selectedCity = this.value;
+
+                if (selectedState && hospitals[selectedState]) {
+                    let hospitalsToShow = hospitals[selectedState];
+
+                    if (selectedCity) {
+                        hospitalsToShow = hospitals[selectedState].filter(hospital =>
+                            hospital.city === selectedCity
+                        );
+                    }
+
+                    displayHospitals(hospitalsToShow);
+
+                    if (hospitalsToShow.length === 0) {
+                        hospitalsList.innerHTML = '<div class="no-selection"><p>所选城市暂无合作医院</p></div>';
+                    }
+                }
+            });
+
+            function showCitySelector(state) {
+                if (cities[state]) {
+                    citySelect.innerHTML = '<option value="">所有城市</option>';
+                    cities[state].forEach(city => {
+                        const option = document.createElement('option');
+                        option.value = city;
+                        option.textContent = city;
+                        citySelect.appendChild(option);
+                    });
+                    citySelector.style.display = 'block';
+                } else {
+                    hideCitySelector();
+                }
             }
-        });
 
-        citySelect.addEventListener('change', function() {
-            const selectedState = stateSelect.value;
-            const selectedCity = this.value;
-
-            if (selectedState && hospitals[selectedState]) {
-                let hospitalsToShow = hospitals[selectedState];
-
-                if (selectedCity) {
-                    hospitalsToShow = hospitals[selectedState].filter(hospital =>
-                        hospital.city === selectedCity
-                    );
-                }
-
-                displayHospitals(hospitalsToShow);
-
-                if (hospitalsToShow.length === 0) {
-                    hospitalsList.innerHTML = '<div class="no-selection"><p>所选城市暂无合作医院</p></div>';
-                }
+            function hideCitySelector() {
+                citySelector.style.display = 'none';
+                citySelect.value = '';
             }
-        });
 
-        function showCitySelector(state) {
-            if (cities[state]) {
-                citySelect.innerHTML = '<option value="">所有城市</option>';
-                cities[state].forEach(city => {
-                    const option = document.createElement('option');
-                    option.value = city;
-                    option.textContent = city;
-                    citySelect.appendChild(option);
-                });
-                citySelector.style.display = 'block';
-            } else {
-                hideCitySelector();
-            }
-        }
-
-        function hideCitySelector() {
-            citySelector.style.display = 'none';
-            citySelect.value = '';
-        }
-
-        function displayHospitals(stateHospitals) {
-            hospitalsList.innerHTML = '';
-            stateHospitals.forEach((hospital, index) => {
-                const hospitalItem = document.createElement('div');
-                hospitalItem.className = 'hospital-item';
-                hospitalItem.innerHTML = `
+            function displayHospitals(stateHospitals) {
+                hospitalsList.innerHTML = '';
+                stateHospitals.forEach((hospital, index) => {
+                    const hospitalItem = document.createElement('div');
+                    hospitalItem.className = 'hospital-item';
+                    hospitalItem.innerHTML = `
                     <div class="hospital-name">${hospital.name}</div>
                     <div class="hospital-address">${hospital.address}</div>
                 `;
-                hospitalItem.addEventListener('click', () => selectHospital(hospital, hospitalItem));
-                hospitalsList.appendChild(hospitalItem);
-            });
-        }
+                    hospitalItem.addEventListener('click', () => selectHospital(hospital, hospitalItem));
+                    hospitalsList.appendChild(hospitalItem);
+                });
+            }
 
-        function selectHospital(hospital, element) {
-            document.querySelectorAll('.hospital-item').forEach(item => {
-                item.classList.remove('active');
-            });
+            function selectHospital(hospital, element) {
+                document.querySelectorAll('.hospital-item').forEach(item => {
+                    item.classList.remove('active');
+                });
 
-            element.classList.add('active');
+                element.classList.add('active');
 
-            selectedHospital = hospital;
-            showHospitalOnMap(hospital);
-            showHospitalInfo(hospital);
-        }
+                selectedHospital = hospital;
+                showHospitalOnMap(hospital);
+                showHospitalInfo(hospital);
+            }
 
-        function showHospitalOnMap(hospital) {
-            mapContainer.innerHTML = `
+            function showHospitalOnMap(hospital) {
+                mapContainer.innerHTML = `
                 <iframe 
                     class="map-frame"
                     src="https://maps.google.com/maps?q=${encodeURIComponent(hospital.address)}&t=&z=15&ie=UTF8&iwloc=&output=embed"
@@ -1296,74 +1400,93 @@
                     referrerpolicy="no-referrer-when-downgrade">
                 </iframe>
             `;
-            mapControls.style.display = 'block';
-        }
+                mapControls.style.display = 'block';
+            }
 
-        function showHospitalInfo(hospital) {
-            hospitalInfo.innerHTML = `
+            function showHospitalInfo(hospital) {
+                hospitalInfo.innerHTML = `
                 <h4>${hospital.name}</h4>
                 <p><strong>📍 地址:</strong> ${hospital.address}</p>
                 <p><strong>📞 电话:</strong> ${hospital.phone}</p>
                 <p><strong>🏙️ 城市:</strong> ${hospital.city}</p>
             `;
 
-            googleMapsBtn.href = `https://maps.google.com/maps?q=${encodeURIComponent(hospital.address)}`;
-        }
+                googleMapsBtn.href = `https://maps.google.com/maps?q=${encodeURIComponent(hospital.address)}`;
+            }
 
-        function hideMap() {
-            mapContainer.innerHTML = '<div class="map-placeholder"><p>🏥 选择医院以查看位置</p></div>';
-            mapControls.style.display = 'none';
-            selectedHospital = null;
-        }
+            function hideMap() {
+                mapContainer.innerHTML = '<div class="map-placeholder"><p>🏥 选择医院以查看位置</p></div>';
+                mapControls.style.display = 'none';
+                selectedHospital = null;
+            }
 
-        copyAddressBtn.addEventListener('click', async function() {
-            if (selectedHospital) {
-                try {
-                    await navigator.clipboard.writeText(selectedHospital.address);
-                    const originalText = this.innerHTML;
-                    this.innerHTML = '✅ 已复制!';
-                    this.style.background = '#27ae60';
+            copyAddressBtn.addEventListener('click', async function() {
+                if (selectedHospital) {
+                    try {
+                        await navigator.clipboard.writeText(selectedHospital.address);
+                        const originalText = this.innerHTML;
+                        this.innerHTML = '✅ 已复制!';
+                        this.style.background = '#27ae60';
 
-                    setTimeout(() => {
-                        this.innerHTML = originalText;
-                        this.style.background = '';
-                    }, 2000);
-                } catch (err) {
-                    const textArea = document.createElement('textarea');
-                    textArea.value = selectedHospital.address;
-                    document.body.appendChild(textArea);
-                    textArea.select();
-                    document.execCommand('copy');
-                    document.body.removeChild(textArea);
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                            this.style.background = '';
+                        }, 2000);
+                    } catch (err) {
+                        const textArea = document.createElement('textarea');
+                        textArea.value = selectedHospital.address;
+                        document.body.appendChild(textArea);
+                        textArea.select();
+                        document.execCommand('copy');
+                        document.body.removeChild(textArea);
 
-                    const originalText = this.innerHTML;
-                    this.innerHTML = '✅ 已复制!';
-                    this.style.background = '#27ae60';
+                        const originalText = this.innerHTML;
+                        this.innerHTML = '✅ 已复制!';
+                        this.style.background = '#27ae60';
 
-                    setTimeout(() => {
-                        this.innerHTML = originalText;
-                        this.style.background = '';
-                    }, 2000);
+                        setTimeout(() => {
+                            this.innerHTML = originalText;
+                            this.style.background = '';
+                        }, 2000);
+                    }
                 }
+            });
+
+            function toggleCategory(element) {
+                const content = element.nextElementSibling;
+                const icon = element.querySelector('.icon-rotate');
+
+                content.classList.toggle('active');
+                icon.classList.toggle('rotated');
             }
-        });
 
-        function toggleCategory(element) {
-            const content = element.nextElementSibling;
-            const icon = element.querySelector('.icon-rotate');
+            // 默认展开第一个分类
+            document.addEventListener('DOMContentLoaded', function() {
+                const firstCategory = document.querySelector('.category-header');
+                if (firstCategory) {
+                    toggleCategory(firstCategory);
+                }
+            });
 
-            content.classList.toggle('active');
-            icon.classList.toggle('rotated');
-        }
 
-        // 默认展开第一个分类
-        document.addEventListener('DOMContentLoaded', function() {
-            const firstCategory = document.querySelector('.category-header');
-            if (firstCategory) {
-                toggleCategory(firstCategory);
-            }
-        });
-    </script>
+
+
+            const buttons = document.querySelectorAll(".filter-btn");
+            const contents = document.querySelectorAll(".detail-content");
+
+            buttons.forEach(btn => {
+                btn.addEventListener("click", () => {
+                    // 移除 active
+                    buttons.forEach(b => b.classList.remove("active"));
+                    contents.forEach(c => c.classList.remove("active"));
+
+                    // 当前按钮加 active
+                    btn.classList.add("active");
+                    const target = btn.getAttribute("data-target");
+                    document.getElementById(target).classList.add("active");
+                });
+            });
+        </script>
 </body>
 
 </html>
