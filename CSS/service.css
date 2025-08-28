@@ -1,768 +1,958 @@
-        body {
-            margin: 0;
-            padding: 0;
-            font-family: Arial, sans-serif;
+    body {
+        margin: 0;
+        padding: 0;
+        font-family: Arial, sans-serif;
+    }
+    
+    .services {
+        text-align: center;
+        padding: 60px 20px;
+        background: #f8f9fa;
+        /* 改成和医院 finder 区一致的浅灰背景 */
+    }
+    
+    .services .title {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #AF1F1F;
+        /* 用主色调强调标题 */
+        font-family: 'Jacques Francois', serif;
+        /* 和主页风格统一 */
+    }
+    /* 分类按钮 */
+    
+    .filter-buttons {
+        margin-bottom: 25px;
+    }
+    
+    .filter-btn {
+        padding: 10px 22px;
+        margin: 0 8px;
+        border: 2px solid #AF1F1F;
+        border-radius: 5px;
+        background: white;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        font-weight: 600;
+        color: #AF1F1F;
+    }
+    
+    .filter-btn.active,
+    .filter-btn:hover {
+        background: #AF1F1F;
+        color: #fff;
+        box-shadow: 0 4px 10px rgba(175, 31, 31, 0.2);
+    }
+    /* 内容展示区 */
+    
+    .service-details {
+        margin-top: 35px;
+        text-align: left;
+        max-width: 80%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .detail-content {
+        display: none;
+        background: #fff;
+        padding: 30px;
+        border-radius: 15px;
+        box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
+        border-left: 5px solid #AF1F1F;
+        /* 左边加深红强调条 */
+        animation: fadeIn 0.4s ease;
+    }
+    
+    .coverage {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        /* 左右两列 */
+        gap: 40px;
+        /* 列之间留点空隙 */
+        margin-top: 20px;
+    }
+    
+    .coverage h4 {
+        color: #b22222;
+        /* 标题红色，跟你原本的风格 */
+        margin-bottom: 10px;
+    }
+    
+    .coverage ul li {
+        margin: 8px 0;
+        line-height: 1.6;
+    }
+    
+    .images-bottom {
+        display: flex;
+        justify-content: space-between;
+        margin-top: 20px;
+    }
+    
+    .images-bottom img {
+        max-width: 200px;
+        /* 控制大小 */
+        height: auto;
+    }
+    
+    #bear {
+        max-width: 140px;
+        /* 小熊再小一点 */
+    }
+    
+    #PRULady b {
+        display: block;
+        margin: 8px 0;
+        font-weight: bold;
+    }
+    
+    .detail-content.active {
+        display: block;
+    }
+    
+    .detail-content h3 {
+        margin-top: 0;
+        font-size: 1.5rem;
+        color: #AF1F1F;
+        margin-bottom: 15px;
+    }
+    
+    .detail-content p {
+        margin-bottom: 12px;
+        line-height: 1.7;
+        color: #444;
+    }
+    
+    .PruLady b {
+        color: #AF1F1F;
+    }
+    
+    .PruLady p {
+        margin: 8px 0;
+        line-height: 1.6;
+    }
+    
+    .PruLady strong {
+        font-weight: bold;
+        display: block;
+        margin: 6px 0;
+    }
+    
+    .PruMan h4 {
+        font-size: 20px;
+        margin-bottom: 15px;
+        color: #c62828;
+        /* 红色强调 */
+        font-weight: bold;
+    }
+    
+    .PruMan ul li b {
+        font-size: 16px;
+        color: #c62828;
+    }
+    /* 描述文字 */
+    
+    .PruMan ul li p {
+        margin: 5px 0 0 0;
+        font-size: 14px;
+        color: #555;
+    }
+    /* 分隔线 */
+    
+    .detail-content.active {
+        display: block;
+    }
+    
+    .noticblock {
+        margin-top: 20px;
+    }
+    
+    .notice-category {
+        margin-bottom: 15px;
+        border: 1px solid #e1e8ed;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        transition: all 0.3s ease;
+    }
+    
+    .notice-category:hover {
+        border-color: #c9d3da;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    }
+    
+    .category-header {
+        padding: 18px 20px;
+        background-color: #f8f9fa;
+        cursor: pointer;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        transition: background-color 0.3s;
+    }
+    
+    .category-header:hover {
+        background-color: #eef2f6;
+    }
+    
+    .notice-category table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+        font-size: 15px;
+        border-radius: 8px;
+        overflow: hidden;
+        /* 保证圆角生效 */
+        box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    }
+    
+    .notice-category th,
+    .notice-category td {
+        padding: 12px 15px;
+        text-align: left;
+        border-bottom: 1px solid #e6e6e6;
+    }
+    
+    .notice-category th {
+        background: #c62828;
+        /* 标题栏背景色（深蓝色） */
+        color: #fff;
+        font-weight: bold;
+    }
+    
+    .notice-category tr:nth-child(even) {
+        background-color: #f9f9f9;
+        /* 偶数行浅灰背景 */
+    }
+    
+    .notice-category tr:hover {
+        background-color: #f1f7ff;
+        /* hover 高亮 */
+        transition: 0.3s;
+    }
+    
+    .notice-category td {
+        color: #333;
+        line-height: 1.5;
+    }
+    
+    .category-header h3 {
+        margin: 0;
+        font-size: 1.25rem;
+        color: #AF1F1F;
+        text-align: left;
+        /* 确保标题左对齐 */
+    }
+    
+    .category-content {
+        padding: 0;
+        max-height: 0;
+        overflow: hidden;
+        transition: max-height 0.4s ease-out, padding 0.3s ease;
+        background-color: white;
+        text-align: left;
+        /* 内容左对齐 */
+    }
+    
+    .category-content.active {
+        padding: 20px;
+        max-height: 1000px;
+    }
+    
+    .category-content p {
+        margin-bottom: 15px;
+        line-height: 1.7;
+        color: #444;
+        text-align: left;
+        /* 段落左对齐 */
+    }
+    
+    .category-content ul {
+        margin-bottom: 15px;
+        padding-left: 30px;
+        /* 调整列表左对齐的缩进 */
+        text-align: left;
+    }
+    
+    .category-content li {
+        margin-bottom: 10px;
+        line-height: 1.6;
+        text-align: left;
+        /* 列表项左对齐 */
+    }
+    
+    .icon-rotate {
+        transition: transform 0.3s;
+        font-size: 1.2rem;
+        color: #AF1F1F;
+    }
+    
+    .icon-rotate.rotated {
+        transform: rotate(180deg);
+    }
+    
+    .important-note {
+        background-color: #fff9e6;
+        border-left: 4px solid #ffcc00;
+        padding: 18px;
+        margin: 20px 0;
+        border-radius: 4px;
+        text-align: left;
+        /* 重要提示左对齐 */
+    }
+    
+    .important-note h4 {
+        color: #e6a600;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+    }
+    
+    footer {
+        text-align: center;
+        margin-top: 40px;
+        padding-top: 20px;
+        border-top: 1px solid #e6e6e6;
+        color: #666;
+        font-size: 0.9rem;
+    }
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
         }
-        
-        .services {
-            text-align: center;
-            padding: 60px 20px;
-            background: #f8f9fa;
-            /* 改成和医院 finder 区一致的浅灰背景 */
+        to {
+            opacity: 1;
+            transform: translateY(0);
         }
-        
-        .services .title {
-            font-size: 2rem;
-            margin-bottom: 10px;
-            color: #AF1F1F;
-            /* 用主色调强调标题 */
-            font-family: 'Jacques Francois', serif;
-            /* 和主页风格统一 */
-        }
-        /* 分类按钮 */
-        
-        .filter-buttons {
-            margin-bottom: 25px;
-        }
-        
-        .filter-btn {
-            padding: 10px 22px;
-            margin: 0 8px;
-            border: 2px solid #AF1F1F;
-            border-radius: 5px;
-            background: white;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            font-weight: 600;
-            color: #AF1F1F;
-        }
-        
-        .filter-btn.active,
-        .filter-btn:hover {
-            background: #AF1F1F;
-            color: #fff;
-            box-shadow: 0 4px 10px rgba(175, 31, 31, 0.2);
-        }
-        /* 内容展示区 */
-        
-        .service-details {
-            margin-top: 35px;
-            text-align: left;
-            max-width: 80%;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .detail-content {
-            display: none;
-            background: #fff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.08);
-            border-left: 5px solid #AF1F1F;
-            /* 左边加深红强调条 */
-            animation: fadeIn 0.4s ease;
-        }
-        
-        .coverage {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            /* 左右两列 */
-            gap: 40px;
-            /* 列之间留点空隙 */
-            margin-top: 20px;
-        }
-        
-        .coverage h4 {
-            color: #b22222;
-            /* 标题红色，跟你原本的风格 */
-            margin-bottom: 10px;
-        }
-        
-        .coverage ul li {
-            margin: 8px 0;
-            line-height: 1.6;
-        }
-        
-        .images-bottom {
-            display: flex;
-            justify-content: space-between;
-            margin-top: 20px;
-        }
-        
-        .images-bottom img {
-            max-width: 200px;
-            /* 控制大小 */
-            height: auto;
-        }
-        
-        #bear {
-            max-width: 140px;
-            /* 小熊再小一点 */
-        }
-        
-        #PRULady b {
-            display: block;
-            margin: 8px 0;
-            font-weight: bold;
-        }
-        
-        .detail-content.active {
-            display: block;
-        }
-        
-        .detail-content h3 {
-            margin-top: 0;
-            font-size: 1.5rem;
-            color: #AF1F1F;
-            margin-bottom: 15px;
-        }
-        
-        .detail-content p {
-            margin-bottom: 12px;
-            line-height: 1.7;
-            color: #444;
-        }
-        
-        .PruLady b {
-            color: #AF1F1F;
-        }
-        
-        .PruLady p {
-            margin: 8px 0;
-            line-height: 1.6;
-        }
-        
-        .PruLady strong {
-            font-weight: bold;
-            display: block;
-            margin: 6px 0;
-        }
-        
-        .PruMan h4 {
-            font-size: 20px;
-            margin-bottom: 15px;
-            color: #c62828;
-            /* 红色强调 */
-            font-weight: bold;
-        }
-        
-        .PruMan ul li b {
-            font-size: 16px;
-            color: #c62828;
-        }
-        /* 描述文字 */
-        
-        .PruMan ul li p {
-            margin: 5px 0 0 0;
-            font-size: 14px;
-            color: #555;
-        }
-        /* 分隔线 */
-        
-        .detail-content.active {
-            display: block;
-        }
-        
-        .noticblock {
-            margin-top: 20px;
-        }
-        
-        .notice-category {
-            margin-bottom: 15px;
-            border: 1px solid #e1e8ed;
-            border-radius: 8px;
-            overflow: hidden;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            transition: all 0.3s ease;
-        }
-        
-        .notice-category:hover {
-            border-color: #c9d3da;
-            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
-        }
-        
-        .category-header {
-            padding: 18px 20px;
-            background-color: #f8f9fa;
-            cursor: pointer;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            transition: background-color 0.3s;
-        }
-        
-        .category-header:hover {
-            background-color: #eef2f6;
-        }
-        
-        .notice-category table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-            font-size: 15px;
-            border-radius: 8px;
-            overflow: hidden;
-            /* 保证圆角生效 */
-            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
-        }
-        
-        .notice-category th,
-        .notice-category td {
-            padding: 12px 15px;
-            text-align: left;
-            border-bottom: 1px solid #e6e6e6;
-        }
-        
-        .notice-category th {
-            background: #c62828;
-            /* 标题栏背景色（深蓝色） */
-            color: #fff;
-            font-weight: bold;
-        }
-        
-        .notice-category tr:nth-child(even) {
-            background-color: #f9f9f9;
-            /* 偶数行浅灰背景 */
-        }
-        
-        .notice-category tr:hover {
-            background-color: #f1f7ff;
-            /* hover 高亮 */
-            transition: 0.3s;
-        }
-        
-        .notice-category td {
-            color: #333;
-            line-height: 1.5;
-        }
-        
-        .category-header h3 {
-            margin: 0;
-            font-size: 1.25rem;
-            color: #AF1F1F;
-            text-align: left;
-            /* 确保标题左对齐 */
-        }
-        
-        .category-content {
-            padding: 0;
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease-out, padding 0.3s ease;
-            background-color: white;
-            text-align: left;
-            /* 内容左对齐 */
-        }
-        
-        .category-content.active {
+    }
+    
+    @media (max-width: 768px) {
+        .container {
             padding: 20px;
-            max-height: 1000px;
         }
-        
-        .category-content p {
-            margin-bottom: 15px;
-            line-height: 1.7;
-            color: #444;
-            text-align: left;
-            /* 段落左对齐 */
-        }
-        
-        .category-content ul {
-            margin-bottom: 15px;
-            padding-left: 30px;
-            /* 调整列表左对齐的缩进 */
-            text-align: left;
-        }
-        
-        .category-content li {
-            margin-bottom: 10px;
-            line-height: 1.6;
-            text-align: left;
-            /* 列表项左对齐 */
-        }
-        
-        .icon-rotate {
-            transition: transform 0.3s;
-            font-size: 1.2rem;
-            color: #AF1F1F;
-        }
-        
-        .icon-rotate.rotated {
-            transform: rotate(180deg);
-        }
-        
-        .important-note {
-            background-color: #fff9e6;
-            border-left: 4px solid #ffcc00;
-            padding: 18px;
-            margin: 20px 0;
-            border-radius: 4px;
-            text-align: left;
-            /* 重要提示左对齐 */
-        }
-        
-        .important-note h4 {
-            color: #e6a600;
-            margin-bottom: 8px;
-            font-size: 1.1rem;
-        }
-        
-        footer {
-            text-align: center;
-            margin-top: 40px;
-            padding-top: 20px;
-            border-top: 1px solid #e6e6e6;
-            color: #666;
+        .filter-btn {
+            margin: 5px 5px;
+            padding: 8px 16px;
             font-size: 0.9rem;
         }
-        
-        @keyframes fadeIn {
-            from {
-                opacity: 0;
-                transform: translateY(10px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-        
-        @media (max-width: 768px) {
-            .container {
-                padding: 20px;
-            }
-            .filter-btn {
-                margin: 5px 5px;
-                padding: 8px 16px;
-                font-size: 0.9rem;
-            }
-            .detail-content {
-                padding: 20px;
-            }
-            .detail-content h3 {
-                font-size: 1.3rem;
-            }
-            h1 {
-                font-size: 2rem;
-            }
-            .category-header {
-                padding: 14px 16px;
-            }
-            .category-header h3 {
-                font-size: 1.1rem;
-            }
-            .category-content.active {
-                padding: 15px;
-            }
-            .category-content ul {
-                padding-left: 20px;
-            }
-        }
-        /* Hospital Finder Section */
-        
-        .hospital-finder {
-            padding: 50px 20px;
-            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-        }
-        
-        .hospital-finder .section-title {
-            text-align: center;
-            font-size: 2.5rem;
-            margin-bottom: 20px;
-            font-family: 'Jacques Francois', serif;
-            color: #AF1F1F;
-        }
-        
-        .hospital-finder .section-subtitle {
-            text-align: center;
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 40px;
-            max-width: 600px;
-            margin-left: auto;
-            margin-right: auto;
-        }
-        
-        .hospital-container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            border-radius: 15px;
-            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
-            overflow: hidden;
-        }
-        
-        .hospital-main-content {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            min-height: 600px;
-        }
-        
-        .hospital-left-panel {
-            padding: 30px;
-            background: #f8f9fa;
-            border-right: 1px solid #e1e8ed;
-        }
-        
-        .selector-group {
-            margin-bottom: 25px;
-        }
-        
-        .selector-group label {
-            display: block;
-            margin-bottom: 8px;
-            font-weight: 600;
-            color: #2c3e50;
-            font-size: 1rem;
-        }
-        
-        .selector-group select {
-            width: 100%;
-            padding: 12px 15px;
-            border: 2px solid #e1e8ed;
-            border-radius: 8px;
-            font-size: 15px;
-            background: white;
-            transition: all 0.3s ease;
-        }
-        
-        .selector-group select:focus {
-            outline: none;
-            border-color: #AF1F1F;
-            box-shadow: 0 0 0 3px rgba(175, 31, 31, 0.1);
-        }
-        
-        .city-selector {
-            display: none;
-        }
-        
-        .hospitals-list {
-            background: white;
-            border-radius: 12px;
+        .detail-content {
             padding: 20px;
-            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
-            max-height: 400px;
-            overflow-y: auto;
         }
-        
-        .hospitals-list h3 {
-            margin-bottom: 15px;
-            color: #2c3e50;
-            font-size: 1.2rem;
-            border-bottom: 2px solid #AF1F1F;
-            padding-bottom: 8px;
+        .detail-content h3 {
+            font-size: 1.3rem;
         }
-        
-        .hospital-item {
+        h1 {
+            font-size: 2rem;
+        }
+        .category-header {
+            padding: 14px 16px;
+        }
+        .category-header h3 {
+            font-size: 1.1rem;
+        }
+        .category-content.active {
             padding: 15px;
-            margin-bottom: 10px;
-            border: 2px solid #e1e8ed;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: all 0.3s ease;
-            background: #fafbfc;
         }
-        
-        .hospital-item:hover {
-            border-color: #AF1F1F;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-            background: white;
+        .category-content ul {
+            padding-left: 20px;
         }
-        
-        .hospital-item.active {
-            border-color: #AF1F1F;
-            background: #AF1F1F;
-            color: white;
-            transform: translateY(-2px);
-            box-shadow: 0 6px 20px rgba(175, 31, 31, 0.3);
+    }
+    /* Hospital Finder Section */
+    
+    .hospital-finder {
+        padding: 50px 20px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    .hospital-finder .section-title {
+        text-align: center;
+        font-size: 2.5rem;
+        margin-bottom: 20px;
+        font-family: 'Jacques Francois', serif;
+        color: #AF1F1F;
+    }
+    
+    .hospital-finder .section-subtitle {
+        text-align: center;
+        font-size: 1.1rem;
+        color: #666;
+        margin-bottom: 40px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .hospital-container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        border-radius: 15px;
+        box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+        overflow: hidden;
+    }
+    
+    .hospital-main-content {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        min-height: 600px;
+    }
+    
+    .hospital-left-panel {
+        padding: 30px;
+        background: #f8f9fa;
+        border-right: 1px solid #e1e8ed;
+    }
+    
+    .selector-group {
+        margin-bottom: 25px;
+    }
+    
+    .selector-group label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #2c3e50;
+        font-size: 1rem;
+    }
+    
+    .selector-group select {
+        width: 100%;
+        padding: 12px 15px;
+        border: 2px solid #e1e8ed;
+        border-radius: 8px;
+        font-size: 15px;
+        background: white;
+        transition: all 0.3s ease;
+    }
+    
+    .selector-group select:focus {
+        outline: none;
+        border-color: #AF1F1F;
+        box-shadow: 0 0 0 3px rgba(175, 31, 31, 0.1);
+    }
+    
+    .city-selector {
+        display: none;
+    }
+    
+    .hospitals-list {
+        background: white;
+        border-radius: 12px;
+        padding: 20px;
+        box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        max-height: 400px;
+        overflow-y: auto;
+    }
+    
+    .hospitals-list h3 {
+        margin-bottom: 15px;
+        color: #2c3e50;
+        font-size: 1.2rem;
+        border-bottom: 2px solid #AF1F1F;
+        padding-bottom: 8px;
+    }
+    
+    .hospital-item {
+        padding: 15px;
+        margin-bottom: 10px;
+        border: 2px solid #e1e8ed;
+        border-radius: 8px;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        background: #fafbfc;
+    }
+    
+    .hospital-item:hover {
+        border-color: #AF1F1F;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+        background: white;
+    }
+    
+    .hospital-item.active {
+        border-color: #AF1F1F;
+        background: #AF1F1F;
+        color: white;
+        transform: translateY(-2px);
+        box-shadow: 0 6px 20px rgba(175, 31, 31, 0.3);
+    }
+    
+    .hospital-name {
+        font-weight: 600;
+        font-size: 1rem;
+        margin-bottom: 5px;
+    }
+    
+    .hospital-address {
+        font-size: 0.85rem;
+        opacity: 0.8;
+        line-height: 1.4;
+    }
+    
+    .hospital-item.active .hospital-address {
+        opacity: 0.9;
+    }
+    
+    .hospital-right-panel {
+        background: #fff;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+    }
+    
+    .map-container {
+        flex: 1;
+        position: relative;
+        background: linear-gradient(45deg, #f1f2f6, #ddd6fe);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 350px;
+    }
+    
+    .map-placeholder {
+        text-align: center;
+        color: #666;
+        font-size: 1.1rem;
+    }
+    
+    .map-frame {
+        width: 100%;
+        height: 100%;
+        border: none;
+    }
+    
+    .map-controls {
+        padding: 20px;
+        background: white;
+        border-top: 1px solid #e1e8ed;
+    }
+    
+    .hospital-info {
+        margin-bottom: 15px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border-left: 4px solid #AF1F1F;
+    }
+    
+    .hospital-info h4 {
+        color: #2c3e50;
+        margin-bottom: 5px;
+        font-size: 1.1rem;
+    }
+    
+    .hospital-info p {
+        color: #666;
+        margin-bottom: 5px;
+        font-size: 0.9rem;
+    }
+    
+    .action-buttons {
+        display: flex;
+        gap: 10px;
+        flex-wrap: wrap;
+    }
+    
+    .btn {
+        padding: 10px 18px;
+        border: none;
+        border-radius: 6px;
+        cursor: pointer;
+        font-weight: 600;
+        text-decoration: none;
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        transition: all 0.3s ease;
+        font-size: 13px;
+    }
+    
+    .btn-primary {
+        background-color: #AF1F1F;
+        color: white;
+    }
+    
+    .btn-primary:hover {
+        background-color: #8b1818;
+        transform: translateY(-2px);
+        box-shadow: 0 4px 12px rgba(175, 31, 31, 0.3);
+    }
+    
+    .btn-secondary {
+        background-color: #907a62;
+        color: white;
+    }
+    
+    .btn-secondary:hover {
+        background-color: #7a6553;
+        transform: translateY(-2px);
+    }
+    
+    .no-selection {
+        text-align: center;
+        color: #666;
+        padding: 30px;
+        font-style: italic;
+    }
+    /* Original styles continue... */
+    
+    .notic {
+        text-align: center;
+        padding: 50px 20px;
+        width: 80%;
+        margin: auto;
+    }
+    
+    .notic .title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+        font-family: 'Jacques Francois', serif;
+    }
+    
+    .benefits {
+        text-align: center;
+        padding: 50px 20px;
+        width: 80%;
+        margin: auto;
+    }
+    
+    .benefits .title {
+        font-size: 2rem;
+        font-weight: bold;
+        margin-bottom: 10px;
+        color: #333;
+        font-family: 'Jacques Francois', serif;
+    }
+    
+    .benefits .subtitle {
+        font-size: 1rem;
+        color: #666;
+        margin-bottom: 40px;
+    }
+    
+    .benefit-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+        gap: 25px;
+    }
+    
+    .benefit-card {
+        background: #fff;
+        border-radius: 15px;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+        padding: 25px 20px;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+    }
+    
+    .benefit-card img {
+        width: 100%;
+        height: auto;
+        border-radius: 10px;
+        margin-bottom: 15px;
+        display: block;
+    }
+    
+    .benefit-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
+    }
+    
+    .benefit-card h3 {
+        font-size: 1.1rem;
+        margin-bottom: 10px;
+        color: #AF1F1F;
+    }
+    
+    .benefit-card p {
+        font-size: 0.95rem;
+        color: #444;
+        line-height: 1.5;
+    }
+    
+    .footerbar {
+        background-color: #9d8369;
+        width: 100%;
+        color: #fff;
+        padding: 40px 60px;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+    }
+    
+    .footer-logo {
+        flex: 1;
+        min-width: 200px;
+        text-align: left;
+    }
+    
+    .footer-logo .logo-box {
+        width: 180px;
+        height: 180px;
+        background: #d9d9d9;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin: 0;
+        font-weight: bold;
+        color: black;
+    }
+    
+    .footer-section {
+        flex: 1;
+        min-width: 200px;
+        margin: 10px;
+        text-align: left;
+    }
+    
+    .footer-section h3 {
+        margin-bottom: 15px;
+        font-size: 18px;
+        border-bottom: 1px solid #fff;
+        display: inline-block;
+        padding-bottom: 5px;
+    }
+    
+    .footer-section ul {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+    }
+    
+    .footer-section ul li {
+        margin-bottom: 8px;
+    }
+    
+    .footer-section ul li a {
+        color: #fff;
+        text-decoration: none;
+        transition: 0.3s;
+    }
+    
+    .footer-section ul li a:hover {
+        text-decoration: underline;
+    }
+    
+    .location-item {
+        margin-bottom: 15px;
+    }
+    
+    .contact-item {
+        margin-bottom: 10px;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+    }
+    /* Responsive Design */
+    
+    .claims-section {
+        padding: 50px 20px;
+        background: #f8f9fa;
+        width: 80%;
+        margin: 40px auto;
+        border-radius: 15px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    }
+    
+    .claims-section .title {
+        font-size: 2rem;
+        margin-bottom: 10px;
+        color: #AF1F1F;
+        font-family: 'Jacques Francois', serif;
+        text-align: center;
+    }
+    
+    .claims-intro {
+        text-align: center;
+        margin-bottom: 40px;
+        color: #555;
+        line-height: 1.6;
+        max-width: 800px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .claims-timeline {
+        position: relative;
+        max-width: 1000px;
+        margin: 0 auto;
+        padding-left: 30px;
+    }
+    
+    .claims-timeline::before {
+        content: '';
+        position: absolute;
+        left: 0;
+        top: 0;
+        height: 100%;
+        width: 4px;
+        background: #AF1F1F;
+    }
+    
+    .claim-item {
+        background: white;
+        border-radius: 10px;
+        padding: 25px;
+        margin-bottom: 30px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+        position: relative;
+        border-left: 4px solid #AF1F1F;
+    }
+    
+    .claim-item::before {
+        content: '';
+        position: absolute;
+        left: -41px;
+        top: 25px;
+        width: 20px;
+        height: 20px;
+        border-radius: 50%;
+        background: #AF1F1F;
+        border: 4px solid white;
+    }
+    
+    .claim-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+        flex-wrap: wrap;
+    }
+    
+    .claim-title {
+        font-size: 1.3rem;
+        color: #2c3e50;
+        margin: 0;
+    }
+    
+    .claim-date {
+        color: #7f8c8d;
+        font-size: 0.9rem;
+    }
+    
+    .claim-amount {
+        font-size: 1.5rem;
+        font-weight: bold;
+        color: #AF1F1F;
+        margin: 10px 0;
+    }
+    
+    .claim-details {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+        gap: 15px;
+        margin: 15px 0;
+    }
+    
+    .claim-detail-item {
+        background: #f8f9fa;
+        padding: 12px;
+        border-radius: 8px;
+    }
+    
+    .claim-detail-item strong {
+        display: block;
+        color: #7f8c8d;
+        font-size: 0.85rem;
+        margin-bottom: 5px;
+    }
+    
+    .claim-note {
+        background: #fff9e6;
+        border-left: 4px solid #ffcc00;
+        padding: 15px;
+        margin-top: 15px;
+        border-radius: 4px;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    
+    .claim-tags {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+        margin-top: 15px;
+    }
+    
+    .claim-tag {
+        background: #e8f4fd;
+        color: #2c7bbe;
+        padding: 5px 10px;
+        border-radius: 20px;
+        font-size: 0.8rem;
+    }
+    
+    .claim-tag.approved {
+        background: #e6f7ee;
+        color: #0cb577;
+    }
+    
+    .claim-story {
+        margin-top: 20px;
+        padding-top: 15px;
+        border-top: 1px dashed #e1e8ed;
+        color: #555;
+        line-height: 1.6;
+    }
+    
+    .claim-image {
+        width: 100%;
+        max-width: 75%;
+        margin: 0 auto;
+        border-radius: 8px;
+        overflow: hidden;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    
+    .claim-image img {
+        width: 100%;
+        height: auto;
+        display: block;
+        transition: transform 0.3s ease;
+    }
+    
+    .claim-image img:hover {
+        transform: scale(1.02);
+    }
+    
+    @media (max-width: 768px) {
+        .hospital-main-content {
+            grid-template-columns: 1fr;
         }
-        
-        .hospital-name {
-            font-weight: 600;
-            font-size: 1rem;
-            margin-bottom: 5px;
+        .hero-text h1 {
+            font-size: 2.5rem;
         }
-        
-        .hospital-address {
-            font-size: 0.85rem;
-            opacity: 0.8;
-            line-height: 1.4;
-        }
-        
-        .hospital-item.active .hospital-address {
-            opacity: 0.9;
-        }
-        
-        .hospital-right-panel {
-            background: #fff;
-            position: relative;
-            display: flex;
+        .action-buttons {
             flex-direction: column;
         }
-        
-        .map-container {
-            flex: 1;
-            position: relative;
-            background: linear-gradient(45deg, #f1f2f6, #ddd6fe);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            min-height: 350px;
-        }
-        
-        .map-placeholder {
-            text-align: center;
-            color: #666;
-            font-size: 1.1rem;
-        }
-        
-        .map-frame {
-            width: 100%;
-            height: 100%;
-            border: none;
-        }
-        
-        .map-controls {
-            padding: 20px;
-            background: white;
-            border-top: 1px solid #e1e8ed;
-        }
-        
-        .hospital-info {
-            margin-bottom: 15px;
-            padding: 15px;
-            background: #f8f9fa;
-            border-radius: 8px;
-            border-left: 4px solid #AF1F1F;
-        }
-        
-        .hospital-info h4 {
-            color: #2c3e50;
-            margin-bottom: 5px;
-            font-size: 1.1rem;
-        }
-        
-        .hospital-info p {
-            color: #666;
-            margin-bottom: 5px;
-            font-size: 0.9rem;
-        }
-        
-        .action-buttons {
-            display: flex;
-            gap: 10px;
-            flex-wrap: wrap;
-        }
-        
         .btn {
-            padding: 10px 18px;
-            border: none;
-            border-radius: 6px;
-            cursor: pointer;
-            font-weight: 600;
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-            transition: all 0.3s ease;
-            font-size: 13px;
-        }
-        
-        .btn-primary {
-            background-color: #AF1F1F;
-            color: white;
-        }
-        
-        .btn-primary:hover {
-            background-color: #8b1818;
-            transform: translateY(-2px);
-            box-shadow: 0 4px 12px rgba(175, 31, 31, 0.3);
-        }
-        
-        .btn-secondary {
-            background-color: #907a62;
-            color: white;
-        }
-        
-        .btn-secondary:hover {
-            background-color: #7a6553;
-            transform: translateY(-2px);
-        }
-        
-        .no-selection {
-            text-align: center;
-            color: #666;
-            padding: 30px;
-            font-style: italic;
-        }
-        /* Original styles continue... */
-        
-        .notic {
-            text-align: center;
-            padding: 50px 20px;
-            width: 80%;
-            margin: auto;
-        }
-        
-        .notic .title {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
-            font-family: 'Jacques Francois', serif;
-        }
-        
-        .benefits {
-            text-align: center;
-            padding: 50px 20px;
-            width: 80%;
-            margin: auto;
-        }
-        
-        .benefits .title {
-            font-size: 2rem;
-            font-weight: bold;
-            margin-bottom: 10px;
-            color: #333;
-            font-family: 'Jacques Francois', serif;
-        }
-        
-        .benefits .subtitle {
-            font-size: 1rem;
-            color: #666;
-            margin-bottom: 40px;
-        }
-        
-        .benefit-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
-            gap: 25px;
-        }
-        
-        .benefit-card {
-            background: #fff;
-            border-radius: 15px;
-            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
-            padding: 25px 20px;
-            transition: transform 0.2s ease, box-shadow 0.2s ease;
-        }
-        
-        .benefit-card img {
-            width: 100%;
-            height: auto;
-            border-radius: 10px;
-            margin-bottom: 15px;
-            display: block;
-        }
-        
-        .benefit-card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.12);
-        }
-        
-        .benefit-card h3 {
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-            color: #AF1F1F;
-        }
-        
-        .benefit-card p {
-            font-size: 0.95rem;
-            color: #444;
-            line-height: 1.5;
-        }
-        
-        .footerbar {
-            background-color: #9d8369;
-            width: 100%;
-            color: #fff;
-            padding: 40px 60px;
-            display: flex;
-            justify-content: space-between;
-            flex-wrap: wrap;
-        }
-        
-        .footer-logo {
-            flex: 1;
-            min-width: 200px;
-            text-align: left;
-        }
-        
-        .footer-logo .logo-box {
-            width: 180px;
-            height: 180px;
-            background: #d9d9d9;
-            display: flex;
-            align-items: center;
             justify-content: center;
-            margin: 0;
-            font-weight: bold;
-            color: black;
         }
-        
-        .footer-section {
-            flex: 1;
-            min-width: 200px;
-            margin: 10px;
-            text-align: left;
+        .hospital-finder .section-title {
+            font-size: 2rem;
         }
-        
-        .footer-section h3 {
-            margin-bottom: 15px;
-            font-size: 18px;
-            border-bottom: 1px solid #fff;
-            display: inline-block;
-            padding-bottom: 5px;
+        .claims-section {
+            width: 90%;
+            padding: 30px 15px;
         }
-        
-        .footer-section ul {
-            list-style: none;
-            padding: 0;
-            margin: 0;
+        .claims-timeline {
+            padding-left: 20px;
         }
-        
-        .footer-section ul li {
-            margin-bottom: 8px;
+        .claim-item::before {
+            left: -31px;
         }
-        
-        .footer-section ul li a {
-            color: #fff;
-            text-decoration: none;
-            transition: 0.3s;
+        .claim-header {
+            flex-direction: column;
+            align-items: flex-start;
         }
-        
-        .footer-section ul li a:hover {
-            text-decoration: underline;
+        .claim-date {
+            margin-top: 5px;
         }
-        
-        .location-item {
-            margin-bottom: 15px;
+        .claim-details {
+            grid-template-columns: 1fr;
         }
-        
-        .contact-item {
-            margin-bottom: 10px;
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        /* Responsive Design */
-        
-        @media (max-width: 768px) {
-            .hospital-main-content {
-                grid-template-columns: 1fr;
-            }
-            .hero-text h1 {
-                font-size: 2.5rem;
-            }
-            .action-buttons {
-                flex-direction: column;
-            }
-            .btn {
-                justify-content: center;
-            }
-            .hospital-finder .section-title {
-                font-size: 2rem;
-            }
-        }
+    }
