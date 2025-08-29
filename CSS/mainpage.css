@@ -129,8 +129,11 @@
  
  footer {
      background-color: #f8f8f8;
-     padding: 20px;
+     padding: 0;
+     /* 移除padding */
      text-align: center;
+     overflow: hidden;
+     /* 防止水平滚动 */
  }
  /* Floating language selector styles */
  
@@ -495,13 +498,21 @@
  
  .footerbar {
      background-color: #9d8369;
-     width: 100%;
+     width: 100vw;
+     /* 使用视口宽度 */
+     margin-left: calc(-50vw + 50%);
+     /* 抵消父容器padding */
      box-sizing: border-box;
      color: #fff;
      padding: 40px 60px;
      display: flex;
      justify-content: space-between;
      flex-wrap: wrap;
+     position: relative;
+     left: 50%;
+     right: 50%;
+     transform: translateX(-50%);
+     /* 居中对齐 */
  }
  
  .footer-logo {
