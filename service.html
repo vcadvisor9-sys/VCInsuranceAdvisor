@@ -369,7 +369,34 @@
 
                     <div class="claim-details">
                         <div class="claim-image">
-                            <img src="image%20source/claim1.png" alt="心脏阻塞理赔案例">
+                            <div class="carousel-container">
+                                <div class="carousel-wrapper">
+                                    <div class="carousel">
+                                        <div class="carousel-item">
+                                            <img src="image%20source/claim1.png" alt="Claim 1">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="image%20source/claim2.png" alt="Claim 2">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="image%20source/claim3.png" alt="Claim 3">
+                                        </div>
+                                        <div class="carousel-item">
+                                            <img src="image%20source/claim4.png" alt="Claim 4">
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <div class="carousel-controls">
+                                    <div class="control-dot active" data-index="0"></div>
+                                    <div class="control-dot" data-index="1"></div>
+                                    <div class="control-dot" data-index="2"></div>
+                                    <div class="control-dot" data-index="3"></div>
+                                </div>
+
+                                <button class="nav-btn prev">&#10094;</button>
+                                <button class="nav-btn next">&#10095;</button>
+                            </div>
                         </div>
                     </div>
 
@@ -1670,8 +1697,150 @@
                 });
             }
 
-            // 页面加载完成后初始化
-            document.addEventListener('DOMContentLoaded', initTabRotation);
+            document.addEventListener('DOMContentLoaded', function() {
+                const carousel = document.querySelector('.carousel');
+                const items = document.querySelectorAll('.carousel-item');
+                const images = document.querySelectorAll('.carousel-item img');
+                const dots = document.querySelectorAll('.control-dot');
+                const prevBtn = document.querySelector('.prev');
+                const nextBtn = document.querySelector('.next');
+
+                // 弹出层元素
+                const modal = document.getElementById('imageModal');
+                const modalImage = document.getElementById('modalImage');
+                const closeBtn = document.querySelector('.close-btn');
+                const modalPrev = document.querySelector('.modal-prev');
+                const modalNext = document.querySelector('.modal-next');
+                const imageCounter = document.getElementById('imageCounter');
+
+                let currentIndex = 0;
+                let intervalId;
+
+                // 更新轮播显示
+                function updateCarousel() {
+                    carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+                    // 更新指示点状态
+                    dots.forEach((dot, index) => {
+                        dot.classList.toggle('active', index === currentIndex);
+                    });
+                }
+
+                // 切换到下一张
+                function nextSlide() {
+                    currentIndex = (currentIndex + 1) % items.length;
+                    updateCarousel();
+                }
+
+                // 切换到上一张
+                function prevSlide() {
+                    currentIndex = (currentIndex - 1 + items.length) % items.length;
+                    updateCarousel();
+                }
+
+                // 开始自动轮播
+                function startAutoPlay() {
+                    intervalId = setInterval(nextSlide, 5000); // 5秒切换
+                }
+
+                // 停止自动轮播
+                function stopAutoPlay() {
+                    clearInterval(intervalId);
+                }
+
+                // 打开弹出层
+                function openModal(index) {
+                    currentIndex = index;
+                    modalImage.src = images[currentIndex].src;
+                    imageCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+                    modal.style.display = 'block';
+                    document.body.style.overflow = 'hidden'; // 防止背景滚动
+                }
+
+                // 关闭弹出层
+                function closeModal() {
+                    modal.style.display = 'none';
+                    document.body.style.overflow = 'auto'; // 恢复背景滚动
+                }
+
+                // 弹出层内切换图片
+                function modalNextSlide() {
+                    currentIndex = (currentIndex + 1) % items.length;
+                    modalImage.src = images[currentIndex].src;
+                    imageCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+                }
+
+                function modalPrevSlide() {
+                    currentIndex = (currentIndex - 1 + items.length) % items.length;
+                    modalImage.src = images[currentIndex].src;
+                    imageCounter.textContent = `${currentIndex + 1} / ${images.length}`;
+                }
+
+                // 事件监听 - 轮播控制
+                nextBtn.addEventListener('click', () => {
+                    stopAutoPlay();
+                    nextSlide();
+                    startAutoPlay();
+                });
+
+                prevBtn.addEventListener('click', () => {
+                    stopAutoPlay();
+                    prevSlide();
+                    startAutoPlay();
+                });
+
+                // 指示点点击事件
+                dots.forEach(dot => {
+                    dot.addEventListener('click', () => {
+                        stopAutoPlay();
+                        currentIndex = parseInt(dot.getAttribute('data-index'));
+                        updateCarousel();
+                        startAutoPlay();
+                    });
+                });
+
+                // 图片点击事件 - 打开弹出层
+                images.forEach((img, index) => {
+                    img.addEventListener('click', () => {
+                        stopAutoPlay();
+                        openModal(index);
+                    });
+                });
+
+                // 弹出层控制
+                closeBtn.addEventListener('click', closeModal);
+
+                modalNext.addEventListener('click', modalNextSlide);
+
+                modalPrev.addEventListener('click', modalPrevSlide);
+
+                // 点击弹出层背景关闭
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        closeModal();
+                    }
+                });
+
+                // 键盘导航
+                document.addEventListener('keydown', (e) => {
+                    if (modal.style.display === 'block') {
+                        if (e.key === 'Escape') {
+                            closeModal();
+                        } else if (e.key === 'ArrowRight') {
+                            modalNextSlide();
+                        } else if (e.key === 'ArrowLeft') {
+                            modalPrevSlide();
+                        }
+                    }
+                });
+
+                // 鼠标悬停时暂停轮播
+                carousel.addEventListener('mouseenter', stopAutoPlay);
+                carousel.addEventListener('mouseleave', startAutoPlay);
+
+                // 初始化
+                startAutoPlay();
+            });
         </script>
 </body>
 
