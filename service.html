@@ -397,6 +397,17 @@
                                 <button class="nav-btn prev">&#10094;</button>
                                 <button class="nav-btn next">&#10095;</button>
                             </div>
+
+                            <!-- 弹出层 -->
+                            <div id="imageModal" class="modal">
+                                <span class="close-btn">&times;</span>
+                                <div class="modal-content">
+                                    <img class="modal-image" id="modalImage" src="" alt="">
+                                    <div class="image-counter" id="imageCounter"></div>
+                                </div>
+                                <span class="modal-nav modal-prev">&#10094;</span>
+                                <span class="modal-nav modal-next">&#10095;</span>
+                            </div>
                         </div>
                     </div>
 
@@ -1620,16 +1631,6 @@
                 icon.classList.toggle('rotated');
             }
 
-            // 默认展开第一个分类
-            document.addEventListener('DOMContentLoaded', function() {
-                const firstCategory = document.querySelector('.category-header');
-                if (firstCategory) {
-                    toggleCategory(firstCategory);
-                }
-            });
-
-
-
             // 自动轮播控制变量
             let autoRotateInterval;
             let isUserInteracted = false;
@@ -1656,7 +1657,7 @@
                         buttons[currentIndex].classList.add("active");
                         const target = buttons[currentIndex].getAttribute("data-target");
                         document.getElementById(target).classList.add("active");
-                    }, 10000); // 15秒切换一次
+                    }, 10000); // 10秒切换一次
                 }
 
                 // 按钮点击事件
@@ -1697,7 +1698,8 @@
                 });
             }
 
-            document.addEventListener('DOMContentLoaded', function() {
+            // 轮播图功能
+            function initCarousel() {
                 const carousel = document.querySelector('.carousel');
                 const items = document.querySelectorAll('.carousel-item');
                 const images = document.querySelectorAll('.carousel-item img');
@@ -1840,6 +1842,21 @@
 
                 // 初始化
                 startAutoPlay();
+            }
+
+            // 使用单个DOMContentLoaded事件监听器
+            document.addEventListener('DOMContentLoaded', function() {
+                // 默认展开第一个分类
+                const firstCategory = document.querySelector('.category-header');
+                if (firstCategory) {
+                    toggleCategory(firstCategory);
+                }
+
+                // 初始化选项卡轮播
+                initTabRotation();
+
+                // 初始化图片轮播
+                initCarousel();
             });
         </script>
 </body>
