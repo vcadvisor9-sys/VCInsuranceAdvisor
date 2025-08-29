@@ -238,19 +238,19 @@
     min-width: 300px;
     position: relative;
     overflow: hidden;
-    background: linear-gradient(120deg, #4a6491 0%, #2c3e50 100%);
+    background: linear-gradient(120deg, #AF1F1F 100%);
 }
 
 .income-title {
     font-size: 2.2rem;
-    color: #2c3e50;
+    color: #AF1F1F;
     margin-bottom: 15px;
     font-weight: 700;
 }
 
 .income-subtitle {
     font-size: 1.4rem;
-    color: #4a6491;
+    color: #AF1F1F;
     margin-bottom: 25px;
     font-weight: 600;
 }
@@ -266,7 +266,7 @@
     background: #f8f9fa;
     padding: 20px;
     border-radius: 10px;
-    border-left: 4px solid #4a6491;
+    border-left: 4px solid #AF1F1F;
     margin-top: 20px;
 }
 
@@ -305,7 +305,7 @@
 
 .slide-image {
     width: 100%;
-    height: 600px;
+    height: 700px;
     border-radius: 12px;
     overflow: hidden;
     box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
