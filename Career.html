@@ -148,6 +148,95 @@
             </div>
         </section>
 
+        <section class="income-section">
+            <div class="income-content">
+                <h2 class="income-title">UNLIMITED INCOME POTENTIAL</h2>
+                <h3 class="income-subtitle">收入无上限</h3>
+
+                <p class="income-description">
+                    Your earnings are based on your choice, not fixed by a salary cap.<br> 你的收入取决于你的选择，不受固定薪资限制。
+                </p>
+
+
+
+            </div>
+
+            <div class="income-slider">
+                <div class="slider-container">
+                    <div class="slider">
+                        <!-- Slide 1 -->
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="image source/benifit1.jpg" alt="Financial Growth">
+                            </div>
+                            <h4 class="slide-title">灵活收入结构</h4>
+                            <p class="slide-description">根据您的业绩和目标达成情况，收入没有上限限制</p>
+                        </div>
+
+                        <!-- Slide 2 -->
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="image source/benifit2.jpg" alt="Career Development">
+                            </div>
+                            <h4 class="slide-title">职业发展路径</h4>
+                            <p class="slide-description">清晰的晋升通道，让您的努力得到应有的回报</p>
+                        </div>
+
+                        <!-- Slide 3 -->
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="image source/benifit3.jpg" alt="Rewards">
+                            </div>
+                            <h4 class="slide-title">奖励与认可</h4>
+                            <p class="slide-description">卓越表现将获得丰厚奖励和国际旅行机会</p>
+                        </div>
+
+                        <!-- Slide 4 -->
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="image source/benifit4.jpg" alt="Training">
+                            </div>
+                            <h4 class="slide-title">专业培训支持</h4>
+                            <p class="slide-description">全面的培训计划，帮助您提升技能和专业知识</p>
+                        </div>
+
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="image source/benifit5.jpg" alt="Growing">
+                            </div>
+                            <h4 class="slide-title">专业培训支持</h4>
+                            <p class="slide-description">全面的培训计划，帮助您提升技能和专业知识</p>
+                        </div>
+
+                        <div class="slide">
+                            <div class="slide-image">
+                                <img src="image source/benifit6.jpg" alt="Customer">
+                            </div>
+                            <h4 class="slide-title">专业培训支持</h4>
+                            <p class="slide-description">全面的培训计划，帮助您提升技能和专业知识</p>
+                        </div>
+                    </div>
+
+                    <div class="slider-nav prev">
+                        <i class="fas fa-chevron-left"></i>
+                    </div>
+                    <div class="slider-nav next">
+                        <i class="fas fa-chevron-right"></i>
+                    </div>
+
+                    <div class="slider-controls">
+                        <div class="slider-dot active" data-slide="0"></div>
+                        <div class="slider-dot" data-slide="1"></div>
+                        <div class="slider-dot" data-slide="2"></div>
+                        <div class="slider-dot" data-slide="3"></div>
+                        <div class="slider-dot" data-slide="4"></div>
+                        <div class="slider-dot" data-slide="5"></div>
+
+                    </div>
+                </div>
+            </div>
+        </section>
+
     </main>
 
 
@@ -200,5 +289,85 @@
         <p>&copy; 2023 My Website. All rights reserved.</p>
     </footer>
 </body>
+
+
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        const slider = document.querySelector('.slider');
+        const slides = document.querySelectorAll('.slide');
+        const dots = document.querySelectorAll('.slider-dot');
+        const prevBtn = document.querySelector('.prev');
+        const nextBtn = document.querySelector('.next');
+
+        let currentSlide = 0;
+        const slideCount = slides.length;
+        let autoSlideInterval;
+
+        // 更新幻灯片位置
+        function updateSlide() {
+            // 计算每张幻灯片的宽度百分比
+            const slideWidth = 100 / slideCount;
+            slider.style.transform = `translateX(-${currentSlide * slideWidth}%)`;
+
+            // 更新指示点
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentSlide);
+            });
+        }
+
+        // 下一张幻灯片
+        function nextSlide() {
+            currentSlide = (currentSlide + 1) % slideCount;
+            updateSlide();
+        }
+
+        // 上一张幻灯片
+        function prevSlide() {
+            currentSlide = (currentSlide - 1 + slideCount) % slideCount;
+            updateSlide();
+        }
+
+        // 开始自动轮播
+        function startAutoSlide() {
+            autoSlideInterval = setInterval(nextSlide, 5000);
+        }
+
+        // 停止自动轮播
+        function stopAutoSlide() {
+            clearInterval(autoSlideInterval);
+        }
+
+        // 事件监听
+        nextBtn.addEventListener('click', () => {
+            stopAutoSlide();
+            nextSlide();
+            startAutoSlide();
+        });
+
+        prevBtn.addEventListener('click', () => {
+            stopAutoSlide();
+            prevSlide();
+            startAutoSlide();
+        });
+
+        // 点击指示点切换幻灯片
+        dots.forEach(dot => {
+            dot.addEventListener('click', function() {
+                stopAutoSlide();
+                currentSlide = parseInt(this.getAttribute('data-slide'));
+                updateSlide();
+                startAutoSlide();
+            });
+        });
+
+        // 鼠标悬停时暂停轮播
+        const sliderContainer = document.querySelector('.slider-container');
+        sliderContainer.addEventListener('mouseenter', stopAutoSlide);
+        sliderContainer.addEventListener('mouseleave', startAutoSlide);
+
+        // 初始化自动轮播
+        startAutoSlide();
+    });
+</script>
 
 </html>
