@@ -238,56 +238,62 @@
         </section>
         <section class="contact-form-section">
 
-            <h2 class="form-title">联系我们</h2>
-            <p class="form-subtitle">填写以下表单，我们的团队会尽快与您联系</p>
-
-            <div class="containlist">
-                <ul class="contact-list">
-                    <li><i class="fas fa-phone"></i> 电话: +6012-708 9125</li>
-                    <li><i class="fas fa-envelope"></i> 邮箱: vcadvisory@hotmail.com</li>
-            </div>
-
-            <div class="form-container">
-                <form class="contact-form" id="contactForm">
-                    <div class="form-group">
-                        <label for="name" class="form-label">姓名</label>
-                        <input type="text" id="name" class="form-input" placeholder="请输入您的姓名" required>
-                        <div class="error-message" id="nameError">请输入有效的姓名</div>
+            <div class="contact-container">
+                <div class="contact-left">
+                    <div class="containlist">
+                        <h3>联系我们</h3>
+                        <ul class="contact-list">
+                            <li><i class="fas fa-phone"></i> 电话: +6012-708 9125</li>
+                            <li><i class="fas fa-envelope"></i> 邮箱: vcadvisory@hotmail.com</li>
+                            <li><i class="fas fa-clock"></i> 工作时间: 周一至周五 9:00-18:00</li>
+                        </ul>
                     </div>
+                </div>
 
-                    <div class="form-group">
-                        <label for="email" class="form-label">电子邮箱</label>
-                        <input type="email" id="email" class="form-input" placeholder="请输入您的电子邮箱" required>
-                        <div class="error-message" id="emailError">请输入有效的电子邮箱地址</div>
+                <div class="contact-right">
+                    <div class="form-container">
+                        <form class="contact-form" id="contactForm">
+                            <div class="form-group">
+                                <label for="name" class="form-label">姓名</label>
+                                <input type="text" id="name" class="form-input" placeholder="请输入您的姓名" required>
+                                <div class="error-message" id="nameError">请输入有效的姓名</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="email" class="form-label">电子邮箱</label>
+                                <input type="email" id="email" class="form-input" placeholder="请输入您的电子邮箱" required>
+                                <div class="error-message" id="emailError">请输入有效的电子邮箱地址</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="phone" class="form-label">电话号码</label>
+                                <input type="tel" id="phone" class="form-input" placeholder="请输入您的电话号码" required>
+                                <div class="error-message" id="phoneError">请输入有效的电话号码</div>
+                            </div>
+
+                            <div class="form-group">
+                                <label for="subject" class="form-label">主题</label>
+                                <input type="text" id="subject" class="form-input" placeholder="请简要说明您的需求">
+                            </div>
+
+                            <div class="form-group full-width">
+                                <label for="message" class="form-label">留言内容</label>
+                                <textarea id="message" class="form-input" placeholder="请详细描述您的需求或问题..." required></textarea>
+                                <div class="error-message" id="messageError">请输入您的留言内容</div>
+                            </div>
+
+                            <button type="submit" class="form-button">提交信息</button>
+
+                            <div class="form-success" id="formSuccess">
+                                <i class="fas fa-check-circle"></i> 感谢您的留言！我们会尽快与您联系。
+                            </div>
+
+                            <div class="form-info">
+                                <p>我们承诺保护您的隐私，您的信息仅用于联系您并提供相关服务。</p>
+                            </div>
+                        </form>
                     </div>
-
-                    <div class="form-group">
-                        <label for="phone" class="form-label">电话号码</label>
-                        <input type="tel" id="phone" class="form-input" placeholder="请输入您的电话号码" required>
-                        <div class="error-message" id="phoneError">请输入有效的电话号码</div>
-                    </div>
-
-                    <div class="form-group">
-                        <label for="subject" class="form-label">主题</label>
-                        <input type="text" id="subject" class="form-input" placeholder="请简要说明您的需求">
-                    </div>
-
-                    <div class="form-group full-width">
-                        <label for="message" class="form-label">留言内容</label>
-                        <textarea id="message" class="form-input" placeholder="请详细描述您的需求或问题..." required></textarea>
-                        <div class="error-message" id="messageError">请输入您的留言内容</div>
-                    </div>
-
-                    <button type="submit" class="form-button">提交信息</button>
-
-                    <div class="form-success" id="formSuccess">
-                        <i class="fas fa-check-circle"></i> 感谢您的留言！我们会尽快与您联系。
-                    </div>
-
-                    <div class="form-info">
-                        <p>我们承诺保护您的隐私，您的信息仅用于联系您并提供相关服务。</p>
-                    </div>
-                </form>
+                </div>
             </div>
 
         </section>
