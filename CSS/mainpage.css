@@ -268,9 +268,13 @@ footer {
     padding: 20px;
 }
 
+.service-item a {
+    text-decoration: none;
+}
+
 .service-content h3 {
     margin: 0 0 10px 0;
-    color: #2c3e50;
+    color: #AF1F1F;
     font-size: 1.3rem;
 }
 
@@ -638,7 +642,7 @@ footer {
         display: block;
         padding: 15px 20px;
         font-size: 16px;
-        border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        border-bottom: 1px solid#9d8369;
     }
     .nav_bar ul li:last-child a {
         border-bottom: none;
@@ -974,7 +978,7 @@ footer {
         top: 70px;
         left: 0;
         width: 100%;
-        background-color: rgba(44, 62, 80, 0.95);
+        background-color: #9d8369;
         padding: 15px 0;
         z-index: 35;
     }
