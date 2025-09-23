@@ -121,8 +121,9 @@ main {
 .chinese-text {
     font-size: 1.4rem;
     line-height: 1.8;
-    font-weight: 500;
+    font-weight: 700;
     display: block;
+    color: #AF1F1F;
 }
 
 .aboutuse_btn button {
