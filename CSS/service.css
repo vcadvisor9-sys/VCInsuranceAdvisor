@@ -276,6 +276,14 @@ body {
     /* 段落左对齐 */
 }
 
+.category-content b {
+    color: #AF1F1F;
+}
+
+.category-content h3 {
+    color: #AF1F1F;
+}
+
 .category-content ul {
     margin-bottom: 15px;
     padding-left: 30px;
@@ -684,7 +692,7 @@ footer {
 .service-card h3 {
     display: inline;
     font-size: 1.2rem;
-    color: #2c3e50;
+    color: #AF1F1F;
     margin-bottom: 15px;
 }
 
