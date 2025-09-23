@@ -35,24 +35,22 @@
 <body>
     <div id="header"></div>
     <!-- Floating Language Selector -->
-    <div class="language-selector" id="languageSelector">
-        <div class="language-toggle" onclick="toggleLanguageOptions()">
-            <span id="currentLangIcon">EN</span>
-        </div>
-        <div class="language-options">
-            <div class="language-option" onclick="selectLanguage('en')">English</div>
-            <div class="language-option" onclick="selectLanguage('zh')">中文</div>
-        </div>
-    </div>
 
 
 
     <main>
         <hr>
         <div class="introduce_text">
-            <p id="introText"></p>
+            <p>
+                <br><span class="chinese-text">我们是一支专业的保险顾问团队，始终以客户为中心，倾听您的梦想，守护您的未来。我们用专业的建议，帮您守护最重要的人和事，并助您为挚爱之人打造跨世代的爱与保障。</span>
+                <br>
+                <br><span class="english-text">We are a team of professional insurance advisors, always putting clients at the center, listening to your dreams, and protecting your future. With professional advice, we help you protect the most important people and things in your
+                life, and assist you in creating intergenerational love and security for your loved ones.</span>
+
+
+            </p>
             <div class="aboutuse_btn">
-                <button>About us</button>
+                <button onclick="window.location.href='About.html'">About us</button>
             </div>
         </div>
 
@@ -94,12 +92,14 @@
                     </div>
                 </div>
                 <div class="service-item">
-                    <div class="service-image">
-                        <img src="image source/staff-agreement-applicant-associate-boardroom-business-1652041-pxhere.com.jpg" alt="Case Sharing">
-                    </div>
-                    <div class="service-content">
-                        <h3>Case Sharing</h3>
-                    </div>
+                    <a href="service.html#case_sharing">
+                        <div class="service-image">
+                            <img src="image source/staff-agreement-applicant-associate-boardroom-business-1652041-pxhere.com.jpg" alt="Case Sharing">
+                        </div>
+                        <div class="service-content">
+                            <h3>Case Sharing</h3>
+                        </div>
+                    </a>
                 </div>
                 <div class="service-item">
                     <a href="service.html#orphan_policy">
