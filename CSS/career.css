@@ -1,753 +1,1090 @@
-.career-container {
-    display: flex;
-    width: 100%;
-    margin-left: calc(-50vw + 50%);
-    margin-right: calc(-50vw + 50%);
-    flex-direction: column;
-    gap: 20px;
-    padding: 20px;
-    background-color: #D9C4AA;
-}
-
-* {
-    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-}
-
-.title-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    color: #AF1F1F;
-    margin-bottom: 10px;
-}
-
-.career-container h1 {
-    font-size: 2.8rem;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.career-container h2 {
-    font-size: 2rem;
-    color: #AF1F1F;
-    margin: 40px 0 20px;
-    padding-bottom: 10px;
-    border-bottom: 2px solid #AF1F1F;
-}
-
-.benefits-section {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    /* 关键：整体水平居中对齐 */
-    gap: 25px;
-    margin-bottom: 50px;
-    padding: 30px;
-    max-width: 95%;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.benefit-card {
-    background: white;
-    padding: 25px;
-    border-radius: 12px;
-    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    text-align: center;
-    flex: 0 1 300px;
-    /* 不伸缩，基础宽度300px，可以收缩 */
-    min-width: 280px;
-    /* 最小宽度 */
-}
-
-.benefit-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
-}
-
-.benefit-icon {
-    font-size: 2.5rem;
-    color: #AF1F1F;
-    margin-bottom: 15px;
-}
-
-.benefit-card h3 {
-    font-size: 1.3rem;
-    color: #AF1F1F;
-    margin-bottom: 10px;
-}
-
-.jobs-section {
-    padding: 30px;
-    border-radius: 12px;
-}
-
-.job-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
-}
-
-.job-card {
-    background: #f8f9fa;
-    padding: 25px;
-    border-radius: 10px;
-    border-left: 5px solid #AF1F1F;
-    transition: transform 0.3s ease;
-}
-
-.job-card:hover {
-    transform: translateX(5px);
-    background: #edf2f7;
-}
-
-.job-title {
-    font-size: 1.4rem;
-    color: #AF1F1F;
-    margin-bottom: 10px;
-}
-
-.cta-section {
-    text-align: center;
-    margin-top: 50px;
-    padding: 40px;
-    background: linear-gradient(120deg, #7b251e, #AF1F1F);
-    color: white;
-    border-radius: 12px;
-}
-
-.cta-section h2 {
-    color: white;
-    border-bottom: 2px solid rgba(255, 255, 255, 0.3);
-}
-
-.cta-text {
-    font-size: 1.2rem;
-    margin-bottom: 25px;
-    max-width: 700px;
-    margin-left: auto;
-    margin-right: auto;
-}
-
-.contact-info {
-    margin-top: 20px;
-    font-size: 1.1rem;
-}
-
-.pruventure-container {
-    display: flex;
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    margin: 20px 0;
-    flex-wrap: wrap;
-}
-
-.Pruventure {
-    flex: 1;
-    min-width: 300px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    padding: 30px;
-    background: linear-gradient(120deg, #f8f9fa 0%, #e9ecef 100%);
-}
-
-.img-container {
-    width: 100%;
-    text-align: center;
-}
-
-.img-container img {
-    width: 100%;
-    max-width: 400px;
-    border-radius: 12px;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.img-container img:hover {
-    transform: scale(1.03);
-    box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
-}
-
-.Pruventure-text {
-    flex: 1;
-    min-width: 300px;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    background: white;
-}
-
-.Pruventure-text h1 {
-    font-size: 2.2rem;
-    color: #AF1F1F;
-    margin-bottom: 20px;
-    font-weight: 700;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.Pruventure-text h1:after {
-    content: '';
-    position: absolute;
-    width: 60px;
-    height: 4px;
-    background: linear-gradient(90deg, #a41111, #AF1F1F);
-    bottom: 0;
-    left: 0;
-    border-radius: 2px;
-}
-
-.Pruventure-text b {
-    font-size: 1.2rem;
-    color: #AF1F1F;
-    margin-bottom: 20px;
-    display: block;
-}
-
-.Pruventure-text p {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 25px;
-}
-
-.Pruventure-text strong {
-    color: #AF1F1F;
-    font-weight: 700;
-    background: linear-gradient(120deg, rgba(74, 100, 145, 0.1) 0%, rgba(44, 62, 80, 0.1) 100%);
-    padding: 2px 6px;
-    border-radius: 4px;
-}
-
-.income-section {
-    display: flex;
-    background: white;
-    border-radius: 16px;
-    overflow: hidden;
-    box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
-    flex-wrap: wrap;
-}
-
-.income-content {
-    flex: 1;
-    min-width: 300px;
-    padding: 40px;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-}
-
-.income-slider {
-    flex: 1;
-    min-width: 300px;
-    position: relative;
-    overflow: hidden;
-    background: linear-gradient(120deg, #AF1F1F 100%);
-}
-
-.income-title {
-    font-size: 2.2rem;
-    color: #AF1F1F;
-    margin-bottom: 15px;
-    font-weight: 700;
-}
-
-.income-subtitle {
-    font-size: 1.4rem;
-    color: #AF1F1F;
-    margin-bottom: 25px;
-    font-weight: 600;
-}
-
-.income-description {
-    font-size: 1.1rem;
-    color: #555;
-    line-height: 1.8;
-    margin-bottom: 30px;
-}
-
-.income-detail {
-    background: #f8f9fa;
-    padding: 20px;
-    border-radius: 10px;
-    border-left: 4px solid #AF1F1F;
-    margin-top: 20px;
-}
-
-.income-detail p {
-    font-size: 1rem;
-    color: #444;
-    line-height: 1.7;
-}
-
-.slider-container {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    overflow: hidden;
-    border-radius: 0 16px 16px 0;
-}
-
-.slider {
-    display: flex;
-    width: 600%;
-    /* 修改为600%以适应6张图片 */
-    height: 100%;
-    transition: transform 0.6s ease-in-out;
-}
-
-.slide {
-    width: 16.666%;
-    /* 修改为100% / 6 = 16.666% */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    padding: 30px;
-    color: white;
-}
-
-.slide-image {
-    width: 100%;
-    height: 700px;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
-    margin-bottom: 25px;
-}
-
-.slide-image img {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-}
-
-.slide-title {
-    font-size: 1.4rem;
-    font-weight: 600;
-    margin-bottom: 15px;
-    text-align: center;
-}
-
-.slide-description {
-    font-size: 1rem;
-    text-align: center;
-    max-width: 300px;
-    line-height: 1.6;
-}
-
-.slider-controls {
-    position: absolute;
-    bottom: 20px;
-    left: 0;
-    right: 0;
-    display: flex;
-    justify-content: center;
-    gap: 10px;
-    z-index: 10;
-}
-
-.slider-dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: background 0.3s ease;
-}
-
-.slider-dot.active {
-    background: white;
-    transform: scale(1.2);
-}
-
-.slider-nav {
-    position: absolute;
-    top: 50%;
-    transform: translateY(-50%);
-    width: 40px;
-    height: 40px;
-    background: rgba(255, 255, 255, 0.2);
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    color: white;
-    font-size: 1.2rem;
-    cursor: pointer;
-    transition: background 0.3s ease;
-    z-index: 10;
-}
-
-.slider-nav:hover {
-    background: rgba(255, 255, 255, 0.3);
-}
-
-.slider-nav.prev {
-    left: 15px;
-}
-
-.slider-nav.next {
-    right: 15px;
-}
-
-.highlight {
-    color: #2c3e50;
-    font-weight: 700;
-    background: linear-gradient(120deg, rgba(74, 100, 145, 0.1) 0%, rgba(44, 62, 80, 0.1) 100%);
-    padding: 2px 6px;
-    border-radius: 4px;
-}
-
-.contact-container {
-    display: flex;
-    gap: 40px;
-    margin: 30px 0;
-    flex-wrap: wrap;
-}
-
-.contact-left,
-.contact-right {
-    flex: 1;
-    min-width: 300px;
-}
-
-.contact-left {
-    background: #f8f9fa;
-    padding: 30px;
-    border-radius: 10px;
-    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
-}
-
-
-/* 表单容器样式 */
-
-.form-container {
-    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
-    padding: 35px;
-    border-radius: 16px;
-    box-shadow: 0 8px 25px rgba(175, 31, 31, 0.15);
-    border: 1px solid rgba(175, 31, 31, 0.1);
-}
-
-
-/* 表单标题 */
-
-.form-title {
-    font-size: 1.8rem;
-    color: #AF1F1F;
-    margin-bottom: 25px;
-    text-align: center;
-    font-weight: 700;
-    position: relative;
-    padding-bottom: 15px;
-}
-
-.form-title:after {
-    content: '';
-    position: absolute;
-    width: 80px;
-    height: 3px;
-    background: linear-gradient(90deg, #AF1F1F, #D9C4AA);
-    bottom: 0;
-    left: 50%;
-    transform: translateX(-50%);
-    border-radius: 2px;
-}
-
-
-/* 表单组样式 */
-
-.form-group {
-    margin-bottom: 25px;
-    position: relative;
-}
-
-.form-label {
-    display: block;
-    margin-bottom: 8px;
-    font-weight: 600;
-    color: #2c3e50;
-    font-size: 1rem;
-}
-
-.form-input {
-    width: 100%;
-    padding: 14px 16px;
-    border: 2px solid #D9C4AA;
-    border-radius: 8px;
-    font-size: 1rem;
-    transition: all 0.3s ease;
-    background: white;
-    color: #2c3e50;
-}
-
-.form-input:focus {
-    outline: none;
-    border-color: #AF1F1F;
-    box-shadow: 0 0 0 3px rgba(175, 31, 31, 0.1);
-    transform: translateY(-2px);
-}
-
-.form-input::placeholder {
-    color: #a0aec0;
-}
-
-
-/* 文本区域样式 */
-
-textarea.form-input {
-    min-height: 120px;
-    resize: vertical;
-}
-
-
-/* 错误消息样式 */
-
-.error-message {
-    display: none;
-    color: #e53e3e;
-    font-size: 0.85rem;
-    margin-top: 6px;
-    font-weight: 500;
-}
-
-.form-input:invalid:not(:placeholder-shown)+.error-message {
-    display: block;
-}
-
-
-/* 提交按钮样式 */
-
-.form-button {
-    width: 100%;
-    padding: 16px;
-    background: linear-gradient(135deg, #AF1F1F 0%, #8b0000 100%);
-    color: white;
-    border: none;
-    border-radius: 8px;
-    font-size: 1.1rem;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-transform: uppercase;
-    letter-spacing: 0.5px;
-    margin-top: 10px;
-}
-
-.form-button:hover {
-    background: linear-gradient(135deg, #8b0000 0%, #6a0000 100%);
-    transform: translateY(-2px);
-    box-shadow: 0 6px 15px rgba(175, 31, 31, 0.3);
-}
-
-.form-button:active {
-    transform: translateY(0);
-}
-
-
-/* 成功消息样式 */
-
-.form-success {
-    display: none;
-    background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
-    color: white;
-    padding: 20px;
-    border-radius: 8px;
-    margin-top: 20px;
-    text-align: center;
-    animation: fadeIn 0.5s ease;
-}
-
-.form-success i {
-    margin-right: 10px;
-    font-size: 1.2rem;
-}
-
-
-/* 表单信息文本 */
-
-.form-info {
-    margin-top: 25px;
-    padding: 15px;
-    background: rgba(175, 31, 31, 0.05);
-    border-radius: 8px;
-    border-left: 4px solid #AF1F1F;
-}
-
-.form-info p {
-    margin: 0;
-    color: #4a5568;
-    font-size: 0.9rem;
-    line-height: 1.5;
-}
-
-
-/* 动画效果 */
-
-@keyframes fadeIn {
-    from {
-        opacity: 0;
-        transform: translateY(10px);
-    }
-    to {
-        opacity: 1;
-        transform: translateY(0);
-    }
-}
-
-
-/* 响应式设计 */
-
-@media (max-width: 768px) {
-    .form-container {
-        padding: 25px;
-        margin: 0 10px;
-    }
-    .form-title {
-        font-size: 1.5rem;
-    }
-    .form-input {
-        padding: 12px;
-    }
-    .form-button {
-        padding: 14px;
-        font-size: 1rem;
-    }
-    .benefits-section {
-        max-width: 400px;
-        padding: 20px 15px;
-    }
-    .benefit-card {
-        flex: 0 1 100%;
-        /* 移动端占满宽度 */
-        min-width: auto;
-    }
-}
-
-
-/* 表单焦点状态的额外样式 */
-
-.form-group:focus-within .form-label {
-    color: #AF1F1F;
-}
-
-
-/* 可选：为必填字段添加星号 */
-
-.form-label[for]:after {
-    content: '*';
-    color: #AF1F1F;
-    margin-left: 4px;
-}
-
-
-/* 表单输入验证样式 */
-
-.form-input:valid:not(:placeholder-shown) {
-    border-color: #38a169;
-}
-
-.form-input:invalid:not(:placeholder-shown) {
-    border-color: #e53e3e;
-}
-
-
-/* 响应式设计 */
-
-@media (max-width: 768px) {
-    .contact-container {
-        flex-direction: column;
-    }
-    .contact-left,
-    .contact-right {
+    .career-container {
+        display: flex;
         width: 100%;
-    }
-}
-
-@media (max-width: 768px) {
-    h1 {
-        font-size: 2.2rem;
-    }
-    h2 {
-        font-size: 1.7rem;
-    }
-    .benefits-section,
-    .job-list {
-        grid-template-columns: 1fr;
-    }
-    .cta-section {
-        padding: 25px;
-    }
-    .income-section {
+        margin-left: calc(-50vw + 50%);
+        margin-right: calc(-50vw + 50%);
         flex-direction: column;
+        gap: 20px;
+        padding: 20px;
+        background-color: #D9C4AA;
     }
-    .income-content,
-    .income-slider {
+    
+    * {
+        font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    }
+    
+    .title-container {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        color: #AF1F1F;
+        margin-bottom: 10px;
+    }
+    
+    .career-container h1 {
+        font-size: 2.8rem;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+    
+    .career-container h2 {
+        font-size: 2rem;
+        color: #AF1F1F;
+        margin: 40px 0 20px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #AF1F1F;
+    }
+    
+    .benefits-section {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        /* 关键：整体水平居中对齐 */
+        gap: 25px;
+        margin-bottom: 50px;
+        padding: 30px;
+        max-width: 95%;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .benefit-card {
+        background: white;
         padding: 25px;
+        border-radius: 12px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        text-align: center;
+        flex: 0 1 300px;
+        /* 不伸缩，基础宽度300px，可以收缩 */
+        min-width: 280px;
+        /* 最小宽度 */
     }
-    .income-title {
-        font-size: 1.8rem;
+    
+    .benefit-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
     }
-    .income-subtitle {
-        font-size: 1.2rem;
+    
+    .benefit-icon {
+        font-size: 2.5rem;
+        color: #AF1F1F;
+        margin-bottom: 15px;
     }
-    .slider-container {
+    
+    .benefit-card h3 {
+        font-size: 1.3rem;
+        color: #AF1F1F;
+        margin-bottom: 10px;
+    }
+    
+    .jobs-section {
+        padding: 30px;
         border-radius: 12px;
     }
-    .slide {
-        padding: 20px;
-    }
-    .slide-image {
-        max-width: 220px;
-        height: 180px;
-    }
-    .slider {
-        width: 600%;
-        /* 保持与桌面端一致 */
-    }
-    .slide {
-        width: 16.666%;
-        /* 保持与桌面端一致 */
-    }
-}
-
-@media (max-width: 480px) {
-    .income-content {
-        padding: 20px;
-    }
-    .income-title {
-        font-size: 1.6rem;
-    }
-    .income-description {
-        font-size: 1rem;
-    }
-    .slider-nav {
-        width: 35px;
-        height: 35px;
-        font-size: 1rem;
-    }
-    .slide-image {
-        max-width: 200px;
-        height: 160px;
-    }
-    .benefits-section {
+    
+    .job-list {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
         gap: 20px;
-        padding: 15px 10px;
     }
-    .benefit-card {
-        padding: 20px 15px;
+    
+    .job-card {
+        background: #f8f9fa;
+        padding: 25px;
+        border-radius: 10px;
+        border-left: 5px solid #AF1F1F;
+        transition: transform 0.3s ease;
     }
-    .benefit-icon {
-        font-size: 2rem;
+    
+    .job-card:hover {
+        transform: translateX(5px);
+        background: #edf2f7;
     }
-    .benefit-card h3 {
+    
+    .job-title {
+        font-size: 1.4rem;
+        color: #AF1F1F;
+        margin-bottom: 10px;
+    }
+    
+    .cta-section {
+        text-align: center;
+        margin-top: 50px;
+        padding: 40px;
+        background: linear-gradient(120deg, #7b251e, #AF1F1F);
+        color: white;
+        border-radius: 12px;
+    }
+    
+    .cta-section h2 {
+        color: white;
+        border-bottom: 2px solid rgba(255, 255, 255, 0.3);
+    }
+    
+    .cta-text {
+        font-size: 1.2rem;
+        margin-bottom: 25px;
+        max-width: 700px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .contact-info {
+        margin-top: 20px;
         font-size: 1.1rem;
     }
-}
+    
+    .pruventure-container {
+        display: flex;
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin: 20px 0;
+        flex-wrap: wrap;
+    }
+    
+    .Pruventure {
+        flex: 1;
+        min-width: 300px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 30px;
+        background: linear-gradient(120deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    .img-container {
+        width: 100%;
+        text-align: center;
+        /* 添加以下样式防止图片溢出 */
+        max-width: 100%;
+        box-sizing: border-box;
+    }
+    
+    .img-container img {
+        width: 100%;
+        max-width: 400px;
+        height: auto;
+        /* 确保高度自适应 */
+        border-radius: 12px;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.15);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        /* 添加响应式图片属性 */
+        display: block;
+        margin: 0 auto;
+    }
+    
+    .img-container img:hover {
+        transform: scale(1.03);
+        box-shadow: 0 12px 25px rgba(0, 0, 0, 0.2);
+    }
+    
+    .Pruventure-text {
+        flex: 1;
+        min-width: 300px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background: white;
+        /* 添加以下样式防止内容溢出 */
+        box-sizing: border-box;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    
+    .Pruventure-text h1 {
+        font-size: 2.2rem;
+        color: #AF1F1F;
+        margin-bottom: 20px;
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 15px;
+        /* 添加响应式字体大小 */
+        line-height: 1.2;
+    }
+    
+    .Pruventure-text b {
+        font-size: 1.2rem;
+        color: #AF1F1F;
+        margin-bottom: 20px;
+        display: block;
+        /* 添加响应式字体大小 */
+        line-height: 1.3;
+    }
+    
+    .Pruventure-text p {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 25px;
+        /* 确保文本不会溢出 */
+        max-width: 100%;
+    }
+    
+    .Pruventure-text strong {
+        color: #AF1F1F;
+        font-weight: 700;
+        background: linear-gradient(120deg, rgba(74, 100, 145, 0.1) 0%, rgba(44, 62, 80, 0.1) 100%);
+        padding: 2px 6px;
+        border-radius: 4px;
+        /* 确保内联元素不会导致溢出 */
+        white-space: nowrap;
+    }
+    
+    .commission-section {
+        padding: 60px 20px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    .commission-container {
+        max-width: 1000px;
+        margin: 0 auto;
+        text-align: center;
+    }
+    
+    .commission-section h2 {
+        font-size: 2.2rem;
+        color: #AF1F1F;
+        margin-bottom: 15px;
+        font-weight: 700;
+    }
+    
+    .commission-subtitle {
+        font-size: 1.2rem;
+        color: #555;
+        margin-bottom: 40px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .commission-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 40px;
+    }
+    
+    .commission-card {
+        background: white;
+        border-radius: 12px;
+        padding: 30px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+    
+    .commission-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+    }
+    
+    .commission-card h3 {
+        font-size: 1.5rem;
+        color: #AF1F1F;
+        margin-bottom: 25px;
+        padding-bottom: 10px;
+        border-bottom: 2px solid #D9C4AA;
+    }
+    
+    .commission-item {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 12px 0;
+        border-bottom: 1px solid #f0f0f0;
+    }
+    
+    .commission-item:last-child {
+        border-bottom: none;
+    }
+    
+    .commission-label {
+        font-size: 1.1rem;
+        color: #555;
+        font-weight: 500;
+    }
+    
+    .commission-value {
+        font-size: 1.3rem;
+        font-weight: 700;
+        color: #AF1F1F;
+    }
+    
+    .commission-total {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 15px 0;
+        margin-top: 15px;
+        border-top: 2px solid #D9C4AA;
+    }
+    
+    .commission-total .commission-label {
+        font-size: 1.2rem;
+        font-weight: 700;
+    }
+    
+    .commission-total .commission-value {
+        font-size: 1.5rem;
+    }
+    
+    .commission-note {
+        margin-top: 20px;
+        padding: 15px;
+        background: #f8f9fa;
+        border-radius: 8px;
+        border-left: 4px solid #AF1F1F;
+    }
+    
+    .commission-note p {
+        margin: 0;
+        font-size: 0.95rem;
+        color: #555;
+        line-height: 1.5;
+    }
+    
+    .income-section {
+        display: flex;
+        background: white;
+        border-radius: 16px;
+        overflow: hidden;
+        box-shadow: 0 15px 40px rgba(0, 0, 0, 0.12);
+        flex-wrap: wrap;
+        max-width: 100%;
+        box-sizing: border-box;
+        /* 确保两个部分高度平衡 */
+        align-items: stretch;
+        min-height: 600px;
+        /* 设置最小高度保持平衡 */
+    }
+    
+    .income-content {
+        flex: 1;
+        min-width: 300px;
+        padding: 40px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        max-width: 100%;
+        box-sizing: border-box;
+        /* 限制内容区域的最大宽度 */
+        max-width: 500px;
+        /* 防止文本区域过宽 */
+    }
+    
+    .income-slider {
+        flex: 1;
+        min-width: 300px;
+        position: relative;
+        overflow: hidden;
+        background: linear-gradient(120deg, #AF1F1F, #8b0000);
+        /* 确保轮播区域有足够空间 */
+        min-height: 500px;
+        display: flex;
+        align-items: center;
+    }
+    
+    .income-title {
+        font-size: 2.2rem;
+        color: #AF1F1F;
+        margin-bottom: 15px;
+        font-weight: 700;
+        line-height: 1.2;
+        /* 添加文本溢出保护 */
+        word-break: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+    }
+    
+    .income-subtitle {
+        font-size: 1.4rem;
+        color: #AF1F1F;
+        margin-bottom: 25px;
+        font-weight: 600;
+        line-height: 1.3;
+        /* 添加文本溢出保护 */
+        word-break: break-word;
+    }
+    
+    .income-description {
+        font-size: 1.1rem;
+        color: #555;
+        line-height: 1.8;
+        margin-bottom: 30px;
+        max-width: 100%;
+        /* 增强英文文本换行 */
+        word-break: break-word;
+        overflow-wrap: break-word;
+        hyphens: auto;
+        white-space: normal !important;
+        /* 强制正常换行 */
+    }
+    
+    .income-detail {
+        background: #f8f9fa;
+        padding: 20px;
+        border-radius: 10px;
+        border-left: 4px solid #AF1F1F;
+        margin-top: 20px;
+    }
+    
+    .income-description br {
+        display: block;
+        content: "";
+        margin-bottom: 8px;
+    }
+    /* 修改HTML结构，添加span包装英文和中文部分 */
+    
+    .income-description span {
+        display: block;
+        margin-bottom: 10px;
+    }
+    
+    .income-detail p {
+        font-size: 1rem;
+        color: #444;
+        line-height: 1.7;
+    }
+    
+    .slider-container {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        overflow: hidden;
+        border-radius: 0 16px 16px 0;
+    }
+    
+    .slider {
+        display: flex;
+        width: 600%;
+        height: 100%;
+        transition: transform 0.6s ease-in-out;
+    }
+    
+    .slide {
+        width: 16.666%;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        padding: 30px;
+        color: white;
+        box-sizing: border-box;
+        text-align: center;
+        /* 确保幻灯片内容居中 */
+        height: 100%;
+    }
+    
+    .slide-image {
+        width: 100%;
+        max-width: 700px;
+        /* 统一图片最大宽度 */
+        height: 600px;
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+        margin-bottom: 20px;
+        /* 确保图片容器居中 */
+        margin-left: auto;
+        margin-right: auto;
+    }
+    
+    .slide-image img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+    
+    .slide-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+        margin-bottom: 15px;
+        text-align: center;
+        line-height: 1.3;
+        max-width: 250px;
+    }
+    
+    .slide-description {
+        font-size: 0.95rem;
+        text-align: center;
+        max-width: 250px;
+        line-height: 1.5;
+        word-wrap: break-word;
+    }
+    
+    .slider-controls {
+        position: absolute;
+        bottom: 20px;
+        left: 0;
+        right: 0;
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        z-index: 10;
+    }
+    
+    .slider-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background: rgba(255, 255, 255, 0.5);
+        cursor: pointer;
+        transition: background 0.3s ease;
+    }
+    
+    .slider-dot.active {
+        background: white;
+        transform: scale(1.2);
+    }
+    
+    .slider-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 40px;
+        height: 40px;
+        background: rgba(255, 255, 255, 0.2);
+        border-radius: 50%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: white;
+        font-size: 1.2rem;
+        cursor: pointer;
+        transition: background 0.3s ease;
+        z-index: 10;
+    }
+    
+    .slider-nav:hover {
+        background: rgba(255, 255, 255, 0.3);
+    }
+    
+    .slider-nav.prev {
+        left: 15px;
+    }
+    
+    .slider-nav.next {
+        right: 15px;
+    }
+    
+    .highlight {
+        color: #2c3e50;
+        font-weight: 700;
+        background: linear-gradient(120deg, rgba(74, 100, 145, 0.1) 0%, rgba(44, 62, 80, 0.1) 100%);
+        padding: 2px 6px;
+        border-radius: 4px;
+    }
+    
+    .contact-container {
+        display: flex;
+        gap: 40px;
+        margin: 30px 0;
+        flex-wrap: wrap;
+    }
+    
+    .contact-left,
+    .contact-right {
+        flex: 1;
+        min-width: 300px;
+    }
+    
+    .contact-left {
+        background: #f8f9fa;
+        padding: 30px;
+        border-radius: 10px;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+    }
+    /* 表单容器样式 */
+    
+    .form-container {
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        padding: 35px;
+        border-radius: 16px;
+        box-shadow: 0 8px 25px rgba(175, 31, 31, 0.15);
+        border: 1px solid rgba(175, 31, 31, 0.1);
+    }
+    /* 表单标题 */
+    
+    .form-title {
+        font-size: 1.8rem;
+        color: #AF1F1F;
+        margin-bottom: 25px;
+        text-align: center;
+        font-weight: 700;
+        position: relative;
+        padding-bottom: 15px;
+    }
+    
+    .form-title:after {
+        content: '';
+        position: absolute;
+        width: 80px;
+        height: 3px;
+        background: linear-gradient(90deg, #AF1F1F, #D9C4AA);
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        border-radius: 2px;
+    }
+    /* 表单组样式 */
+    
+    .form-group {
+        margin-bottom: 25px;
+        position: relative;
+    }
+    
+    .form-label {
+        display: block;
+        margin-bottom: 8px;
+        font-weight: 600;
+        color: #2c3e50;
+        font-size: 1rem;
+    }
+    
+    .form-input {
+        width: 100%;
+        padding: 14px 16px;
+        border: 2px solid #D9C4AA;
+        border-radius: 8px;
+        font-size: 1rem;
+        transition: all 0.3s ease;
+        background: white;
+        color: #2c3e50;
+    }
+    
+    .form-input:focus {
+        outline: none;
+        border-color: #AF1F1F;
+        box-shadow: 0 0 0 3px rgba(175, 31, 31, 0.1);
+        transform: translateY(-2px);
+    }
+    
+    .form-input::placeholder {
+        color: #a0aec0;
+    }
+    /* 文本区域样式 */
+    
+    textarea.form-input {
+        min-height: 120px;
+        resize: vertical;
+    }
+    /* 错误消息样式 */
+    
+    .error-message {
+        display: none;
+        color: #e53e3e;
+        font-size: 0.85rem;
+        margin-top: 6px;
+        font-weight: 500;
+    }
+    
+    .form-input:invalid:not(:placeholder-shown)+.error-message {
+        display: block;
+    }
+    /* 提交按钮样式 */
+    
+    .form-button {
+        width: 100%;
+        padding: 16px;
+        background: linear-gradient(135deg, #AF1F1F 0%, #8b0000 100%);
+        color: white;
+        border: none;
+        border-radius: 8px;
+        font-size: 1.1rem;
+        font-weight: 600;
+        cursor: pointer;
+        transition: all 0.3s ease;
+        text-transform: uppercase;
+        letter-spacing: 0.5px;
+        margin-top: 10px;
+    }
+    
+    .form-button:hover {
+        background: linear-gradient(135deg, #8b0000 0%, #6a0000 100%);
+        transform: translateY(-2px);
+        box-shadow: 0 6px 15px rgba(175, 31, 31, 0.3);
+    }
+    
+    .form-button:active {
+        transform: translateY(0);
+    }
+    /* 成功消息样式 */
+    
+    .form-success {
+        display: none;
+        background: linear-gradient(135deg, #38a169 0%, #2f855a 100%);
+        color: white;
+        padding: 20px;
+        border-radius: 8px;
+        margin-top: 20px;
+        text-align: center;
+        animation: fadeIn 0.5s ease;
+    }
+    
+    .form-success i {
+        margin-right: 10px;
+        font-size: 1.2rem;
+    }
+    /* 表单信息文本 */
+    
+    .form-info {
+        margin-top: 25px;
+        padding: 15px;
+        background: rgba(175, 31, 31, 0.05);
+        border-radius: 8px;
+        border-left: 4px solid #AF1F1F;
+    }
+    
+    .form-info p {
+        margin: 0;
+        color: #4a5568;
+        font-size: 0.9rem;
+        line-height: 1.5;
+    }
+    /* 动画效果 */
+    
+    @keyframes fadeIn {
+        from {
+            opacity: 0;
+            transform: translateY(10px);
+        }
+        to {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    }
+    /* 响应式设计 */
+    
+    @media (max-width: 768px) {
+        .form-container {
+            padding: 25px;
+            margin: 0 10px;
+        }
+        .form-title {
+            font-size: 1.5rem;
+        }
+        .form-input {
+            padding: 12px;
+        }
+        .form-button {
+            padding: 14px;
+            font-size: 1rem;
+        }
+        .benefits-section {
+            max-width: 400px;
+            padding: 20px 15px;
+        }
+        .benefit-card {
+            flex: 0 1 100%;
+            /* 移动端占满宽度 */
+            min-width: auto;
+        }
+        .commission-section {
+            padding: 40px 15px;
+        }
+        .commission-section h2 {
+            font-size: 1.8rem;
+        }
+        .commission-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .commission-card {
+            padding: 20px;
+        }
+        .pruventure-container {
+            flex-direction: column;
+            margin: 15px 0;
+        }
+        .Pruventure {
+            order: 2;
+            /* 图片放在文本后面 */
+        }
+        .Pruventure-text {
+            order: 1;
+            /* 文本放在图片前面 */
+        }
+        .Pruventure,
+        .Pruventure-text {
+            min-width: 100%;
+            padding: 25px 20px;
+        }
+        .Pruventure-text h1 {
+            font-size: 1.8rem;
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+        }
+        .Pruventure-text b {
+            font-size: 1.1rem;
+            margin-bottom: 15px;
+        }
+        .Pruventure-text p {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 20px;
+        }
+        .img-container img {
+            max-width: 80%;
+            height: auto;
+        }
+    }
+    /* 表单焦点状态的额外样式 */
+    
+    .form-group:focus-within .form-label {
+        color: #AF1F1F;
+    }
+    /* 可选：为必填字段添加星号 */
+    
+    .form-label[for]:after {
+        content: '*';
+        color: #AF1F1F;
+        margin-left: 4px;
+    }
+    /* 表单输入验证样式 */
+    
+    .form-input:valid:not(:placeholder-shown) {
+        border-color: #38a169;
+    }
+    
+    .form-input:invalid:not(:placeholder-shown) {
+        border-color: #e53e3e;
+    }
+    /* 响应式设计 */
+    
+    @media (max-width: 768px) {
+        .contact-container {
+            flex-direction: column;
+        }
+        .contact-left,
+        .contact-right {
+            width: 100%;
+        }
+    }
+    
+    @media (max-width: 768px) {
+        h1 {
+            font-size: 2.2rem;
+        }
+        h2 {
+            font-size: 1.7rem;
+        }
+        .benefits-section,
+        .job-list {
+            grid-template-columns: 1fr;
+        }
+        .cta-section {
+            padding: 25px;
+        }
+        .income-section {
+            flex-direction: column;
+            border-radius: 12px;
+            margin: 0 10px;
+            /* 添加边距防止贴边 */
+        }
+        .income-content {
+            padding: 30px 25px;
+            min-width: auto;
+            text-align: center;
+        }
+        .income-title {
+            font-size: 1.8rem;
+            margin-bottom: 12px;
+            /* 小屏幕上强制换行 */
+            word-break: break-word;
+            line-height: 1.3;
+        }
+        .income-subtitle {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            word-break: break-word;
+        }
+        .income-description {
+            font-size: 1rem;
+            line-height: 1.6;
+            margin-bottom: 25px;
+            /* 小屏幕上更积极的换行策略 */
+            word-break: break-word;
+            overflow-wrap: anywhere;
+        }
+        .income-description br {
+            display: none;
+        }
+        .income-slider {
+            min-width: auto;
+            border-radius: 0 0 12px 12px;
+        }
+        .slider-container {
+            border-radius: 0 0 12px 12px;
+        }
+        .slide {
+            padding: 25px 20px;
+            width: 16.666%;
+        }
+        .slide-image {
+            max-width: 250px;
+            height: 250px;
+            margin-bottom: 20px;
+        }
+        .slide-title {
+            font-size: 1.2rem;
+            margin-bottom: 12px;
+        }
+        .slide-description {
+            font-size: 0.95rem;
+            max-width: 250px;
+            line-height: 1.5;
+        }
+        .slider-nav {
+            width: 35px;
+            height: 35px;
+            font-size: 1rem;
+        }
+        .income-content h2,
+        .income-content h3,
+        .income-content p {
+            max-width: 100%;
+            word-wrap: break-word;
+        }
+        .slider {
+            width: 600%;
+            /* 保持与桌面端一致 */
+        }
+        .slide {
+            width: 16.666%;
+            /* 保持与桌面端一致 */
+        }
+    }
+    
+    @media (max-width: 480px) {
+        .income-content {
+            padding: 25px 20px;
+        }
+        .income-title {
+            font-size: 1.6rem;
+        }
+        .income-subtitle {
+            font-size: 1.2rem;
+        }
+        .income-description {
+            font-size: 0.95rem;
+        }
+        .income-description br {
+            display: none;
+            /* 在小屏幕上移除换行 */
+        }
+        .slide {
+            padding: 20px 15px;
+        }
+        .slide-image {
+            max-width: 200px;
+            height: 150px;
+            margin-bottom: 15px;
+        }
+        .slide-title {
+            font-size: 1.1rem;
+        }
+        .slide-description {
+            font-size: 0.9rem;
+            max-width: 200px;
+        }
+        .slider-controls {
+            bottom: 15px;
+        }
+        .slider-dot {
+            width: 10px;
+            height: 10px;
+        }
+        .benefits-section {
+            gap: 20px;
+            padding: 15px 10px;
+        }
+        .benefit-card {
+            padding: 20px 15px;
+        }
+        .benefit-icon {
+            font-size: 2rem;
+        }
+        .benefit-card h3 {
+            font-size: 1.1rem;
+        }
+        .Pruventure-text {
+            padding: 20px 15px;
+        }
+        .Pruventure-text h1 {
+            font-size: 1.6rem;
+        }
+        .Pruventure-text b {
+            font-size: 1rem;
+        }
+        .Pruventure-text p {
+            font-size: 0.95rem;
+            line-height: 1.5;
+        }
+        /* 确保在小屏幕上换行正常 */
+        .Pruventure-text p br {
+            display: block;
+            content: "";
+            margin-bottom: 8px;
+        }
+        .img-container {
+            padding: 0 5px;
+        }
+        .img-container img {
+            max-width: 80%;
+            border-radius: 8px;
+            /* 在小屏幕上减小圆角 */
+        }
+        .Pruventure {
+            padding: 15px 10px;
+        }
+    }
+    
+    @media (max-width: 360px) {
+        .income-content {
+            padding: 20px 15px;
+        }
+        .income-title {
+            font-size: 1.4rem;
+        }
+        .income-subtitle {
+            font-size: 1.1rem;
+        }
+        .income-description {
+            font-size: 0.9rem;
+        }
+        .slide {
+            padding: 15px 10px;
+        }
+        .slide-image {
+            max-width: 180px;
+            height: 130px;
+        }
+        .slide-title {
+            font-size: 1rem;
+        }
+        .slide-description {
+            font-size: 0.85rem;
+            max-width: 180px;
+        }
+        .Pruventure-text h1 {
+            font-size: 1.4rem;
+        }
+        .Pruventure-text b {
+            font-size: 0.95rem;
+        }
+        .Pruventure-text p {
+            font-size: 0.9rem;
+        }
+        .img-container img {
+            max-width: 80%;
+            border-radius: 6px;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+            /* 减小阴影 */
+        }
+    }
