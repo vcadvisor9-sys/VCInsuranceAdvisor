@@ -1449,4 +1449,66 @@ footer {
     .premium-cta {
         padding: 20px 15px;
     }
+    .service-details {
+        max-width: 95% !important;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        overflow-x: hidden;
+    }
+    .coverage {
+        grid-template-columns: 1fr !important;
+        gap: 20px !important;
+    }
+    .images-bottom {
+        flex-direction: column;
+        align-items: center;
+        gap: 15px;
+    }
+    .images-bottom img {
+        max-width: 100% !important;
+        height: auto;
+    }
+    #bear {
+        max-width: 80% !important;
+    }
+    .detail-content {
+        padding: 20px 15px !important;
+        word-wrap: break-word;
+        overflow-wrap: break-word;
+    }
+    .detail-content h3 {
+        font-size: 1.3rem !important;
+        text-align: center;
+    }
+    .coverage h4 {
+        font-size: 1.1rem;
+    }
+    .coverage ul li {
+        font-size: 0.9rem;
+        line-height: 1.4;
+    }
+}
+
+@media (max-width: 480px) {
+    body {
+        overflow-x: hidden;
+        width: 100%;
+    }
+    .container {
+        max-width: 100%;
+        padding: 0 10px;
+    }
+    .filter-buttons {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .filter-btn {
+        margin: 5px;
+        padding: 8px 12px;
+        font-size: 0.85rem;
+        flex: 1;
+        min-width: 120px;
+        text-align: center;
+    }
 }
