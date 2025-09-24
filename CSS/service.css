@@ -792,6 +792,128 @@ footer {
     line-height: 1.5;
 }
 
+.premium-adjustment {
+    padding: 50px 20px;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    width: 80%;
+    margin: 40px auto;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.premium-adjustment .title {
+    font-size: 2rem;
+    margin-bottom: 10px;
+    color: #AF1F1F;
+    font-family: 'Jacques Francois', serif;
+    text-align: center;
+}
+
+.premium-adjustment hr {
+    border: 0;
+    height: 2px;
+    background: #AF1F1F;
+    width: 80px;
+    margin: 0 auto 20px;
+}
+
+.premium-intro {
+    text-align: center;
+    margin-bottom: 40px;
+    color: #555;
+    line-height: 1.6;
+    max-width: 800px;
+    margin-left: auto;
+    margin-right: auto;
+    font-size: 1.1rem;
+}
+
+.premium-intro strong {
+    color: #AF1F1F;
+    font-weight: 600;
+}
+
+.premium-features {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 25px;
+    margin-bottom: 40px;
+}
+
+.premium-card {
+    background: white;
+    border-radius: 12px;
+    padding: 30px 20px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-top: 4px solid #AF1F1F;
+}
+
+.premium-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(175, 31, 31, 0.15);
+}
+
+.premium-icon {
+    font-size: 3rem;
+    margin-bottom: 15px;
+}
+
+.premium-card h3 {
+    color: #AF1F1F;
+    margin-bottom: 15px;
+    font-size: 1.2rem;
+}
+
+.premium-card p {
+    color: #555;
+    line-height: 1.6;
+    font-size: 0.95rem;
+}
+
+.premium-cta {
+    background: white;
+    border-radius: 12px;
+    padding: 30px;
+    text-align: center;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.08);
+    border-left: 4px solid #907a62;
+}
+
+.premium-cta h4 {
+    color: #2c3e50;
+    margin-bottom: 15px;
+    font-size: 1.3rem;
+}
+
+.premium-cta p {
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 25px;
+    max-width: 600px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.consultation-btn {
+    background: #AF1F1F;
+    color: white;
+    border: none;
+    padding: 12px 30px;
+    font-size: 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    font-weight: 600;
+    transition: all 0.3s ease;
+}
+
+.consultation-btn:hover {
+    background: #8b1818;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px rgba(175, 31, 31, 0.3);
+}
+
 .footerbar {
     background-color: #9d8369;
     width: 100%;
@@ -1286,5 +1408,21 @@ footer {
     }
     .services-grid {
         grid-template-columns: 1fr;
+    }
+    .premium-adjustment {
+        width: 90%;
+        padding: 30px 15px;
+    }
+    .premium-adjustment .title {
+        font-size: 1.8rem;
+    }
+    .premium-features {
+        grid-template-columns: 1fr;
+    }
+    .premium-card {
+        padding: 20px 15px;
+    }
+    .premium-cta {
+        padding: 20px 15px;
     }
 }
