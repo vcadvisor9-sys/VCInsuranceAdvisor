@@ -36,11 +36,16 @@
 }
 
 .benefits-section {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    /* 关键：整体水平居中对齐 */
     gap: 25px;
     margin-bottom: 50px;
     padding: 30px;
+    max-width: 95%;
+    margin-left: auto;
+    margin-right: auto;
 }
 
 .benefit-card {
@@ -50,6 +55,10 @@
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.08);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     text-align: center;
+    flex: 0 1 300px;
+    /* 不伸缩，基础宽度300px，可以收缩 */
+    min-width: 280px;
+    /* 最小宽度 */
 }
 
 .benefit-card:hover {
@@ -611,6 +620,15 @@ textarea.form-input {
         padding: 14px;
         font-size: 1rem;
     }
+    .benefits-section {
+        max-width: 400px;
+        padding: 20px 15px;
+    }
+    .benefit-card {
+        flex: 0 1 100%;
+        /* 移动端占满宽度 */
+        min-width: auto;
+    }
 }
 
 
@@ -718,5 +736,18 @@ textarea.form-input {
     .slide-image {
         max-width: 200px;
         height: 160px;
+    }
+    .benefits-section {
+        gap: 20px;
+        padding: 15px 10px;
+    }
+    .benefit-card {
+        padding: 20px 15px;
+    }
+    .benefit-icon {
+        font-size: 2rem;
+    }
+    .benefit-card h3 {
+        font-size: 1.1rem;
     }
 }
