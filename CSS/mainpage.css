@@ -544,6 +544,11 @@ footer {
     text-align: left;
 }
 
+.footer-logo img {
+    max-width: 100%;
+    height: auto;
+}
+
 .footer-logo .logo-box {
     width: 180px;
     height: 180px;
