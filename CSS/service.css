@@ -105,6 +105,52 @@ body {
     /* 小熊再小一点 */
 }
 
+.MedicalCard {
+    margin-top: 20px;
+}
+
+.MedicalCard h4 {
+    color: #AF1F1F;
+    font-size: 1.3rem;
+    margin-bottom: 15px;
+    font-family: 'Jacques Francois', serif;
+}
+
+.MedicalCard ul {
+    list-style-type: disc;
+    margin-left: 20px;
+    margin-bottom: 15px;
+}
+
+.MedicalCard ul li {
+    margin-bottom: 8px;
+    line-height: 1.6;
+    color: #444;
+}
+
+.MedicalCard b {
+    color: #AF1F1F;
+    font-weight: bold;
+}
+
+.MedicalCard hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 15px 0;
+}
+
+
+/* 确保 Medical Card 内容正确显示 */
+
+#MedicalCard {
+    display: none;
+}
+
+#MedicalCard.active {
+    display: block;
+}
+
 #PRULady b {
     display: block;
     margin: 8px 0;
@@ -874,6 +920,10 @@ footer {
     border-top: 4px solid #AF1F1F;
 }
 
+.PRUcash-coverage b {
+    color: #AF1F1F;
+}
+
 .premium-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 8px 20px rgba(175, 31, 31, 0.15);
@@ -1510,5 +1560,14 @@ footer {
         flex: 1;
         min-width: 120px;
         text-align: center;
+    }
+    .MedicalCard h4 {
+        font-size: 1.1rem;
+    }
+    .MedicalCard ul {
+        margin-left: 15px;
+    }
+    .MedicalCard ul li {
+        font-size: 0.9rem;
     }
 }
