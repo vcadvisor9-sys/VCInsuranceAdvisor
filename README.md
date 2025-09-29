@@ -15,6 +15,6 @@ this web page is a simple web page that was develop by Using **HTML,CSS,JAVA Scr
 
 CSS file had save all page's css . The **Mainpage.css** need to apply in all page due to the header nav bar and footeer bar was writen in here so it must be apply on it. 
 
-JS File had save all the Javascript code for each page. If you finding the email function it was locate at **career.js** file. This Email function is using the [MailJS](https://dashboard.emailjs.com/sign-in "MailJS") to apply it .The email and password to loging you can contact so Nichole. If you want to learn how to using on it you can follow by this [video](https://youtu.be/BgVjild0C9A?si=YmHDxZ7Nx4U6Ozgx "video"). 
+JS File had save all the Javascript code for each page. If you finding the email function it was locate at **career.js** file. This Email function is using the [MailJS](https://dashboard.emailjs.com/sign-in "MailJS") to apply it .The email and password to loging you can contact so **Nichole**. If you want to learn how to using on it you can follow by this [video](https://youtu.be/BgVjild0C9A?si=YmHDxZ7Nx4U6Ozgx "video"). 
 
 
