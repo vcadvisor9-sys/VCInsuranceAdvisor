@@ -1088,3 +1088,259 @@
             /* 减小阴影 */
         }
     }
+    /* 创业基金部分样式 */
+    
+    .startup-fund-section {
+        padding: 60px 20px;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+        margin: 40px 0;
+    }
+    
+    .startup-fund-container {
+        max-width: 1200px;
+        margin: 0 auto;
+    }
+    
+    .startup-fund-title {
+        text-align: center;
+        font-size: 2.5rem;
+        color: #AF1F1F;
+        margin-bottom: 10px;
+        font-weight: 700;
+    }
+    
+    .startup-fund-subtitle {
+        text-align: center;
+        font-size: 1.2rem;
+        color: #555;
+        margin-bottom: 50px;
+        max-width: 600px;
+        margin-left: auto;
+        margin-right: auto;
+    }
+    /* 收入计算器样式 */
+    
+    .income-calculator {
+        background: white;
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+    }
+    
+    .calculator-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+        gap: 30px;
+        margin-bottom: 30px;
+    }
+    
+    .calculator-option {
+        background: #f8f9fa;
+        padding: 25px;
+        border-radius: 12px;
+        border: 2px solid transparent;
+        transition: all 0.3s ease;
+        cursor: pointer;
+    }
+    
+    .calculator-option:hover {
+        border-color: #AF1F1F;
+        transform: translateY(-5px);
+    }
+    
+    .calculator-option.active {
+        border-color: #AF1F1F;
+        background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    }
+    
+    .option-header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 15px;
+    }
+    
+    .option-title {
+        font-size: 1.3rem;
+        color: #AF1F1F;
+        font-weight: 600;
+    }
+    
+    .option-badge {
+        background: #AF1F1F;
+        color: white;
+        padding: 4px 12px;
+        border-radius: 20px;
+        font-size: 0.9rem;
+        font-weight: 600;
+    }
+    
+    .option-details {
+        color: #555;
+        line-height: 1.6;
+    }
+    
+    .option-details strong {
+        color: #AF1F1F;
+        font-size: 1.1rem;
+    }
+    
+    .income-result {
+        background: linear-gradient(135deg, #AF1F1F 0%, #8b0000 100%);
+        color: white;
+        padding: 30px;
+        border-radius: 12px;
+        text-align: center;
+        margin-top: 20px;
+    }
+    
+    .income-total {
+        font-size: 2.5rem;
+        font-weight: 700;
+        margin-bottom: 10px;
+    }
+    
+    .income-breakdown {
+        font-size: 1.1rem;
+        opacity: 0.9;
+    }
+    /* 奖励部分样式 */
+    
+    .rewards-section {
+        background: white;
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+        margin-bottom: 40px;
+    }
+    
+    .rewards-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 25px;
+        margin-top: 30px;
+    }
+    
+    .reward-card {
+        background: #f8f9fa;
+        padding: 25px;
+        border-radius: 12px;
+        text-align: center;
+        transition: transform 0.3s ease;
+    }
+    
+    .reward-card:hover {
+        transform: translateY(-5px);
+    }
+    
+    .reward-icon {
+        font-size: 3rem;
+        color: #AF1F1F;
+        margin-bottom: 15px;
+    }
+    
+    .reward-title {
+        font-size: 1.3rem;
+        color: #AF1F1F;
+        margin-bottom: 10px;
+        font-weight: 600;
+    }
+    
+    .reward-description {
+        color: #555;
+        line-height: 1.6;
+    }
+    /* 目标达成部分 */
+    
+    .goals-section {
+        background: white;
+        border-radius: 16px;
+        padding: 40px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+    }
+    
+    .goals-checklist {
+        max-width: 800px;
+        margin: 0 auto;
+    }
+    
+    .goal-item {
+        display: flex;
+        align-items: flex-start;
+        margin-bottom: 25px;
+        padding: 20px;
+        background: #f8f9fa;
+        border-radius: 10px;
+        transition: all 0.3s ease;
+    }
+    
+    .goal-item:hover {
+        background: #e9ecef;
+    }
+    
+    .goal-check {
+        background: #AF1F1F;
+        color: white;
+        width: 30px;
+        height: 30px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-right: 15px;
+        flex-shrink: 0;
+        margin-top: 2px;
+    }
+    
+    .goal-content h4 {
+        color: #AF1F1F;
+        margin-bottom: 8px;
+        font-size: 1.1rem;
+    }
+    
+    .goal-content p {
+        color: #555;
+        line-height: 1.6;
+        margin-bottom: 5px;
+    }
+    
+    .goal-note {
+        font-size: 0.9rem;
+        color: #888;
+        font-style: italic;
+    }
+    /* 响应式设计 */
+    
+    @media (max-width: 768px) {
+        .startup-fund-section {
+            padding: 40px 15px;
+        }
+        .startup-fund-title {
+            font-size: 2rem;
+        }
+        .income-calculator,
+        .rewards-section,
+        .goals-section {
+            padding: 25px;
+        }
+        .calculator-grid {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+        .income-total {
+            font-size: 2rem;
+        }
+        .rewards-grid {
+            grid-template-columns: 1fr;
+        }
+        .goal-item {
+            flex-direction: column;
+            text-align: center;
+        }
+        .goal-check {
+            margin-right: 0;
+            margin-bottom: 10px;
+            align-self: center;
+        }
+    }
