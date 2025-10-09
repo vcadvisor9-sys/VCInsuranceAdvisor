@@ -228,9 +228,9 @@ footer {
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr) !important;
+    grid-template-columns: repeat(4, 1fr);
     ;
-    gap: 15px;
+    gap: 8px;
     /* 从 30px 减小到 15px */
     max-width: 100%;
     margin: 0 auto;
@@ -618,6 +618,11 @@ footer {
 @media (max-width: 768px) {
     body {
         overflow-x: hidden;
+    }
+    .service-grid {
+        grid-template-columns: 1fr;
+        /* 手机保持1列 */
+        gap: 15px;
     }
     /* 导航栏响应式设计 */
     .nav_bar {
