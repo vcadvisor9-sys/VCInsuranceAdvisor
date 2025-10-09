@@ -1553,62 +1553,73 @@
  let isUserInteracted = false;
 
  // 初始化函数
+ // 初始化函数
  function initTabRotation() {
      const buttons = document.querySelectorAll(".filter-btn");
      const contents = document.querySelectorAll(".detail-content");
      let currentIndex = 0;
+     let isUserInteracted = false;
+     let autoRotateInterval;
+
+     // 切换到指定索引的选项卡
+     function switchToTab(index) {
+         // 移除所有active状态
+         buttons.forEach(b => b.classList.remove("active"));
+         contents.forEach(c => c.classList.remove("active"));
+
+         // 设置新的active状态
+         buttons[index].classList.add("active");
+         const target = buttons[index].getAttribute("data-target");
+         const targetElement = document.getElementById(target);
+         if (targetElement) {
+             targetElement.classList.add("active");
+         }
+
+         currentIndex = index;
+     }
 
      // 设置自动轮播
      function startAutoRotation() {
-         if (isUserInteracted) return; // 如果用户已交互，停止自动轮播
+         if (isUserInteracted) return;
 
          autoRotateInterval = setInterval(() => {
-             // 移除当前active
-             buttons.forEach(b => b.classList.remove("active"));
-             contents.forEach(c => c.classList.remove("active"));
+             let nextIndex = (currentIndex + 1) % buttons.length;
+             switchToTab(nextIndex);
+         }, 5000); // 5秒切换一次
+     }
 
-             // 移动到下一个
-             currentIndex = (currentIndex + 1) % buttons.length;
+     // 停止自动轮播
+     function stopAutoRotation() {
+         clearInterval(autoRotateInterval);
+     }
 
-             // 添加active
-             buttons[currentIndex].classList.add("active");
-             const target = buttons[currentIndex].getAttribute("data-target");
-             document.getElementById(target).classList.add("active");
-         }, 10000); // 10秒切换一次
+     // 初始化：设置第一个选项卡为active
+     function initializeTabs() {
+         if (buttons.length > 0) {
+             switchToTab(0);
+         }
      }
 
      // 按钮点击事件
-     buttons.forEach(btn => {
+     buttons.forEach((btn, index) => {
          btn.addEventListener("click", () => {
              // 用户交互，停止自动轮播
              isUserInteracted = true;
-             clearInterval(autoRotateInterval);
+             stopAutoRotation();
 
-             // 移除active
-             buttons.forEach(b => b.classList.remove("active"));
-             contents.forEach(c => c.classList.remove("active"));
-
-             // 当前按钮加active
-             btn.classList.add("active");
-             const target = btn.getAttribute("data-target");
-             document.getElementById(target).classList.add("active");
-
-             // 更新当前索引
-             buttons.forEach((button, index) => {
-                 if (button === btn) {
-                     currentIndex = index;
-                 }
-             });
+             // 切换到点击的选项卡
+             switchToTab(index);
          });
      });
 
-     // 启动自动轮播
+     // 初始化
+     initializeTabs();
      startAutoRotation();
 
      // 当页面不可见时暂停轮播
      document.addEventListener('visibilitychange', function() {
          if (document.hidden) {
-             clearInterval(autoRotateInterval);
+             stopAutoRotation();
          } else if (!isUserInteracted) {
              startAutoRotation();
          }
