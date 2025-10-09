@@ -8,6 +8,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
     <link rel="icon" href="image source/logo.jpg" type="image/x-icon">
     <link rel="stylesheet" href="CSS/mainpage.css">
+    <link rel="stylesheet" href="CSS/service.css">
     <title>Home</title>
 
 </head>
@@ -88,35 +89,13 @@
                         <img src="image source/app-application-business-business-strategy-coffee-collaboration-1434201-pxhere.com.jpg" alt="Latest Info">
                     </div>
                     <div class="service-content">
-                        <h3>Latest Info
-                            <br> 最新资讯
+                        <h3>Campaign Info
+                            <br> 最新活动资讯
                         </h3>
                     </div>
                 </div>
-                <div class="service-item">
-                    <a href="service.html#premium_adjustment">
-                        <div class="service-image">
-                            <img src="image source/writing-work-pen-office-brand-cash-1238368-pxhere.com.jpg" alt="Insurance Knowledge">
-                        </div>
-                        <div class="service-content">
-                            <h3>Insurance Planning
-                                <br> 保险规划
-                            </h3>
-                        </div>
-                    </a>
-                </div>
-                <div class="service-item">
-                    <a href="service.html#case_sharing">
-                        <div class="service-image">
-                            <img src="image source/staff-agreement-applicant-associate-boardroom-business-1652041-pxhere.com.jpg" alt="Case Sharing">
-                        </div>
-                        <div class="service-content">
-                            <h3>Case Sharing
-                                <br> 案例分享
-                            </h3>
-                        </div>
-                    </a>
-                </div>
+
+
                 <div class="service-item">
                     <a href="service.html#orphan_policy">
                         <div class="service-image">
@@ -161,9 +140,9 @@
         </div>
         <br>
         <div class="info-section">
-            <a href="service.html#hospitalContainer" class="info-card" style="background-image: url('image source/customernotice.jpg');">
+            <a href="service.html#case_sharing" class="info-card" style="background-image: url('image source/customernotice.jpg');">
                 <div class="info-overlay">
-                    <h2>顾客须知</h2>
+                    <h2>理赔分享</h2>
                 </div>
             </a>
 
@@ -180,6 +159,73 @@
             </a>
         </div>
 
+        <!-- Hospital Finder Section -->
+        <section class="hospital-finder" id="hospitalContainer">
+            <h2 class="section-title">医院网络查找</h2>
+            <p class="section-subtitle">查找您附近的合作医院，享受便捷的医疗服务和保险理赔</p>
+
+            <div class="hospital-container">
+                <div class="hospital-main-content">
+                    <div class="hospital-left-panel">
+                        <div class="selector-group">
+                            <label for="stateSelect">选择州属：</label>
+                            <select id="stateSelect">
+                            <option value="">请选择州属...</option>
+                            <option value="johor">柔佛 (Johor)</option>
+                            <option value="kedah">吉打 (Kedah)</option>
+                            <option value="kelantan">吉兰丹 （Kelantan）</option>
+                            <option value="malacca">马六甲 (Malacca)</option>
+                            <option value="NegeriSembilan">森美兰 (Negeri Sembilan)</option>
+                            <option value="pahang">彭亨 (Pahang)</option>
+                            <option value="perak">霹雳 (Perak)</option>
+                            <option value="perlis">玻璃市 (Perlis)</option>
+                            <option value="penang">槟城 (Penang)</option>
+                            <option value="sabah">沙巴 (Sabah)</option>
+                            <option value="sarawak">砂拉越 (Sarawak)</option>
+                            <option value="selangor">雪兰莪/吉隆波 (Selangor/Kuala Lumpur)</option>
+                            <option value="terengganu">登嘉楼 (Terengganu)</option>
+                        </select>
+                        </div>
+
+                        <div class="selector-group city-selector" id="citySelector">
+                            <label for="citySelect">选择城市 (可选)：</label>
+                            <select id="citySelect">
+                            <option value="">所有城市</option>
+                        </select>
+                        </div>
+
+                        <div class="hospitals-list">
+                            <h3>可选医院</h3>
+                            <div id="hospitalsList">
+                                <div class="no-selection">
+                                    <p>请先选择州属以查看该地区的医院</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="hospital-right-panel">
+                        <div class="map-container" id="mapContainer">
+                            <div class="map-placeholder">
+                                <p>🏥 选择医院以查看位置</p>
+                            </div>
+                        </div>
+
+                        <div class="map-controls" id="mapControls" style="display: none;">
+                            <div class="hospital-info" id="hospitalInfo"></div>
+                            <div class="action-buttons">
+                                <a href="#" id="googleMapsBtn" class="btn btn-primary" target="_blank">
+                                📍 Google Maps 导航
+                            </a>
+                                <button id="copyAddressBtn" class="btn btn-secondary">
+                                📋 复制地址
+                            </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
 
         <div class="contactus" id="contactus">
@@ -261,5 +307,6 @@
 
 </body>
 
+<script src="JS/service.js"></script>
 
 </html>

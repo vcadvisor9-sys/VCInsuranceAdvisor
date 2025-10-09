@@ -228,15 +228,16 @@ footer {
 
 .service-grid {
     display: grid;
-    width: 100%;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 30px;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 15px;
+    /* 从 30px 减小到 15px */
     max-width: 100%;
     margin: 0 auto;
 }
 
 .service-item {
     background-color: white;
+    width: 100%;
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -541,35 +542,24 @@ footer {
 .footer-logo .logo-box {
     width: 180px;
     height: 180px;
-    background: transparent;
-    /* 移除之前的灰色背景 */
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin: 0;
-}
-
-.footer-logo .logo-box img {
-    width: 100%;
-    /* 图片宽度填满容器 */
-    height: 100%;
-    /* 图片高度填满容器 */
-    object-fit: contain;
-    /* 保持图片比例，完整显示 */
-    border-radius: 0;
-    /* 移除圆角（如果需要可以保留） */
-}
-
-.footer-logo .logo-box {
-    width: 180px;
-    height: 180px;
     background: #d9d9d9;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 0;
-    font-weight: bold;
-    color: black;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 4px solid #AF1F1F;
+    /* 添加红色边框 */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    /* 添加阴影效果 */
+}
+
+.footer-logo .logo-box img {
+    width: 90%;
+    height: 90%;
+    object-fit: cover;
+    border-radius: 50%;
 }
 
 .footer-section {
@@ -953,10 +943,12 @@ footer {
 
 @media (min-width: 992px) {
     .service-grid {
-        grid-template-columns: repeat(3, 1fr);
+        grid-template-columns: repeat(4, 1fr);
+        /* 改为4列 */
     }
     .info-card {
-        flex: 1 1 calc(33.333% - 20px);
+        flex: 1 1 calc(25% - 20px);
+        /* 对应改为4列 */
     }
 }
 
