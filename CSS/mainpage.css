@@ -228,7 +228,8 @@ footer {
 
 .service-grid {
     display: grid;
-    grid-template-columns: repeat(4, 1fr);
+    grid-template-columns: repeat(4, 1fr) !important;
+    ;
     gap: 15px;
     /* 从 30px 减小到 15px */
     max-width: 100%;
