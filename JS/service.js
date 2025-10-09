@@ -1813,3 +1813,120 @@ document.addEventListener('DOMContentLoaded', function() {
     // 初始化图片轮播
     initCarousel();
 });
+
+// 初始化第二个轮播图
+function initSecondCarousel() {
+    const carouselContainer = document.querySelectorAll('.carousel-container')[1];
+    if (!carouselContainer) return;
+
+    const carousel = carouselContainer.querySelector('.carousel');
+    const items = carouselContainer.querySelectorAll('.carousel-item');
+    const dots = carouselContainer.querySelectorAll('.control-dot');
+    const prevBtn = carouselContainer.querySelector('.prev');
+    const nextBtn = carouselContainer.querySelector('.next');
+
+    if (!carousel || items.length === 0) return;
+
+    let currentIndex = 0;
+
+    // 更新轮播显示
+    function updateCarousel() {
+        carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+        // 更新指示点状态
+        dots.forEach((dot, index) => {
+            dot.classList.toggle('active', index === currentIndex);
+        });
+    }
+
+    // 切换到下一张
+    function nextSlide() {
+        currentIndex = (currentIndex + 1) % items.length;
+        updateCarousel();
+    }
+
+    // 切换到上一张
+    function prevSlide() {
+        currentIndex = (currentIndex - 1 + items.length) % items.length;
+        updateCarousel();
+    }
+
+    // 事件监听
+    if (nextBtn) {
+        nextBtn.addEventListener('click', nextSlide);
+    }
+
+    if (prevBtn) {
+        prevBtn.addEventListener('click', prevSlide);
+    }
+
+    // 指示点点击事件
+    dots.forEach(dot => {
+        dot.addEventListener('click', () => {
+            currentIndex = parseInt(dot.getAttribute('data-index'));
+            updateCarousel();
+        });
+    });
+
+    // 初始化
+    updateCarousel();
+}
+
+// 在DOMContentLoaded中调用
+document.addEventListener('DOMContentLoaded', function() {
+    // 初始化第二个轮播图
+    initSecondCarousel();
+});
+
+
+// 简单的轮播图功能
+document.addEventListener('DOMContentLoaded', function() {
+    // 为每个轮播图容器初始化
+    document.querySelectorAll('.carousel-container').forEach(container => {
+        const carousel = container.querySelector('.carousel');
+        const items = carousel.querySelectorAll('.carousel-item');
+        const dots = container.querySelectorAll('.control-dot');
+        const prevBtn = container.querySelector('.prev');
+        const nextBtn = container.querySelector('.next');
+
+        let currentIndex = 0;
+        const totalItems = items.length;
+
+        // 更新轮播图
+        function updateCarousel() {
+            carousel.style.transform = `translateX(-${currentIndex * 100}%)`;
+
+            // 更新指示点
+            dots.forEach((dot, index) => {
+                dot.classList.toggle('active', index === currentIndex);
+            });
+        }
+
+        // 下一张
+        function nextSlide() {
+            currentIndex = (currentIndex + 1) % totalItems;
+            updateCarousel();
+        }
+
+        // 上一张
+        function prevSlide() {
+            currentIndex = (currentIndex - 1 + totalItems) % totalItems;
+            updateCarousel();
+        }
+
+        // 事件监听
+        prevBtn.addEventListener('click', prevSlide);
+        nextBtn.addEventListener('click', nextSlide);
+
+        // 点击指示点
+        dots.forEach((dot, index) => {
+            dot.addEventListener('click', () => {
+                currentIndex = index;
+                updateCarousel();
+            });
+        });
+
+        // 初始化
+        updateCarousel();
+    });
+});

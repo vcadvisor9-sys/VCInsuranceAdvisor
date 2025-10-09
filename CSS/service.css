@@ -1235,6 +1235,210 @@ footer {
     transform: scale(1.02);
 }
 
+
+/*sec claim */
+
+
+/* 时间线样式 */
+
+.claim-timeline {
+    margin: 25px 0;
+    padding: 20px;
+    background: #f8f9fa;
+    border-radius: 10px;
+}
+
+.claim-timeline h4 {
+    color: #AF1F1F;
+    margin-bottom: 20px;
+    text-align: center;
+}
+
+.timeline {
+    position: relative;
+    padding-left: 30px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    left: 15px;
+    top: 0;
+    bottom: 0;
+    width: 2px;
+    background: #AF1F1F;
+}
+
+.timeline-item {
+    position: relative;
+    margin-bottom: 25px;
+}
+
+.timeline-item::before {
+    content: '';
+    position: absolute;
+    left: -23px;
+    top: 5px;
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #AF1F1F;
+    border: 3px solid white;
+}
+
+.timeline-date {
+    font-weight: bold;
+    color: #AF1F1F;
+    margin-bottom: 5px;
+}
+
+.timeline-content {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 3px solid #AF1F1F;
+}
+
+
+/* 保障细分样式 */
+
+.coverage-breakdown {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin: 20px 0;
+}
+
+.coverage-item {
+    background: white;
+    padding: 15px;
+    border-radius: 8px;
+    text-align: center;
+    border: 1px solid #e1e8ed;
+}
+
+.coverage-item strong {
+    color: #AF1F1F;
+    display: block;
+    margin-bottom: 8px;
+}
+
+.lesson-learned {
+    background: #fff9e6;
+    padding: 15px;
+    border-radius: 8px;
+    border-left: 4px solid #ffcc00;
+    margin-top: 20px;
+}
+
+
+/* 财务分析样式 */
+
+.financial-breakdown {
+    margin: 25px 0;
+    padding: 20px;
+    background: white;
+    border-radius: 10px;
+    border: 1px solid #e1e8ed;
+}
+
+.breakdown-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.breakdown-item {
+    text-align: center;
+    padding: 15px;
+    background: #f8f9fa;
+    border-radius: 8px;
+}
+
+.breakdown-item.highlight {
+    background: #AF1F1F;
+    color: white;
+}
+
+.breakdown-label {
+    font-size: 0.9rem;
+    margin-bottom: 8px;
+}
+
+.breakdown-amount {
+    font-size: 1.2rem;
+    font-weight: bold;
+}
+
+
+/* 标签样式增强 */
+
+.claim-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+    margin: 15px 0;
+}
+
+.claim-tag {
+    background: #e8f4fd;
+    color: #2c7bbe;
+    padding: 5px 12px;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    font-weight: 500;
+}
+
+.claim-tag:nth-child(2) {
+    background: #e6f7ee;
+    color: #0cb577;
+}
+
+.claim-tag:nth-child(3) {
+    background: #fff9e6;
+    color: #e6a700;
+}
+
+.claim-tag:nth-child(4) {
+    background: #ffe6e6;
+    color: #d63031;
+}
+
+.claim-tag:nth-child(5) {
+    background: #f0e6ff;
+    color: #6c5ce7;
+}
+
+.claim-tag:nth-child(6) {
+    background: #e6f3ff;
+    color: #0984e3;
+}
+
+
+/* 响应式设计 */
+
+@media (max-width: 768px) {
+    .coverage-breakdown {
+        grid-template-columns: 1fr;
+    }
+    .breakdown-grid {
+        grid-template-columns: 1fr;
+    }
+    .timeline {
+        padding-left: 20px;
+    }
+    .timeline::before {
+        left: 10px;
+    }
+    .timeline-item::before {
+        left: -18px;
+    }
+}
+
+
+/**/
+
 .carousel-container {
     width: 100%;
     max-width: 1000px;
