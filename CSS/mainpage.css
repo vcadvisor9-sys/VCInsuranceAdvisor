@@ -1,9 +1,32 @@
+/* 防止水平滚动和留白 */
+
+* {
+    box-sizing: border-box;
+}
+
+html,
+body {
+    max-width: 100%;
+    overflow-x: hidden;
+}
+
+
+/* 确保所有容器不会导致溢出 */
+
+.container,
+section,
+header,
+footer {
+    max-width: 100%;
+}
+
 body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
     width: 100%;
     overflow-x: hidden;
+    position: relative;
 }
 
 header {
@@ -14,7 +37,7 @@ header {
     position: absolute;
     top: 0;
     left: 0;
-    width: 100%;
+    width: 100vw;
     z-index: 30;
     padding: 20px 0;
     box-sizing: border-box;
@@ -102,7 +125,7 @@ main {
 }
 
 .introduce_text p {
-    max-width: 800px;
+    max-width: 80%;
     margin: 0 auto;
 }
 
@@ -152,68 +175,6 @@ footer {
 
 /* Floating language selector styles */
 
-.language-selector {
-    position: fixed;
-    bottom: 20px;
-    right: 20px;
-    z-index: 1000;
-}
-
-.language-toggle {
-    width: 50px;
-    height: 50px;
-    background-color: #2c3e50;
-    color: white;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    cursor: pointer;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    transition: all 0.3s;
-}
-
-.language-toggle:hover {
-    background-color: #1a252f;
-    transform: scale(1.1);
-}
-
-.language-toggle span {
-    font-size: 1.2rem;
-    font-weight: bold;
-}
-
-.language-options {
-    position: absolute;
-    bottom: 60px;
-    right: 0;
-    background-color: white;
-    border-radius: 8px;
-    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.2);
-    overflow: hidden;
-    display: none;
-    width: 120px;
-}
-
-.language-option {
-    padding: 10px 15px;
-    cursor: pointer;
-    transition: background-color 0.3s;
-    text-align: center;
-}
-
-.language-option:hover {
-    background-color: #f0f0f0;
-}
-
-.language-selector.active .language-options {
-    display: block;
-}
-
-.language-selector.active .language-toggle {
-    background-color: #1a252f;
-}
-
 .ourservice {
     padding: 40px 20px;
     text-align: center;
@@ -238,7 +199,10 @@ footer {
 
 .service-item {
     background-color: white;
-    width: 90%;
+    width: 95%;
+    /* 稍微调整宽度 */
+    margin: 0 auto;
+    /* 居中显示 */
     border-radius: 8px;
     overflow: hidden;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
@@ -315,8 +279,10 @@ footer {
 }
 
 .blue-square {
-    width: 100vw;
+    width: 100%;
     margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    max-width: 100vw;
     height: 500px;
     background-color: #D9C4AA;
     clip-path: polygon(0% 0%, 100% 5%, 100% 95%, 0% 100%);
@@ -430,7 +396,7 @@ footer {
     gap: 20px;
     margin: 50px auto;
     width: 100%;
-    max-width: 80%;
+    max-width: 95%;
     flex-wrap: wrap;
     padding: 0 !important;
 }
@@ -463,6 +429,7 @@ footer {
     background: rgba(0, 0, 0, 0.5);
     /* 半透明黑底 */
     color: white;
+    justify-content: center;
     text-align: center;
     font-size: 1.5rem;
     font-weight: bold;
@@ -525,8 +492,10 @@ footer {
 
 .footerbar {
     background-color: #9d8369;
-    width: 100vw;
+    width: 100%;
     margin-left: calc(-50vw + 50%);
+    margin-right: calc(-50vw + 50%);
+    max-width: 100vw;
     box-sizing: border-box;
     color: #fff;
     padding: 40px 60px;
@@ -737,6 +706,34 @@ footer {
     .footer-logo .logo-box {
         margin: 0 auto;
     }
+    .footerbar {
+        padding: 30px 20px;
+        flex-direction: column;
+        align-items: center;
+        /* 让整个footer内容居中 */
+    }
+    .footer-logo {
+        display: flex;
+        justify-content: center;
+        /* 水平居中 */
+        align-items: center;
+        /* 垂直居中 */
+        width: 100%;
+        margin-bottom: 25px;
+    }
+    .footer-logo .logo-box {
+        margin: 0 auto;
+        /* 确保logo盒子居中 */
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .footer-logo .logo-box img {
+        display: block;
+        /* 移除图片底部的空白间隙 */
+        margin: 0 auto;
+        /* 图片本身也居中 */
+    }
 }
 
 
@@ -936,7 +933,7 @@ footer {
     .footer-section {
         min-width: auto;
         flex: 1 1 45%;
-        text-align: left;
+        text-align: center;
     }
     .footer-logo .logo-box {
         margin: 0;
