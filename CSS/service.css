@@ -161,6 +161,13 @@ body {
     display: block;
 }
 
+#PRUWealthEnrich h3 {
+    text-align: left;
+    font-size: 1.5rem;
+    color: #AF1F1F;
+    margin-bottom: 15px;
+}
+
 .detail-content h3 {
     margin-top: 0;
     font-size: 1.5rem;
@@ -209,6 +216,68 @@ body {
     margin: 5px 0 0 0;
     font-size: 14px;
     color: #555;
+}
+
+
+/* PRUWealthEnrich - 内容靠左对齐 */
+
+.PRUWealthEnrich {
+    text-align: left;
+}
+
+.PRUWealthEnrich h4 {
+    font-size: 20px;
+    margin-bottom: 15px;
+    color: #c62828;
+    font-weight: bold;
+    text-align: left;
+    /* 标题靠左 */
+}
+
+.PRUWealthEnrich ul {
+    list-style-type: none;
+    padding-left: 0;
+    margin-bottom: 15px;
+    text-align: left;
+    /* 列表靠左 */
+}
+
+.PRUWealthEnrich ul li {
+    margin-bottom: 20px;
+    padding-left: 0;
+    text-align: left;
+    /* 列表项靠左 */
+}
+
+.PRUWealthEnrich ul li b {
+    font-size: 16px;
+    color: #c62828;
+    display: block;
+    margin-bottom: 5px;
+    font-weight: bold;
+    text-align: left;
+    /* 粗体标题靠左 */
+}
+
+.PRUWealthEnrich ul li p {
+    margin: 5px 0 0 0;
+    font-size: 14px;
+    color: #555;
+    line-height: 1.6;
+    text-align: left;
+    /* 段落文字靠左 */
+}
+
+.PRUWealthEnrich hr {
+    border: 0;
+    height: 1px;
+    background: #ddd;
+    margin: 20px 0;
+}
+
+.PRUWealthEnrich strong {
+    color: #c62828;
+    font-weight: bold;
 }
 
 
@@ -1732,6 +1801,9 @@ footer {
     }
     .detail-content h3 {
         font-size: 1.3rem !important;
+        text-align: center;
+    }
+    #PRUWealthEnrich h3 {
         text-align: center;
     }
     .coverage h4 {
